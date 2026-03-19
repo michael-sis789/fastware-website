@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fastware | AI-Powered Software Development in 10 Days</title>
+    <meta name="description" content="Fastware delivers custom business software in 10 days at 20% of market price. AI-powered development for SMEs.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0a1628;
+            --primary-light: #1a2d4a;
+            --accent: #00d4aa;
+            --accent-dark: #00b894;
+            --gradient-start: #00d4aa;
+            --gradient-end: #00b894;
+            --text: #1a1a2e;
+            --text-light: #64748b;
+            --white: #ffffff;
+            --gray: #f1f5f9;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-dark);
+        }
+        
+        .nav-cta {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: white !important;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 10rem 2rem 6rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300d4aa' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(0,212,170,0.15);
+            border: 1px solid rgba(0,212,170,0.3);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-badge::before {
+            content: '⚡';
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero h1 span {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: #94a3b8;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,212,170,0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border: 2px solid rgba(255,255,255,0.2);
+            transition: all 0.3s;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.4);
+        }
+        
+        /* Stats Bar */
+        .stats-bar {
+            background: var(--gray);
+            padding: 2rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .stats-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+        
+        .stat-item h3 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .stat-item p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        /* Section Styles */
+        .section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .section-title p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Why Fastware */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .why-card {
+            padding: 2.5rem;
+            background: white;
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .why-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+        
+        .why-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .why-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+        
+        .why-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+        
+        /* Industries Grid */
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .industry-card {
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s;
+        }
+        
+        .industry-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(0,212,170,0.1);
+        }
+        
+        .industry-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .industry-icon {
+            font-size: 2rem;
+        }
+        
+        .industry-header h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+        
+        .industry-card ul {
+            list-style: none;
+            color: var(--text-light);
+        }
+        
+        .industry-card li {
+            padding: 0.4rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .industry-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-dark);
+            font-weight: 700;
+        }
+        
+        /* Process Timeline */
+        .process-section {
+            background: var(--gray);
+        }
+        
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            position: relative;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 10%;
+            right: 10%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+            border-radius: 2px;
+        }
+        
+        .timeline-step {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border: 4px solid var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--accent-dark);
+            margin: 0 auto 1.5rem;
+        }
+        
+        .timeline-step h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-step p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        .step-days {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        /* Pricing Section */
+        .pricing-section {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .pricing-section .section-title h2,
+        .pricing-section .section-title p {
+            color: white;
+        }
+        
+        .pricing-section .section-title p {
+            opacity: 0.8;
+        }
+        
+        .pricing-card {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+        }
+        
+        .pricing-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        
+        .pricing-amount {
+            font-size: 4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+        }
+        
+        .pricing-compare {
+            color: #94a3b8;
+            text-decoration: line-through;
+            font-size: 1.5rem;
+            margin-left: 0.5rem;
+        }
+        
+        .pricing-desc {
+            color: #94a3b8;
+            margin: 1.5rem 0;
+        }
+        
+        .pricing-features {
+            text-align: left;
+            max-width: 400px;
+            margin: 2rem auto;
+        }
+        
+        .pricing-features li {
+            padding: 0.75rem 0;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .pricing-features li::before {
+            content: '✓';
+            color: var(--accent);
+            font-weight: 700;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--primary);
+            color: white;
+            padding: 3rem 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        
+        .footer-copy {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .why-grid,
+            .industries-grid,
+            .timeline {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline::before {
+                display: none;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .pricing-amount {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content">
+            <div class="logo">Fastware</div>
+            <div class="nav-links">
+                <a href="#why">Why Us</a>
+                <a href="#industries">Industries</a>
+                <a href="#process">Process</a>
+                <a href="#pricing">Pricing</a>
+                <a href="mailto:admin@vimamall.com" class="nav-cta">Get Quote</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">AI-Powered Development</div>
+            <h1>Your Custom Software <span>Ready in 10 Days</span></h1>
+            <p class="hero-subtitle">
+                Stop waiting months for software. Fastware combines AI acceleration with expert engineering 
+                to deliver enterprise-grade systems at 20% of traditional costs.
+            </p>
+            <div class="hero-cta">
+                <a href="mailto:admin@vimamall.com" class="btn-primary">Get Your Free Quote</a>
+                <a href="#process" class="btn-secondary">See How It Works</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3>10 Days</h3>
+                <p>Average Delivery Time</p>
+            </div>
+            <div class="stat-item">
+                <h3>80%</h3>
+                <p>Cost Savings vs Market</p>
+            </div>
+            <div class="stat-item">
+                <h3>20+</h3>
+                <p>Industries Served</p>
+            </div>
+            <div class="stat-item">
+                <h3>100%</h3>
+                <p>Source Code Ownership</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Fastware -->
+    <section class="section" id="why">
+        <div class="section-title">
+            <h2>Why Choose Fastware?</h2>
+            <p>In the age of AI, software development shouldn't take months or cost a fortune.</p>
+        </div>
+        <div class="why-grid">
+            <div class="why-card">
+                <div class="why-icon">⚡</div>
+                <h3>Lightning Fast</h3>
+                <p>Our AI-accelerated development engine delivers what takes others 3-6 months in just 10 working days. Speed without compromising quality.</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">💰</div>
+                <h3>Unbeatable Pricing</h3>
+                <p>Traditional agencies charge RM40,000+. We deliver the same quality for RM8,000. AI efficiency means savings we pass directly to you.</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">🎯</div>
+                <h3>Perfect Fit Guarantee</h3>
+                <p>No templates. No generic solutions. Every system is custom-built for your exact workflow, integrated with your existing tools and processes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Section -->
+    <section class="section" id="industries" style="background: var(--gray);">
+        <div class="section-title">
+            <h2>Solutions by Industry</h2>
+            <p>From logistics to healthcare, we've built systems that transform operations.</p>
+        </div>
+        <div class="industries-grid">
+            <div class="industry-card">
+                <div class="industry-header">
+                    <span class="industry-icon">📦</span>
+                    <h3>Logistics & Supply Chain</h3>
+                </div>
+                <ul>
+                    <li>Cross-border parcel tracking portals</li>
+                    <li>Cold chain temperature monitoring</li>
+                    <li>Last-mile delivery management</li>
+                </ul>
+            </div>
+            <div class="industry-card">
+                <div class="industry-header">
+                    <span class="industry-icon">🏢</span>
+                    <h3>Property & Real Estate</h3>
+                </div>
+                <ul>
+                    <li>Condo/JMB management systems</li>
+                    <li>Rental property automation</li>
+                    <li>Lead CRM with social sync</li>
+                </ul>
+            </div>
+            <div class="industry-card">
+                <div class="industry-header">
+                    <span class="industry-icon">🏥</span>
+                    <h3>Medical & Wellness</h3>
+                </div>
+                <ul>
+                    <li>Clinic & dental practice portals</li>
+                    <li>Gym membership & access control</li>
+                    <li>TCM herb formula management</li>
+                </ul>
+            </div>
+            <div class="industry-card">
+                <div class="industry-header">
+                    <span class="industry-icon">⚙️</span>
+                    <h3>Specialized Systems</h3>
+                </div>
+                <ul>
+                    <li>Central kitchen ERP solutions</li>
+                    <li>Agriculture yield tracking</li>
+                    <li>Manufacturing job shop tracking</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section process-section" id="process">
+        <div class="section-title">
+            <h2>The Fastware Process</h2>
+            <p>From idea to live system in 10 days — here's how we do it.</p>
+        </div>
+        <div class="timeline">
+            <div class="timeline-step">
+                <div class="step-number">1</div>
+                <h3>Consultation</h3>
+                <p>You share your pain points and requirements</p>
+                <span class="step-days">Day 1</span>
+            </div>
+            <div class="timeline-step">
+                <div class="step-number">2</div>
+                <h3>Architecture</h3>
+                <p>We design your custom database & workflow</p>
+                <span class="step-days">Days 2-3</span>
+            </div>
+            <div class="timeline-step">
+                <div class="step-number">3</div>
+                <h3>Development</h3>
+                <p>AI-accelerated build with expert oversight</p>
+                <span class="step-days">Days 4-8</span>
+            </div>
+            <div class="timeline-step">
+                <div class="step-number">4</div>
+                <h3>Launch</h3>
+                <p>You test, we refine, then go live</p>
+                <span class="step-days">Days 9-10</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="section pricing-section" id="pricing">
+        <div class="section-title">
+            <h2>Transparent Pricing</h2>
+            <p>Premium software development at prices that make sense for SMEs.</p>
+        </div>
+        <div class="pricing-card">
+            <div class="pricing-badge">MOST POPULAR</div>
+            <div style="margin: 1.5rem 0;">
+                <span class="pricing-amount">RM8,000</span>
+                <span class="pricing-compare">RM40,000</span>
+            </div>
+            <p class="pricing-desc">Complete custom system delivered in 10 days</p>
+            <ul class="pricing-features">
+                <li>Full source code ownership</li>
+                <li>Custom database design</li>
+                <li>Mobile-responsive interface</li>
+                <li>WhatsApp/Email integrations</li>
+                <li>1 year technical support</li>
+                <li>Training & documentation</li>
+            </ul>
+            <a href="mailto:admin@vimamall.com" class="btn-primary" style="margin-top: 1rem;">Get Started</a>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Ready to Transform Your Business?</h2>
+        <p>Join Malaysian SMEs who've replaced messy spreadsheets with professional systems. Get your free consultation today.</p>
+        <a href="mailto:admin@vimamall.com" class="btn-primary">Get Your Free Quote</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">Fastware</div>
+            <div class="footer-links">
+                <a href="mailto:admin@vimamall.com">admin@vimamall.com</a>
+                <a href="#why">Why Us</a>
+                <a href="#industries">Industries</a>
+            </div>
+            <div class="footer-copy">© 2026 Fastware by Vimamall Sdn Bhd. All rights reserved.</div>
+        </div>
+    </footer>
+</body>
+</html>
