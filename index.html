@@ -173,6 +173,7 @@
             transition: transform 0.3s, box-shadow 0.3s;
             border: none;
             cursor: pointer;
+            display: inline-block;
         }
         
         .btn-primary:hover {
@@ -297,6 +298,16 @@
         }
         
         /* Industries Grid */
+        .industries-section {
+            background: var(--gray);
+            padding: 6rem 2rem;
+        }
+        
+        .industries-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
         .industries-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -304,51 +315,206 @@
         }
         
         .industry-card {
-            padding: 2rem;
+            padding: 1.5rem 2rem;
             background: white;
             border-radius: 12px;
             border: 1px solid #e2e8f0;
             transition: all 0.3s;
+            cursor: pointer;
         }
         
         .industry-card:hover {
             border-color: var(--accent);
             box-shadow: 0 10px 30px rgba(0,212,170,0.1);
+            transform: translateY(-3px);
+        }
+        
+        .industry-card.hidden {
+            display: none;
+        }
+        
+        .industry-card.visible {
+            animation: fadeIn 0.4s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         .industry-header {
             display: flex;
             align-items: center;
             gap: 1rem;
-            margin-bottom: 1rem;
         }
         
         .industry-icon {
-            font-size: 2rem;
+            font-size: 1.75rem;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(0,212,170,0.1), rgba(0,212,170,0.05));
+            border-radius: 10px;
         }
         
         .industry-header h3 {
-            font-size: 1.25rem;
-            font-weight: 700;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text);
         }
         
-        .industry-card ul {
-            list-style: none;
-            color: var(--text-light);
+        .show-more-container {
+            text-align: center;
+            margin-top: 3rem;
         }
         
-        .industry-card li {
-            padding: 0.4rem 0;
-            padding-left: 1.5rem;
+        .btn-show-more {
+            background: transparent;
+            color: var(--accent-dark);
+            padding: 1rem 2.5rem;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1rem;
+            border: 2px solid var(--accent);
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-show-more:hover {
+            background: var(--accent);
+            color: white;
+        }
+        
+        .btn-show-more .arrow {
+            transition: transform 0.3s;
+        }
+        
+        .btn-show-more.expanded .arrow {
+            transform: rotate(180deg);
+        }
+        
+        /* Industry Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 22, 40, 0.85);
+            backdrop-filter: blur(5px);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            max-width: 600px;
+            width: 100%;
+            max-height: 80vh;
+            overflow-y: auto;
+            padding: 2.5rem;
             position: relative;
+            transform: scale(0.9);
+            transition: transform 0.3s;
         }
         
-        .industry-card li::before {
+        .modal-overlay.active .modal-content {
+            transform: scale(1);
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            width: 40px;
+            height: 40px;
+            border: none;
+            background: var(--gray);
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .modal-close:hover {
+            background: #e2e8f0;
+        }
+        
+        .modal-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .modal-content h3 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .modal-category {
+            color: var(--accent-dark);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .modal-content p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .modal-features {
+            list-style: none;
+        }
+        
+        .modal-features li {
+            padding: 0.6rem 0;
+            padding-left: 1.75rem;
+            position: relative;
+            color: var(--text);
+        }
+        
+        .modal-features li::before {
             content: '✓';
             position: absolute;
             left: 0;
             color: var(--accent-dark);
             font-weight: 700;
+        }
+        
+        .modal-cta {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e2e8f0;
         }
         
         /* Process Timeline */
@@ -495,27 +661,137 @@
             font-weight: 700;
         }
         
-        /* CTA Section */
-        .cta-section {
-            text-align: center;
-            padding: 6rem 2rem;
+        /* Contact Form Section */
+        .contact-section {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 6rem 2rem;
+        }
+        
+        .contact-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .contact-section .section-title h2 {
             color: white;
         }
         
-        .cta-section h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
+        .contact-section .section-title p {
+            color: #94a3b8;
         }
         
-        .cta-section p {
+        .contact-form {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 2.5rem;
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+        
+        .form-group label {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: #e2e8f0;
+            font-size: 0.95rem;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 1rem 1.25rem;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 10px;
+            background: rgba(255,255,255,0.05);
+            color: white;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: rgba(255,255,255,0.08);
+        }
+        
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #64748b;
+        }
+        
+        .form-group select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1.25rem;
+        }
+        
+        .form-group select option {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .form-group textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+        
+        .form-submit {
+            width: 100%;
+            padding: 1.25rem;
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+        }
+        
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 3rem 2rem;
+            background: rgba(0,212,170,0.1);
+            border: 1px solid rgba(0,212,170,0.3);
+            border-radius: 20px;
+        }
+        
+        .form-success.active {
+            display: block;
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        .form-success-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-success h3 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .form-success p {
             color: #94a3b8;
             font-size: 1.1rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
         }
         
         /* Footer */
@@ -576,8 +852,11 @@
             }
             
             .why-grid,
-            .industries-grid,
             .timeline {
+                grid-template-columns: 1fr;
+            }
+            
+            .industries-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -592,6 +871,23 @@
             .pricing-amount {
                 font-size: 3rem;
             }
+            
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-group.full-width {
+                grid-column: span 1;
+            }
+            
+            .contact-form {
+                padding: 1.5rem;
+            }
+            
+            .modal-content {
+                padding: 1.5rem;
+                margin: 1rem;
+            }
         }
     </style>
 </head>
@@ -605,7 +901,7 @@
                 <a href="#industries">Industries</a>
                 <a href="#process">Process</a>
                 <a href="#pricing">Pricing</a>
-                <a href="mailto:admin@vimamall.com" class="nav-cta">Get Quote</a>
+                <a href="#contact" class="nav-cta">Get Quote</a>
             </div>
         </div>
     </nav>
@@ -620,7 +916,7 @@
                 to deliver enterprise-grade systems at 20% of traditional costs.
             </p>
             <div class="hero-cta">
-                <a href="mailto:admin@vimamall.com" class="btn-primary">Get Your Free Quote</a>
+                <a href="#contact" class="btn-primary">Get Your Free Quote</a>
                 <a href="#process" class="btn-secondary">See How It Works</a>
             </div>
         </div>
@@ -638,7 +934,7 @@
                 <p>Cost Savings vs Market</p>
             </div>
             <div class="stat-item">
-                <h3>20+</h3>
+                <h3>50+</h3>
                 <p>Industries Served</p>
             </div>
             <div class="stat-item">
@@ -674,58 +970,40 @@
     </section>
 
     <!-- Industries Section -->
-    <section class="section" id="industries" style="background: var(--gray);">
-        <div class="section-title">
-            <h2>Solutions by Industry</h2>
-            <p>From logistics to healthcare, we've built systems that transform operations.</p>
-        </div>
-        <div class="industries-grid">
-            <div class="industry-card">
-                <div class="industry-header">
-                    <span class="industry-icon">📦</span>
-                    <h3>Logistics & Supply Chain</h3>
-                </div>
-                <ul>
-                    <li>Cross-border parcel tracking portals</li>
-                    <li>Cold chain temperature monitoring</li>
-                    <li>Last-mile delivery management</li>
-                </ul>
+    <section class="industries-section" id="industries">
+        <div class="industries-container">
+            <div class="section-title">
+                <h2>Solutions by Industry</h2>
+                <p>From logistics to healthcare, we've built systems that transform operations across 50+ industries.</p>
             </div>
-            <div class="industry-card">
-                <div class="industry-header">
-                    <span class="industry-icon">🏢</span>
-                    <h3>Property & Real Estate</h3>
-                </div>
-                <ul>
-                    <li>Condo/JMB management systems</li>
-                    <li>Rental property automation</li>
-                    <li>Lead CRM with social sync</li>
-                </ul>
+            <div class="industries-grid" id="industriesGrid">
+                <!-- Industry cards will be populated by JavaScript -->
             </div>
-            <div class="industry-card">
-                <div class="industry-header">
-                    <span class="industry-icon">🏥</span>
-                    <h3>Medical & Wellness</h3>
-                </div>
-                <ul>
-                    <li>Clinic & dental practice portals</li>
-                    <li>Gym membership & access control</li>
-                    <li>TCM herb formula management</li>
-                </ul>
-            </div>
-            <div class="industry-card">
-                <div class="industry-header">
-                    <span class="industry-icon">⚙️</span>
-                    <h3>Specialized Systems</h3>
-                </div>
-                <ul>
-                    <li>Central kitchen ERP solutions</li>
-                    <li>Agriculture yield tracking</li>
-                    <li>Manufacturing job shop tracking</li>
-                </ul>
+            <div class="show-more-container">
+                <button class="btn-show-more" id="showMoreBtn">
+                    Show More Industries
+                    <span class="arrow">↓</span>
+                </button>
             </div>
         </div>
     </section>
+
+    <!-- Industry Modal -->
+    <div class="modal-overlay" id="industryModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">×</button>
+            <div class="modal-icon" id="modalIcon">📦</div>
+            <div class="modal-category" id="modalCategory">Logistics & Supply Chain</div>
+            <h3 id="modalTitle">Cross-Border Parcel Tracking</h3>
+            <p id="modalDescription">Description goes here...</p>
+            <ul class="modal-features" id="modalFeatures">
+                <!-- Features populated by JS -->
+            </ul>
+            <div class="modal-cta">
+                <a href="#contact" class="btn-primary" onclick="closeModal()">Get a Quote for This Solution</a>
+            </div>
+        </div>
+    </div>
 
     <!-- Process Section -->
     <section class="section process-section" id="process">
@@ -782,15 +1060,75 @@
                 <li>1 year technical support</li>
                 <li>Training & documentation</li>
             </ul>
-            <a href="mailto:admin@vimamall.com" class="btn-primary" style="margin-top: 1rem;">Get Started</a>
+            <a href="#contact" class="btn-primary" style="margin-top: 1rem;">Get Started</a>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <h2>Ready to Transform Your Business?</h2>
-        <p>Join Malaysian SMEs who've replaced messy spreadsheets with professional systems. Get your free consultation today.</p>
-        <a href="mailto:admin@vimamall.com" class="btn-primary">Get Your Free Quote</a>
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <div class="section-title">
+                <h2>Get Your Free Quote</h2>
+                <p>Tell us about your project and we'll get back to you within 24 hours.</p>
+            </div>
+            
+            <form class="contact-form" name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true" action="/success" id="contactForm">
+                <input type="hidden" name="form-name" value="contact">
+                
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required placeholder="Your full name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="company">Company *</label>
+                        <input type="text" id="company" name="company" required placeholder="Your company name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required placeholder="your@email.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone *</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="+60 12-345 6789">
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="industry">Industry *</label>
+                        <select id="industry" name="industry" required>
+                            <option value="">Select your industry</option>
+                            <option value="logistics">Logistics & Supply Chain</option>
+                            <option value="property">Property & Real Estate</option>
+                            <option value="medical">Medical & Wellness</option>
+                            <option value="fnb">F&B & Hospitality</option>
+                            <option value="manufacturing">Manufacturing & Industry</option>
+                            <option value="professional">Professional Services</option>
+                            <option value="retail">Retail & E-commerce</option>
+                            <option value="education">Education & Training</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" required placeholder="Tell us about your project requirements..."></textarea>
+                    </div>
+                </div>
+                
+                <div data-netlify-recaptcha="true" style="margin-bottom: 1.5rem;"></div>
+                
+                <button type="submit" class="btn-primary form-submit">Send Message</button>
+            </form>
+            
+            <div class="form-success" id="formSuccess">
+                <div class="form-success-icon">✓</div>
+                <h3>Thank You!</h3>
+                <p>Our team will contact you within 24 hours.</p>
+            </div>
+        </div>
     </section>
 
     <!-- Footer -->
@@ -805,5 +1143,171 @@
             <div class="footer-copy">© 2026 Fastware by Vimamall Sdn Bhd. All rights reserved.</div>
         </div>
     </footer>
+
+    <script>
+        // Industry Data
+        const industries = [
+            // A. Logistics & Supply Chain (8)
+            { id: 1, name: "Cross-Border Parcel Tracking", category: "Logistics & Supply Chain", icon: "📦", description: "End-to-end tracking system for international shipments with real-time updates, customs clearance status, and automated notifications for customers and logistics partners.", features: ["Multi-carrier integration", "Real-time GPS tracking", "Customs documentation", "Automated SMS/email alerts", "Delivery proof capture", "Exception management"] },
+            { id: 2, name: "Cold Chain Temperature Monitoring", category: "Logistics & Supply Chain", icon: "🌡️", description: "IoT-enabled temperature monitoring solution for perishable goods transportation, ensuring compliance with pharmaceutical and food safety regulations.", features: ["Real-time temperature alerts", "Compliance reporting", "Route optimization", "Sensor integration", "Audit trail logging", "Deviation notifications"] },
+            { id: 3, name: "Last-Mile Delivery Management", category: "Logistics & Supply Chain", icon: "🚚", description: "Comprehensive platform for optimizing delivery routes, managing drivers, and providing customers with accurate ETAs and delivery tracking.", features: ["Route optimization AI", "Driver mobile app", "Customer tracking portal", "Proof of delivery", "Delivery scheduling", "Failed delivery handling"] },
+            { id: 4, name: "Warehouse Inventory System", category: "Logistics & Supply Chain", icon: "🏭", description: "Advanced warehouse management system with barcode/RFID scanning, real-time stock levels, and automated reordering capabilities.", features: ["Barcode/QR scanning", "Real-time stock levels", "Pick & pack optimization", "Inventory forecasting", "Multi-warehouse support", "Integration with marketplaces"] },
+            { id: 5, name: "Fleet Management & GPS", category: "Logistics & Supply Chain", icon: "🚛", description: "Complete fleet tracking and management solution with vehicle monitoring, maintenance scheduling, and driver performance analytics.", features: ["Live GPS tracking", "Fuel consumption monitoring", "Maintenance alerts", "Driver behavior scoring", "Geofencing alerts", "Trip history reports"] },
+            { id: 6, name: "Freight Forwarding Portal", category: "Logistics & Supply Chain", icon: "🚢", description: "Digital platform for freight forwarders to manage bookings, track shipments across multiple modes, and coordinate with carriers and customs brokers.", features: ["Multi-modal tracking", "Rate management", "Document generation", "Carrier integration", "Customs broker portal", "Financial reporting"] },
+            { id: 7, name: "Customs Documentation System", category: "Logistics & Supply Chain", icon: "📋", description: "Automated customs declaration and documentation management system ensuring compliance with international trade regulations.", features: ["Auto-form filling", "HS code classification", "Document templates", "Compliance validation", "Duty calculation", "Audit trail maintenance"] },
+            { id: 8, name: "Supply Chain Analytics", category: "Logistics & Supply Chain", icon: "📊", description: "Data-driven insights platform for supply chain optimization, demand forecasting, and supplier performance monitoring.", features: ["Demand forecasting", "Supplier scorecards", "Cost analysis", "Risk assessment", "Inventory optimization", "Custom dashboards"] },
+            
+            // B. Property & Real Estate (8)
+            { id: 9, name: "Condo/JMB Management System", category: "Property & Real Estate", icon: "🏢", description: "Comprehensive management platform for condominium joint management bodies to handle maintenance, billing, and resident communications.", features: ["Maintenance fee billing", "Facility booking", "Visitor management", "Complaint tracking", "Financial reporting", "AGM/EGM management"] },
+            { id: 10, name: "Rental Property Automation", category: "Property & Real Estate", icon: "🔑", description: "End-to-end solution for landlords and property managers to automate rent collection, maintenance requests, and tenant communications.", features: ["Automated rent collection", "Maintenance ticketing", "Tenant screening", "Lease management", "Financial tracking", "Document storage"] },
+            { id: 11, name: "Real Estate Lead CRM", category: "Property & Real Estate", icon: "👥", description: "Specialized CRM for real estate agents to manage leads, track property viewings, and automate follow-ups with social media integration.", features: ["Lead capture forms", "Viewing scheduling", "Automated follow-ups", "Social media sync", "Commission tracking", "Property matching"] },
+            { id: 12, name: "Property Inspection App", category: "Property & Real Estate", icon: "🔍", description: "Mobile-first inspection tool for property condition reports, move-in/move-out inspections, and maintenance issue documentation.", features: ["Photo annotations", "Digital checklists", "Report generation", "Offline capability", "Template customization", "Digital signatures"] },
+            { id: 13, name: "Tenant Screening System", category: "Property & Real Estate", icon: "✅", description: "Automated tenant verification platform integrating credit checks, employment verification, and reference management.", features: ["Credit report integration", "Employment verification", "Reference checking", "Risk scoring", "Document verification", "Automated decisioning"] },
+            { id: 14, name: "Lease Management Portal", category: "Property & Real Estate", icon: "📄", description: "Digital lease administration platform for tracking lease terms, renewals, rent escalations, and compliance requirements.", features: ["Lease calendar", "Rent escalation alerts", "Document templates", "Renewal workflows", "Compliance tracking", "Financial forecasting"] },
+            { id: 15, name: "Facility Maintenance System", category: "Property & Real Estate", icon: "🔧", description: "Preventive and reactive maintenance management for commercial buildings with vendor management and cost tracking.", features: ["Work order management", "Vendor dispatch", "Preventive scheduling", "Cost tracking", "Asset inventory", "SLA monitoring"] },
+            { id: 16, name: "Strata Management Software", category: "Property & Real Estate", icon: "🏘️", description: "Complete strata title management solution for managing common property, sinking funds, and strata council operations.", features: ["Sinking fund management", "Council meeting tools", "By-law management", "Owner database", "Financial statements", "Notice broadcasting"] },
+            
+            // C. Medical & Wellness (8)
+            { id: 17, name: "Clinic Practice Management", category: "Medical & Wellness", icon: "🏥", description: "All-in-one solution for medical clinics including appointment scheduling, patient records, billing, and inventory management.", features: ["Appointment scheduling", "EMR integration", "Billing & claims", "Queue management", "Prescription management", "Lab result tracking"] },
+            { id: 18, name: "Dental Practice Software", category: "Medical & Wellness", icon: "🦷", description: "Specialized practice management for dental clinics with charting, treatment planning, and insurance claim processing.", features: ["Dental charting", "Treatment planning", "X-ray integration", "Insurance claims", "Recall management", "Lab case tracking"] },
+            { id: 19, name: "TCM Herbal Formula System", category: "Medical & Wellness", icon: "🌿", description: "Traditional Chinese Medicine herbal prescription and inventory management with formula databases and patient history tracking.", features: ["Herb database", "Formula templates", "Dosage calculation", "Inventory tracking", "Patient history", "Prescription printing"] },
+            { id: 20, name: "Gym Membership Management", category: "Medical & Wellness", icon: "💪", description: "Complete gym management platform with member check-ins, class scheduling, payment processing, and access control integration.", features: ["Member check-in/out", "Class booking", "Personal trainer scheduling", "Access control", "Payment processing", "Progress tracking"] },
+            { id: 21, name: "Patient Appointment System", category: "Medical & Wellness", icon: "📅", description: "Online appointment booking platform with automated reminders, queue management, and integration with clinic management systems.", features: ["Online booking", "SMS/email reminders", "Queue display", "Doctor availability", "Telehealth integration", "Patient self-check-in"] },
+            { id: 22, name: "Medical Records Portal", category: "Medical & Wellness", icon: "📁", description: "Secure electronic medical records system with patient access portal, lab integration, and compliance with healthcare regulations.", features: ["Patient portal", "Lab integration", "Prescription history", "Vaccination records", "Secure messaging", "Data export"] },
+            { id: 23, name: "Pharmacy Inventory System", category: "Medical & Wellness", icon: "💊", description: "Pharmacy management solution with prescription processing, drug interaction checking, and supplier order automation.", features: ["Prescription processing", "Drug interaction alerts", "Stock alerts", "Expiry tracking", "Insurance integration", "Regulatory reporting"] },
+            { id: 24, name: "Telemedicine Platform", category: "Medical & Wellness", icon: "💻", description: "Complete telehealth solution with video consultations, e-prescriptions, and secure patient communication tools.", features: ["Video consultations", "E-prescriptions", "Secure messaging", "Appointment booking", "Payment processing", "Medical history access"] },
+            
+            // D. F&B & Hospitality (6)
+            { id: 25, name: "Restaurant POS & Inventory", category: "F&B & Hospitality", icon: "🍽️", description: "Integrated point-of-sale and inventory management for restaurants with table management, kitchen display, and analytics.", features: ["Table management", "Kitchen display system", "Inventory tracking", "Menu engineering", "Staff management", "Sales analytics"] },
+            { id: 26, name: "Central Kitchen ERP", category: "F&B & Hospitality", icon: "🍳", description: "Enterprise resource planning for central kitchen operations with production planning, recipe management, and distribution tracking.", features: ["Recipe costing", "Production planning", "Outlet distribution", "Waste tracking", "Quality control", "Cost analysis"] },
+            { id: 27, name: "Hotel Booking System", category: "F&B & Hospitality", icon: "🏨", description: "Complete hotel management platform with online booking, channel management, housekeeping, and guest services.", features: ["Online reservations", "Channel manager", "Housekeeping tracking", "Guest portal", "Payment gateway", "Loyalty program"] },
+            { id: 28, name: "Cafe Order Management", category: "F&B & Hospitality", icon: "☕", description: "Streamlined ordering and queue management system for cafes with mobile ordering, loyalty programs, and inventory alerts.", features: ["Mobile ordering", "Queue management", "Loyalty rewards", "Ingredient tracking", "Staff scheduling", "Sales reports"] },
+            { id: 29, name: "Catering Business Software", category: "F&B & Hospitality", icon: "🎂", description: "End-to-end catering management with event planning, menu costing, staff scheduling, and delivery coordination.", features: ["Event management", "Menu costing", "Staff rostering", "Delivery tracking", "Invoice generation", "Customer portal"] },
+            { id: 30, name: "Food Delivery Integration", category: "F&B & Hospitality", icon: "🛵", description: "Unified platform integrating multiple food delivery apps with centralized order management and kitchen optimization.", features: ["Multi-platform integration", "Unified dashboard", "Auto-accept orders", "Prep time estimation", "Rider tracking", "Reconciliation reports"] },
+            
+            // E. Manufacturing & Industry (6)
+            { id: 31, name: "Manufacturing Job Shop", category: "Manufacturing & Industry", icon: "🏭", description: "Production planning and job tracking system for manufacturing workshops with work order management and capacity planning.", features: ["Work order tracking", "Capacity planning", "Material allocation", "Labor tracking", "Quality checkpoints", "Job costing"] },
+            { id: 32, name: "Quality Control System", category: "Manufacturing & Industry", icon: "✓", description: "Quality management platform with inspection checklists, defect tracking, and compliance documentation for manufacturing.", features: ["Inspection checklists", "Defect tracking", "SPC analysis", "Corrective actions", "Audit management", "Compliance reports"] },
+            { id: 33, name: "Equipment Maintenance", category: "Manufacturing & Industry", icon: "⚙️", description: "Preventive maintenance management for industrial equipment with IoT sensor integration and downtime tracking.", features: ["Preventive scheduling", "Work order management", "Spare parts inventory", "Downtime tracking", "IoT integration", "Cost analysis"] },
+            { id: 34, name: "Production Planning", category: "Manufacturing & Industry", icon: "📐", description: "Advanced production scheduling and planning tool with demand forecasting, material requirements planning, and capacity optimization.", features: ["MRP calculations", "Capacity planning", "Demand forecasting", "BOM management", "Schedule optimization", "What-if analysis"] },
+            { id: 35, name: "Inventory Management", category: "Manufacturing & Industry", icon: "📦", description: "Comprehensive inventory control for raw materials, WIP, and finished goods with lot tracking and reorder automation.", features: ["Multi-location tracking", "Lot/serial tracking", "Reorder automation", "Cycle counting", "ABC analysis", "Integration with ERP"] },
+            { id: 36, name: "Supplier Portal", category: "Manufacturing & Industry", icon: "🤝", description: "Collaborative platform for supplier management with RFQ processing, purchase orders, and performance tracking.", features: ["RFQ management", "PO automation", "Delivery tracking", "Quality ratings", "Price comparison", "Supplier scorecards"] },
+            
+            // F. Professional Services (6)
+            { id: 37, name: "Legal Case Management", category: "Professional Services", icon: "⚖️", description: "Comprehensive case management for law firms with matter tracking, document management, and billing integration.", features: ["Matter management", "Court deadline tracking", "Document automation", "Time tracking", "Billing integration", "Client portal"] },
+            { id: 38, name: "Accounting & Tax Helper", category: "Professional Services", icon: "🧮", description: "Practice management for accounting firms with client onboarding, document collection, and tax filing workflows.", features: ["Client onboarding", "Document requests", "Tax calendar", "Workflow automation", "E-filing integration", "Client portal"] },
+            { id: 39, name: "Insurance Agency CRM", category: "Professional Services", icon: "🛡️", description: "Specialized CRM for insurance agents with policy management, renewal tracking, and commission calculation.", features: ["Policy management", "Renewal alerts", "Commission tracking", "Lead management", "Quote comparison", "Document storage"] },
+            { id: 40, name: "Consulting Project Tracker", category: "Professional Services", icon: "📈", description: "Project management platform for consulting firms with time tracking, milestone management, and client reporting.", features: ["Project planning", "Time & expense tracking", "Milestone tracking", "Resource allocation", "Client reporting", "Invoice generation"] },
+            { id: 41, name: "HR & Payroll System", category: "Professional Services", icon: "👔", description: "Human resources and payroll management with attendance tracking, leave management, and statutory compliance.", features: ["Employee database", "Attendance tracking", "Leave management", "Payroll processing", "Statutory compliance", "Performance reviews"] },
+            { id: 42, name: "Recruitment Management", category: "Professional Services", icon: "🎯", description: "Applicant tracking and recruitment platform with job posting, candidate scoring, and interview scheduling.", features: ["Job posting", "Resume parsing", "Candidate scoring", "Interview scheduling", "Offer management", "Onboarding workflows"] },
+            
+            // G. Retail & E-commerce (4)
+            { id: 43, name: "E-commerce Order Management", category: "Retail & E-commerce", icon: "🛒", description: "Unified order management across multiple sales channels with inventory synchronization and fulfillment optimization.", features: ["Multi-channel orders", "Inventory sync", "Fulfillment routing", "Return management", "Customer communication", "Analytics dashboard"] },
+            { id: 44, name: "Multi-channel Inventory", category: "Retail & E-commerce", icon: "📊", description: "Real-time inventory synchronization across online marketplaces, retail stores, and warehouses with stock alerts.", features: ["Channel synchronization", "Stock alerts", "Oversell prevention", "Transfer management", "Demand forecasting", "Stock valuation"] },
+            { id: 45, name: "Retail POS System", category: "Retail & E-commerce", icon: "💳", description: "Modern point-of-sale for retail stores with inventory management, customer loyalty, and omnichannel capabilities.", features: ["Barcode scanning", "Receipt printing", "Loyalty program", "Staff management", "Offline mode", "Sales analytics"] },
+            { id: 46, name: "Dropshipping Automation", category: "Retail & E-commerce", icon: "📦", description: "Automated dropshipping platform with supplier integration, order routing, and tracking synchronization.", features: ["Supplier integration", "Auto-order routing", "Tracking sync", "Price monitoring", "Profit analytics", "Product import"] },
+            
+            // H. Education & Training (4)
+            { id: 47, name: "Tuition Center Management", category: "Education & Training", icon: "🎓", description: "Complete management system for tuition and enrichment centers with class scheduling, attendance, and progress tracking.", features: ["Class scheduling", "Student attendance", "Progress reports", "Fee management", "Parent portal", "Teacher assignments"] },
+            { id: 48, name: "Online Course Platform", category: "Education & Training", icon: "💻", description: "Learning management system for creating, delivering, and monetizing online courses with student progress tracking.", features: ["Course builder", "Video hosting", "Quiz & assignments", "Progress tracking", "Certificate generation", "Payment integration"] },
+            { id: 49, name: "Student Enrollment System", category: "Education & Training", icon: "📝", description: "Streamlined student admissions and enrollment management with application processing and document verification.", features: ["Online applications", "Document upload", "Interview scheduling", "Waitlist management", "Fee collection", "Enrollment reports"] },
+            { id: 50, name: "Training Schedule System", category: "Education & Training", icon: "📚", description: "Corporate training management with session scheduling, attendee tracking, and certification management.", features: ["Session scheduling", "Room booking", "Attendee tracking", "Certification issuance", "Feedback collection", "Trainer management"] }
+        ];
+
+        // Render Industry Cards
+        function renderIndustries() {
+            const grid = document.getElementById('industriesGrid');
+            grid.innerHTML = industries.map((industry, index) => `
+                <div class="industry-card ${index >= 10 ? 'hidden' : 'visible'}" data-id="${industry.id}" onclick="openModal(${industry.id})">
+                    <div class="industry-header">
+                        <span class="industry-icon">${industry.icon}</span>
+                        <h3>${industry.name}</h3>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Show More / Show Less
+        let expanded = false;
+        document.getElementById('showMoreBtn').addEventListener('click', function() {
+            const cards = document.querySelectorAll('.industry-card');
+            const btn = document.getElementById('showMoreBtn');
+            
+            if (!expanded) {
+                cards.forEach((card, index) => {
+                    if (index >= 10) {
+                        card.classList.remove('hidden');
+                        card.classList.add('visible');
+                    }
+                });
+                btn.innerHTML = 'Show Less <span class="arrow">↑</span>';
+                btn.classList.add('expanded');
+                expanded = true;
+            } else {
+                cards.forEach((card, index) => {
+                    if (index >= 10) {
+                        card.classList.add('hidden');
+                        card.classList.remove('visible');
+                    }
+                });
+                btn.innerHTML = 'Show More Industries <span class="arrow">↓</span>';
+                btn.classList.remove('expanded');
+                expanded = false;
+                document.getElementById('industries').scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+
+        // Modal Functions
+        function openModal(id) {
+            const industry = industries.find(i => i.id === id);
+            if (!industry) return;
+            
+            document.getElementById('modalIcon').textContent = industry.icon;
+            document.getElementById('modalCategory').textContent = industry.category;
+            document.getElementById('modalTitle').textContent = industry.name;
+            document.getElementById('modalDescription').textContent = industry.description;
+            document.getElementById('modalFeatures').innerHTML = industry.features.map(f => `<li>${f}</li>`).join('');
+            
+            document.getElementById('industryModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('industryModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.getElementById('modalClose').addEventListener('click', closeModal);
+        document.getElementById('industryModal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // Form Success Handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            // Netlify handles the actual submission
+            // This just shows the success message after submission
+            setTimeout(() => {
+                document.getElementById('contactForm').style.display = 'none';
+                document.getElementById('formSuccess').classList.add('active');
+            }, 500);
+        });
+
+        // Initialize
+        renderIndustries();
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
