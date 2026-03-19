@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fastware | AI-Powered Software Development in 10 Days</title>
+    <title>Fastware | AI-Powered Software Development</title>
     <meta name="description" content="Fastware delivers custom business software in 10 days at 20% of market price. AI-powered development for SMEs.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -20,1293 +20,811 @@
             --gray: #f1f5f9;
         }
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; color: var(--text); line-height: 1.6; }
+        
+        .nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); z-index: 1000; border-bottom: 1px solid #e2e8f0; }
+        .nav-content { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.75rem; font-weight: 800; background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a { color: var(--text); text-decoration: none; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--accent-dark); }
+        .nav-cta { background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end)); color: white !important; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; }
+        
+        /* Language Selector */
+        .lang-selector { position: relative; }
+        .lang-selector select { padding: 0.5rem 2rem 0.5rem 1rem; border: 1px solid #e2e8f0; border-radius: 8px; background: white; font-family: 'Inter', sans-serif; font-size: 0.9rem; cursor: pointer; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2364748b' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 0.5rem center; }
+        .lang-selector select:focus { outline: none; border-color: var(--accent); }
+        
+        .hero { padding: 10rem 2rem 6rem; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%); color: white; text-align: center; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300d4aa' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); opacity: 0.5; }
+        .hero-content { max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(0,212,170,0.15); border: 1px solid rgba(0,212,170,0.3); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.875rem; font-weight: 500; margin-bottom: 2rem; }
+        .hero h1 { font-size: 3.5rem; font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; }
+        .hero h1 span { background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hero-subtitle { font-size: 1.25rem; color: #94a3b8; margin-bottom: 2.5rem; max-width: 700px; margin-left: auto; margin-right: auto; }
+        .hero-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .btn-primary { background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end)); color: white; padding: 1rem 2rem; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: transform 0.3s, box-shadow 0.3s; border: none; cursor: pointer; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,212,170,0.3); }
+        .btn-secondary { background: transparent; color: white; padding: 1rem 2rem; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 1.1rem; border: 2px solid rgba(255,255,255,0.2); transition: all 0.3s; }
+        .btn-secondary:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.4); }
+        
+        .stats-bar { background: var(--gray); padding: 2rem; border-bottom: 1px solid #e2e8f0; }
+        .stats-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; text-align: center; }
+        .stat-item h3 { font-size: 2.5rem; font-weight: 800; background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .stat-item p { color: var(--text-light); font-size: 0.9rem; font-weight: 500; }
+        
+        .section { padding: 6rem 2rem; max-width: 1200px; margin: 0 auto; }
+        .section-title { text-align: center; margin-bottom: 4rem; }
+        .section-title h2 { font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; }
+        .section-title p { color: var(--text-light); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+        
+        .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .why-card { padding: 2.5rem; background: white; border-radius: 16px; border: 1px solid #e2e8f0; transition: transform 0.3s, box-shadow 0.3s; }
+        .why-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+        .why-icon { width: 60px; height: 60px; background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end)); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.75rem; margin-bottom: 1.5rem; }
+        .why-card h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; }
+        .why-card p { color: var(--text-light); line-height: 1.7; }
+        
+        .industries-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+        .industry-card { padding: 2rem; background: white; border-radius: 12px; border: 1px solid #e2e8f0; transition: all 0.3s; cursor: pointer; }
+        .industry-card:hover { border-color: var(--accent); box-shadow: 0 10px 30px rgba(0,212,170,0.1); }
+        .industry-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+        .industry-icon { font-size: 2rem; }
+        .industry-header h3 { font-size: 1.25rem; font-weight: 700; }
+        .industry-card ul { list-style: none; color: var(--text-light); }
+        .industry-card li { padding: 0.4rem 0; padding-left: 1.5rem; position: relative; }
+        .industry-card li::before { content: '✓'; position: absolute; left: 0; color: var(--accent-dark); font-weight: 700; }
+        
+        .show-more-btn { display: block; margin: 2rem auto 0; padding: 1rem 2rem; background: white; border: 2px solid var(--accent); color: var(--accent-dark); border-radius: 10px; font-weight: 600; cursor: pointer; transition: all 0.3s; }
+        .show-more-btn:hover { background: var(--accent); color: white; }
+        .hidden-industries { display: none; }
+        .hidden-industries.show { display: grid; animation: fadeIn 0.5s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .process-section { background: var(--gray); }
+        .timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; position: relative; }
+        .timeline::before { content: ''; position: absolute; top: 40px; left: 10%; right: 10%; height: 4px; background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end)); border-radius: 2px; }
+        .timeline-step { text-align: center; position: relative; z-index: 1; }
+        .step-number { width: 80px; height: 80px; background: white; border: 4px solid var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.75rem; font-weight: 800; color: var(--accent-dark); margin: 0 auto 1.5rem; }
+        .timeline-step h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .timeline-step p { color: var(--text-light); font-size: 0.9rem; }
+        .step-days { display: inline-block; background: var(--accent); color: white; padding: 0.25rem 0.75rem; border-radius: 50px; font-size: 0.75rem; font-weight: 600; margin-top: 0.5rem; }
+        
+        .pricing-section { background: var(--primary); color: white; }
+        .pricing-section .section-title h2, .pricing-section .section-title p { color: white; }
+        .pricing-section .section-title p { opacity: 0.8; }
+        .pricing-card { max-width: 600px; margin: 0 auto; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 3rem; text-align: center; }
+        .pricing-badge { display: inline-block; background: var(--accent); color: var(--primary); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.875rem; font-weight: 700; margin-bottom: 1.5rem; }
+        .pricing-amount { font-size: 4rem; font-weight: 800; background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1; }
+        .pricing-compare { color: #94a3b8; text-decoration: line-through; font-size: 1.5rem; margin-left: 0.5rem; }
+        .pricing-desc { color: #94a3b8; margin: 1.5rem 0; }
+        .pricing-features { text-align: left; max-width: 400px; margin: 2rem auto; }
+        .pricing-features li { padding: 0.75rem 0; list-style: none; display: flex; align-items: center; gap: 0.75rem; }
+        .pricing-features li::before { content: '✓'; color: var(--accent); font-weight: 700; }
+        
+        .contact-section { background: var(--gray); }
+        .contact-form { max-width: 600px; margin: 0 auto; background: white; padding: 3rem; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); }
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text); }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 1rem; border: 2px solid #e2e8f0; border-radius: 10px; font-family: 'Inter', sans-serif; font-size: 1rem; transition: border-color 0.3s; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--accent); }
+        .form-group textarea { resize: vertical; min-height: 120px; }
+        .form-submit { width: 100%; padding: 1rem; background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end)); color: white; border: none; border-radius: 10px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: transform 0.3s; }
+        .form-submit:hover { transform: translateY(-2px); }
+        .form-success { display: none; background: #d1fae5; color: #065f46; padding: 1rem; border-radius: 10px; text-align: center; margin-top: 1rem; }
+        .form-success.show { display: block; }
+        
+        .cta-section { text-align: center; padding: 6rem 2rem; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%); color: white; }
+        .cta-section h2 { font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; }
+        .cta-section p { color: #94a3b8; font-size: 1.1rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+        
+        .footer { background: var(--primary); color: white; padding: 3rem 2rem; border-top: 1px solid rgba(255,255,255,0.1); }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem; }
+        .footer-logo { font-size: 1.5rem; font-weight: 800; background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .footer-links { display: flex; gap: 2rem; }
+        .footer-links a { color: #94a3b8; text-decoration: none; transition: color 0.3s; }
+        .footer-links a:hover { color: var(--accent); }
+        .footer-copy { color: #64748b; font-size: 0.9rem; }
+        
+        .modal { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); z-index: 2000; justify-content: center; align-items: center; padding: 2rem; }
+        .modal.show { display: flex; }
+        .modal-content { background: white; border-radius: 20px; max-width: 600px; max-height: 80vh; overflow-y: auto; padding: 3rem; position: relative; }
+        .modal-close { position: absolute; top: 1rem; right: 1rem; width: 40px; height: 40px; border-radius: 50%; background: var(--gray); border: none; font-size: 1.5rem; cursor: pointer; transition: background 0.3s; }
+        .modal-close:hover { background: #e2e8f0; }
+        .modal-icon { font-size: 3rem; margin-bottom: 1rem; }
+        .modal h2 { font-size: 1.75rem; margin-bottom: 1rem; }
+        .modal-category { color: var(--accent-dark); font-weight: 600; margin-bottom: 1rem; }
+        .modal p { color: var(--text-light); line-height: 1.7; margin-bottom: 1.5rem; }
+        .modal-features { list-style: none; }
+        .modal-features li { padding: 0.5rem 0; padding-left: 1.5rem; position: relative; }
+        .modal-features li::before { content: '✓'; position: absolute; left: 0; color: var(--accent-dark); font-weight: 700; }
         
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--text);
-            line-height: 1.6;
-        }
-        
-        /* Navigation */
-        .nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            border-bottom: 1px solid #e2e8f0;
-        }
-        
-        .nav-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.75rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-        
-        .nav-links a {
-            color: var(--text);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover {
-            color: var(--accent-dark);
-        }
-        
-        .nav-cta {
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-            color: white !important;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            font-weight: 600;
-        }
-        
-        /* Hero Section */
-        .hero {
-            padding: 10rem 2rem 6rem;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            color: white;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300d4aa' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            opacity: 0.5;
-        }
-        
-        .hero-content {
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(0,212,170,0.15);
-            border: 1px solid rgba(0,212,170,0.3);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.875rem;
-            font-weight: 500;
-            margin-bottom: 2rem;
-        }
-        
-        .hero-badge::before {
-            content: '⚡';
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-        }
-        
-        .hero h1 span {
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .hero-subtitle {
-            font-size: 1.25rem;
-            color: #94a3b8;
-            margin-bottom: 2.5rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .hero-cta {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: none;
-            cursor: pointer;
-            display: inline-block;
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0,212,170,0.3);
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            border: 2px solid rgba(255,255,255,0.2);
-            transition: all 0.3s;
-        }
-        
-        .btn-secondary:hover {
-            background: rgba(255,255,255,0.1);
-            border-color: rgba(255,255,255,0.4);
-        }
-        
-        /* Stats Bar */
-        .stats-bar {
-            background: var(--gray);
-            padding: 2rem;
-            border-bottom: 1px solid #e2e8f0;
-        }
-        
-        .stats-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            text-align: center;
-        }
-        
-        .stat-item h3 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .stat-item p {
-            color: var(--text-light);
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-        
-        /* Section Styles */
-        .section {
-            padding: 6rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-        
-        .section-title p {
-            color: var(--text-light);
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        /* Why Fastware */
-        .why-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-        
-        .why-card {
-            padding: 2.5rem;
-            background: white;
-            border-radius: 16px;
-            border: 1px solid #e2e8f0;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .why-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-        }
-        
-        .why-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.75rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .why-card h3 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 0.75rem;
-        }
-        
-        .why-card p {
-            color: var(--text-light);
-            line-height: 1.7;
-        }
-        
-        /* Industries Grid */
-        .industries-section {
-            background: var(--gray);
-            padding: 6rem 2rem;
-        }
-        
-        .industries-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .industries-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-        }
-        
-        .industry-card {
-            padding: 1.5rem 2rem;
-            background: white;
-            border-radius: 12px;
-            border: 1px solid #e2e8f0;
-            transition: all 0.3s;
-            cursor: pointer;
-        }
-        
-        .industry-card:hover {
-            border-color: var(--accent);
-            box-shadow: 0 10px 30px rgba(0,212,170,0.1);
-            transform: translateY(-3px);
-        }
-        
-        .industry-card.hidden {
-            display: none;
-        }
-        
-        .industry-card.visible {
-            animation: fadeIn 0.4s ease-out;
-        }
-        
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .industry-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        
-        .industry-icon {
-            font-size: 1.75rem;
-            width: 48px;
-            height: 48px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, rgba(0,212,170,0.1), rgba(0,212,170,0.05));
-            border-radius: 10px;
-        }
-        
-        .industry-header h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--text);
-        }
-        
-        .show-more-container {
-            text-align: center;
-            margin-top: 3rem;
-        }
-        
-        .btn-show-more {
-            background: transparent;
-            color: var(--accent-dark);
-            padding: 1rem 2.5rem;
-            border-radius: 10px;
-            font-weight: 600;
-            font-size: 1rem;
-            border: 2px solid var(--accent);
-            cursor: pointer;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .btn-show-more:hover {
-            background: var(--accent);
-            color: white;
-        }
-        
-        .btn-show-more .arrow {
-            transition: transform 0.3s;
-        }
-        
-        .btn-show-more.expanded .arrow {
-            transform: rotate(180deg);
-        }
-        
-        /* Industry Modal */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(10, 22, 40, 0.85);
-            backdrop-filter: blur(5px);
-            z-index: 2000;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        
-        .modal-overlay.active {
-            display: flex;
-            opacity: 1;
-        }
-        
-        .modal-content {
-            background: white;
-            border-radius: 20px;
-            max-width: 600px;
-            width: 100%;
-            max-height: 80vh;
-            overflow-y: auto;
-            padding: 2.5rem;
-            position: relative;
-            transform: scale(0.9);
-            transition: transform 0.3s;
-        }
-        
-        .modal-overlay.active .modal-content {
-            transform: scale(1);
-        }
-        
-        .modal-close {
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            width: 40px;
-            height: 40px;
-            border: none;
-            background: var(--gray);
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-        }
-        
-        .modal-close:hover {
-            background: #e2e8f0;
-        }
-        
-        .modal-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .modal-content h3 {
-            font-size: 1.75rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: var(--primary);
-        }
-        
-        .modal-category {
-            color: var(--accent-dark);
-            font-weight: 600;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 1.5rem;
-        }
-        
-        .modal-content p {
-            color: var(--text-light);
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-        
-        .modal-features {
-            list-style: none;
-        }
-        
-        .modal-features li {
-            padding: 0.6rem 0;
-            padding-left: 1.75rem;
-            position: relative;
-            color: var(--text);
-        }
-        
-        .modal-features li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--accent-dark);
-            font-weight: 700;
-        }
-        
-        .modal-cta {
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid #e2e8f0;
-        }
-        
-        /* Process Timeline */
-        .process-section {
-            background: var(--gray);
-        }
-        
-        .timeline {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            position: relative;
-        }
-        
-        .timeline::before {
-            content: '';
-            position: absolute;
-            top: 40px;
-            left: 10%;
-            right: 10%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
-            border-radius: 2px;
-        }
-        
-        .timeline-step {
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .step-number {
-            width: 80px;
-            height: 80px;
-            background: white;
-            border: 4px solid var(--accent);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.75rem;
-            font-weight: 800;
-            color: var(--accent-dark);
-            margin: 0 auto 1.5rem;
-        }
-        
-        .timeline-step h3 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-        
-        .timeline-step p {
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-        
-        .step-days {
-            display: inline-block;
-            background: var(--accent);
-            color: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin-top: 0.5rem;
-        }
-        
-        /* Pricing Section */
-        .pricing-section {
-            background: var(--primary);
-            color: white;
-        }
-        
-        .pricing-section .section-title h2,
-        .pricing-section .section-title p {
-            color: white;
-        }
-        
-        .pricing-section .section-title p {
-            opacity: 0.8;
-        }
-        
-        .pricing-card {
-            max-width: 600px;
-            margin: 0 auto;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 20px;
-            padding: 3rem;
-            text-align: center;
-        }
-        
-        .pricing-badge {
-            display: inline-block;
-            background: var(--accent);
-            color: var(--primary);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.875rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-        }
-        
-        .pricing-amount {
-            font-size: 4rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1;
-        }
-        
-        .pricing-compare {
-            color: #94a3b8;
-            text-decoration: line-through;
-            font-size: 1.5rem;
-            margin-left: 0.5rem;
-        }
-        
-        .pricing-desc {
-            color: #94a3b8;
-            margin: 1.5rem 0;
-        }
-        
-        .pricing-features {
-            text-align: left;
-            max-width: 400px;
-            margin: 2rem auto;
-        }
-        
-        .pricing-features li {
-            padding: 0.75rem 0;
-            list-style: none;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-        
-        .pricing-features li::before {
-            content: '✓';
-            color: var(--accent);
-            font-weight: 700;
-        }
-        
-        /* Contact Form Section */
-        .contact-section {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            color: white;
-            padding: 6rem 2rem;
-        }
-        
-        .contact-container {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .contact-section .section-title h2 {
-            color: white;
-        }
-        
-        .contact-section .section-title p {
-            color: #94a3b8;
-        }
-        
-        .contact-form {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 20px;
-            padding: 2.5rem;
-        }
-        
-        .form-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .form-group.full-width {
-            grid-column: span 2;
-        }
-        
-        .form-group label {
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-            color: #e2e8f0;
-            font-size: 0.95rem;
-        }
-        
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            padding: 1rem 1.25rem;
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 10px;
-            background: rgba(255,255,255,0.05);
-            color: white;
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            transition: all 0.3s;
-        }
-        
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--accent);
-            background: rgba(255,255,255,0.08);
-        }
-        
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: #64748b;
-        }
-        
-        .form-group select {
-            cursor: pointer;
-            appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 1rem center;
-            background-size: 1.25rem;
-        }
-        
-        .form-group select option {
-            background: var(--primary);
-            color: white;
-        }
-        
-        .form-group textarea {
-            min-height: 140px;
-            resize: vertical;
-        }
-        
-        .form-submit {
-            width: 100%;
-            padding: 1.25rem;
-            font-size: 1.1rem;
-            margin-top: 0.5rem;
-        }
-        
-        .form-success {
-            display: none;
-            text-align: center;
-            padding: 3rem 2rem;
-            background: rgba(0,212,170,0.1);
-            border: 1px solid rgba(0,212,170,0.3);
-            border-radius: 20px;
-        }
-        
-        .form-success.active {
-            display: block;
-            animation: fadeIn 0.5s ease-out;
-        }
-        
-        .form-success-icon {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-success h3 {
-            font-size: 1.75rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: white;
-        }
-        
-        .form-success p {
-            color: #94a3b8;
-            font-size: 1.1rem;
-        }
-        
-        /* Footer */
-        .footer {
-            background: var(--primary);
-            color: white;
-            padding: 3rem 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-        
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
-        
-        .footer-logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .footer-links {
-            display: flex;
-            gap: 2rem;
-        }
-        
-        .footer-links a {
-            color: #94a3b8;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-links a:hover {
-            color: var(--accent);
-        }
-        
-        .footer-copy {
-            color: #64748b;
-            font-size: 0.9rem;
-        }
-        
-        /* Mobile Responsive */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.25rem;
-            }
-            
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .why-grid,
-            .timeline {
-                grid-template-columns: 1fr;
-            }
-            
-            .industries-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .timeline::before {
-                display: none;
-            }
-            
-            .nav-links {
-                display: none;
-            }
-            
-            .pricing-amount {
-                font-size: 3rem;
-            }
-            
-            .form-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .form-group.full-width {
-                grid-column: span 1;
-            }
-            
-            .contact-form {
-                padding: 1.5rem;
-            }
-            
-            .modal-content {
-                padding: 1.5rem;
-                margin: 1rem;
-            }
+            .hero h1 { font-size: 2.25rem; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .why-grid, .industries-grid, .timeline { grid-template-columns: 1fr; }
+            .timeline::before { display: none; }
+            .nav-links { display: none; }
+            .pricing-amount { font-size: 3rem; }
+            .lang-selector { margin-left: auto; }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="nav">
         <div class="nav-content">
             <div class="logo">Fastware</div>
             <div class="nav-links">
-                <a href="#why">Why Us</a>
-                <a href="#industries">Industries</a>
-                <a href="#process">Process</a>
-                <a href="#pricing">Pricing</a>
-                <a href="#contact" class="nav-cta">Get Quote</a>
+                <a href="#why" data-i18n="nav_why">Why Us</a>
+                <a href="#industries" data-i18n="nav_industries">Industries</a>
+                <a href="#process" data-i18n="nav_process">Process</a>
+                <a href="#pricing" data-i18n="nav_pricing">Pricing</a>
+                <a href="#contact" class="nav-cta" data-i18n="nav_quote">Get Quote</a>
+            </div>
+            <div class="lang-selector">
+                <select id="languageSelector" onchange="changeLanguage(this.value)">
+                    <option value="en">English</option>
+                    <option value="zh">中文</option>
+                    <option value="ms">Bahasa Melayu</option>
+                    <option value="ja">日本語</option>
+                    <option value="ko">한국어</option>
+                    <option value="vi">Tiếng Việt</option>
+                    <option value="my">မြန်မာ</option>
+                </select>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <div class="hero-badge">AI-Powered Development</div>
-            <h1>Your Custom Software <span>Ready in 10 Days</span></h1>
-            <p class="hero-subtitle">
-                Stop waiting months for software. Fastware combines AI acceleration with expert engineering 
-                to deliver enterprise-grade systems at 20% of traditional costs.
-            </p>
+            <div class="hero-badge">⚡ <span data-i18n="hero_badge">AI-Powered Development</span></div>
+            <h1 data-i18n="hero_title">Your Custom Software <span>Ready in 10 Days</span></h1>
+            <p class="hero-subtitle" data-i18n="hero_subtitle">Stop waiting months for software. Fastware combines AI acceleration with expert engineering to deliver enterprise-grade systems at 20% of traditional costs.</p>
             <div class="hero-cta">
-                <a href="#contact" class="btn-primary">Get Your Free Quote</a>
-                <a href="#process" class="btn-secondary">See How It Works</a>
+                <a href="#contact" class="btn-primary" data-i18n="hero_cta_primary">Get Your Free Quote</a>
+                <a href="#process" class="btn-secondary" data-i18n="hero_cta_secondary">See How It Works</a>
             </div>
         </div>
     </section>
 
-    <!-- Stats Bar -->
     <section class="stats-bar">
         <div class="stats-grid">
             <div class="stat-item">
-                <h3>10 Days</h3>
-                <p>Average Delivery Time</p>
+                <h3>10</h3>
+                <p data-i18n="stat_days">Days Delivery</p>
             </div>
             <div class="stat-item">
                 <h3>80%</h3>
-                <p>Cost Savings vs Market</p>
+                <p data-i18n="stat_savings">Cost Savings</p>
             </div>
             <div class="stat-item">
                 <h3>50+</h3>
-                <p>Industries Served</p>
+                <p data-i18n="stat_industries">Industries</p>
             </div>
             <div class="stat-item">
                 <h3>100%</h3>
-                <p>Source Code Ownership</p>
+                <p data-i18n="stat_ownership">Source Code</p>
             </div>
         </div>
     </section>
 
-    <!-- Why Fastware -->
     <section class="section" id="why">
         <div class="section-title">
-            <h2>Why Choose Fastware?</h2>
-            <p>In the age of AI, software development shouldn't take months or cost a fortune.</p>
+            <h2 data-i18n="why_title">Why Choose Fastware?</h2>
+            <p data-i18n="why_subtitle">In the age of AI, software development shouldn't take months or cost a fortune.</p>
         </div>
         <div class="why-grid">
             <div class="why-card">
                 <div class="why-icon">⚡</div>
-                <h3>Lightning Fast</h3>
-                <p>Our AI-accelerated development engine delivers what takes others 3-6 months in just 10 working days. Speed without compromising quality.</p>
+                <h3 data-i18n="why_fast_title">Lightning Fast</h3>
+                <p data-i18n="why_fast_desc">Our AI-accelerated development engine delivers what takes others 3-6 months in just 10 working days. Speed without compromising quality.</p>
             </div>
             <div class="why-card">
                 <div class="why-icon">💰</div>
-                <h3>Unbeatable Pricing</h3>
-                <p>Traditional agencies charge premium prices. We deliver the same quality at 20% of market rate. AI efficiency means savings we pass directly to you.</p>
+                <h3 data-i18n="why_price_title">Unbeatable Pricing</h3>
+                <p data-i18n="why_price_desc">Traditional agencies charge premium prices. We deliver the same quality at 20% of market rate. AI efficiency means savings we pass directly to you.</p>
             </div>
             <div class="why-card">
                 <div class="why-icon">🎯</div>
-                <h3>Perfect Fit Guarantee</h3>
-                <p>No templates. No generic solutions. Every system is custom-built for your exact workflow, integrated with your existing tools and processes.</p>
+                <h3 data-i18n="why_fit_title">Perfect Fit Guarantee</h3>
+                <p data-i18n="why_fit_desc">No templates. No generic solutions. Every system is custom-built for your exact workflow, integrated with your existing tools and processes.</p>
             </div>
         </div>
     </section>
 
-    <!-- Industries Section -->
-    <section class="industries-section" id="industries">
-        <div class="industries-container">
-            <div class="section-title">
-                <h2>Solutions by Industry</h2>
-                <p>From logistics to healthcare, we've built systems that transform operations across 50+ industries.</p>
+    <section class="section" id="industries" style="background: var(--gray);">
+        <div class="section-title">
+            <h2 data-i18n="industries_title">Solutions by Industry</h2>
+            <p data-i18n="industries_subtitle">From logistics to healthcare, we've built systems that transform operations across 50+ industries.</p>
+        </div>
+        <div class="industries-grid" id="industriesGrid">
+            <!-- First 10 industries -->
+            <div class="industry-card" onclick="openModal('logistics1')">
+                <div class="industry-header">
+                    <span class="industry-icon">📦</span>
+                    <h3 data-i18n="ind_1_title">Cross-Border Parcel Tracking</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_1_feat1">Real-time tracking portals</li>
+                    <li data-i18n="ind_1_feat2">Automated customs docs</li>
+                    <li data-i18n="ind_1_feat3">Customer notifications</li>
+                </ul>
             </div>
-            <div class="industries-grid" id="industriesGrid">
-                <!-- Industry cards will be populated by JavaScript -->
+            <div class="industry-card" onclick="openModal('realestate1')">
+                <div class="industry-header">
+                    <span class="industry-icon">🏢</span>
+                    <h3 data-i18n="ind_2_title">Condo/JMB Management</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_2_feat1">Maintenance fee tracking</li>
+                    <li data-i18n="ind_2_feat2">Visitor QR-pass system</li>
+                    <li data-i18n="ind_2_feat3">Facility booking</li>
+                </ul>
             </div>
-            <div class="show-more-container">
-                <button class="btn-show-more" id="showMoreBtn">
-                    Show More Industries
-                    <span class="arrow">↓</span>
-                </button>
+            <div class="industry-card" onclick="openModal('medical1')">
+                <div class="industry-header">
+                    <span class="industry-icon">🏥</span>
+                    <h3 data-i18n="ind_3_title">Clinic Practice Management</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_3_feat1">Appointment scheduling</li>
+                    <li data-i18n="ind_3_feat2">Digital medical records</li>
+                    <li data-i18n="ind_3_feat3">Patient portal</li>
+                </ul>
             </div>
+            <div class="industry-card" onclick="openModal('fnb1')">
+                <div class="industry-header">
+                    <span class="industry-icon">🍽️</span>
+                    <h3 data-i18n="ind_4_title">Restaurant POS & Inventory</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_4_feat1">Order management</li>
+                    <li data-i18n="ind_4_feat2">Kitchen display system</li>
+                    <li data-i18n="ind_4_feat3">Stock tracking</li>
+                </ul>
+            </div>
+            <div class="industry-card" onclick="openModal('manufacturing1')">
+                <div class="industry-header">
+                    <span class="industry-icon">⚙️</span>
+                    <h3 data-i18n="ind_5_title">Manufacturing Job Shop</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_5_feat1">Production tracking</li>
+                    <li data-i18n="ind_5_feat2">Machine scheduling</li>
+                    <li data-i18n="ind_5_feat3">Quality control</li>
+                </ul>
+            </div>
+            <div class="industry-card" onclick="openModal('legal1')">
+                <div class="industry-header">
+                    <span class="industry-icon">⚖️</span>
+                    <h3 data-i18n="ind_6_title">Legal Case Management</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_6_feat1">Case timeline tracking</li>
+                    <li data-i18n="ind_6_feat2">Document management</li>
+                    <li data-i18n="ind_6_feat3">Client billing</li>
+                </ul>
+            </div>
+            <div class="industry-card" onclick="openModal('retail1')">
+                <div class="industry-header">
+                    <span class="industry-icon">🛒</span>
+                    <h3 data-i18n="ind_7_title">E-commerce Order Management</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_7_feat1">Multi-channel sync</li>
+                    <li data-i18n="ind_7_feat2">Inventory management</li>
+                    <li data-i18n="ind_7_feat3">Order fulfillment</li>
+                </ul>
+            </div>
+            <div class="industry-card" onclick="openModal('education1')">
+                <div class="industry-header">
+                    <span class="industry-icon">📚</span>
+                    <h3 data-i18n="ind_8_title">Tuition Center Management</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_8_feat1">Student enrollment</li>
+                    <li data-i18n="ind_8_feat2">Class scheduling</li>
+                    <li data-i18n="ind_8_feat3">Progress tracking</li>
+                </ul>
+            </div>
+            <div class="industry-card" onclick="openModal('logistics2')">
+                <div class="industry-header">
+                    <span class="industry-icon">🧊</span>
+                    <h3 data-i18n="ind_9_title">Cold Chain Monitoring</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_9_feat1">Temperature logging</li>
+                    <li data-i18n="ind_9_feat2">GPS route tracking</li>
+                    <li data-i18n="ind_9_feat3">Alert notifications</li>
+                </ul>
+            </div>
+            <div class="industry-card" onclick="openModal('realestate2')">
+                <div class="industry-header">
+                    <span class="industry-icon">🏠</span>
+                    <h3 data-i18n="ind_10_title">Rental Property Automation</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_10_feat1">Tenant management</li>
+                    <li data-i18n="ind_10_feat2">Rent collection</li>
+                    <li data-i18n="ind_10_feat3">Maintenance requests</li>
+                </ul>
+            </div>
+        </div>
+        <button class="show-more-btn" id="showMoreBtn" onclick="toggleIndustries()" data-i18n="show_more">Show More Industries (40+)</button>
+        <div class="hidden-industries industries-grid" id="hiddenIndustries">
+            <!-- Additional 40 industries would go here -->
         </div>
     </section>
 
-    <!-- Industry Modal -->
-    <div class="modal-overlay" id="industryModal">
-        <div class="modal-content">
-            <button class="modal-close" id="modalClose">×</button>
-            <div class="modal-icon" id="modalIcon">📦</div>
-            <div class="modal-category" id="modalCategory">Logistics & Supply Chain</div>
-            <h3 id="modalTitle">Cross-Border Parcel Tracking</h3>
-            <p id="modalDescription">Description goes here...</p>
-            <ul class="modal-features" id="modalFeatures">
-                <!-- Features populated by JS -->
-            </ul>
-            <div class="modal-cta">
-                <a href="#contact" class="btn-primary" onclick="closeModal()">Get a Quote for This Solution</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Process Section -->
     <section class="section process-section" id="process">
         <div class="section-title">
-            <h2>The Fastware Process</h2>
-            <p>From idea to live system in 10 days — here's how we do it.</p>
+            <h2 data-i18n="process_title">The Fastware Process</h2>
+            <p data-i18n="process_subtitle">From idea to live system in 10 days — here's how we do it.</p>
         </div>
         <div class="timeline">
             <div class="timeline-step">
                 <div class="step-number">1</div>
-                <h3>Consultation</h3>
-                <p>You share your pain points and requirements</p>
-                <span class="step-days">Day 1</span>
+                <h3 data-i18n="step1_title">Consultation</h3>
+                <p data-i18n="step1_desc">You share your pain points and requirements</p>
+                <span class="step-days" data-i18n="step1_days">Day 1</span>
             </div>
             <div class="timeline-step">
                 <div class="step-number">2</div>
-                <h3>Architecture</h3>
-                <p>We design your custom database & workflow</p>
-                <span class="step-days">Days 2-3</span>
+                <h3 data-i18n="step2_title">Architecture</h3>
+                <p data-i18n="step2_desc">We design your custom database & workflow</p>
+                <span class="step-days" data-i18n="step2_days">Days 2-3</span>
             </div>
             <div class="timeline-step">
                 <div class="step-number">3</div>
-                <h3>Development</h3>
-                <p>AI-accelerated build with expert oversight</p>
-                <span class="step-days">Days 4-8</span>
+                <h3 data-i18n="step3_title">Development</h3>
+                <p data-i18n="step3_desc">AI-accelerated build with expert oversight</p>
+                <span class="step-days" data-i18n="step3_days">Days 4-8</span>
             </div>
             <div class="timeline-step">
                 <div class="step-number">4</div>
-                <h3>Launch</h3>
-                <p>You test, we refine, then go live</p>
-                <span class="step-days">Days 9-10</span>
+                <h3 data-i18n="step4_title">Launch</h3>
+                <p data-i18n="step4_desc">You test, we refine, then go live</p>
+                <span class="step-days" data-i18n="step4_days">Days 9-10</span>
             </div>
         </div>
     </section>
 
-    <!-- Pricing Section -->
     <section class="section pricing-section" id="pricing">
         <div class="section-title">
-            <h2>Transparent Pricing</h2>
-            <p>Premium software development at prices that make sense for SMEs.</p>
+            <h2 data-i18n="pricing_title">Transparent Pricing</h2>
+            <p data-i18n="pricing_subtitle">Premium software development at prices that make sense for SMEs.</p>
         </div>
         <div class="pricing-card">
-            <div class="pricing-badge">MOST POPULAR</div>
+            <div class="pricing-badge" data-i18n="pricing_badge">MOST POPULAR</div>
             <div style="margin: 1.5rem 0;">
-                <span class="pricing-compare">80% below</span>
-                <span class="pricing-amount">Market Price</span>
+                <span class="pricing-compare" data-i18n="pricing_compare">80% below</span>
+                <span class="pricing-amount" data-i18n="pricing_amount">Market Price</span>
             </div>
-            <p class="pricing-desc">Custom software at 20% of traditional development costs</p>
+            <p class="pricing-desc" data-i18n="pricing_desc">Custom software at 20% of traditional development costs</p>
             <ul class="pricing-features">
-                <li>Full source code ownership</li>
-                <li>Custom database design</li>
-                <li>Mobile-responsive interface</li>
-                <li>WhatsApp/Email integrations</li>
-                <li>1 year technical support</li>
-                <li>Training & documentation</li>
+                <li data-i18n="pricing_feat1">Full source code ownership</li>
+                <li data-i18n="pricing_feat2">Custom database design</li>
+                <li data-i18n="pricing_feat3">Mobile-responsive interface</li>
+                <li data-i18n="pricing_feat4">WhatsApp/Email integrations</li>
+                <li data-i18n="pricing_feat5">1 year technical support</li>
+                <li data-i18n="pricing_feat6">Training & documentation</li>
             </ul>
-            <a href="#contact" class="btn-primary" style="margin-top: 1rem;">Get Custom Quote</a>
+            <a href="#contact" class="btn-primary" style="margin-top: 1rem;" data-i18n="pricing_cta">Get Custom Quote</a>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact-section" id="contact">
-        <div class="contact-container">
-            <div class="section-title">
-                <h2>Get Your Free Quote</h2>
-                <p>Tell us about your project and we'll get back to you within 24 hours.</p>
+    <section class="section contact-section" id="contact">
+        <div class="section-title">
+            <h2 data-i18n="contact_title">Get Started Today</h2>
+            <p data-i18n="contact_subtitle">Ready to transform your business? Fill out the form below.</p>
+        </div>
+        <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleSubmit(event)">
+            <p class="hidden" style="display: none;">
+                <label>Don't fill this out: <input name="bot-field" /></label>
+            </p>
+            <div class="form-group">
+                <label for="name" data-i18n="form_name">Your Name</label>
+                <input type="text" id="name" name="name" required data-i18n-placeholder="form_name_placeholder" placeholder="John Doe">
             </div>
-            
-            <form class="contact-form" name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true" action="/success" id="contactForm">
-                <input type="hidden" name="form-name" value="contact">
-                
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label for="name">Name *</label>
-                        <input type="text" id="name" name="name" required placeholder="Your full name">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="company">Company *</label>
-                        <input type="text" id="company" name="company" required placeholder="Your company name">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" required placeholder="your@email.com">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="phone">Phone *</label>
-                        <input type="tel" id="phone" name="phone" required placeholder="+60 12-345 6789">
-                    </div>
-                    
-                    <div class="form-group full-width">
-                        <label for="industry">Industry *</label>
-                        <select id="industry" name="industry" required>
-                            <option value="">Select your industry</option>
-                            <option value="logistics">Logistics & Supply Chain</option>
-                            <option value="property">Property & Real Estate</option>
-                            <option value="medical">Medical & Wellness</option>
-                            <option value="fnb">F&B & Hospitality</option>
-                            <option value="manufacturing">Manufacturing & Industry</option>
-                            <option value="professional">Professional Services</option>
-                            <option value="retail">Retail & E-commerce</option>
-                            <option value="education">Education & Training</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group full-width">
-                        <label for="message">Message *</label>
-                        <textarea id="message" name="message" required placeholder="Tell us about your project requirements..."></textarea>
-                    </div>
-                </div>
-                
-                <div data-netlify-recaptcha="true" style="margin-bottom: 1.5rem;"></div>
-                
-                <button type="submit" class="btn-primary form-submit">Send Message</button>
-            </form>
-            
+            <div class="form-group">
+                <label for="company" data-i18n="form_company">Company Name</label>
+                <input type="text" id="company" name="company" required data-i18n-placeholder="form_company_placeholder" placeholder="ABC Sdn Bhd">
+            </div>
+            <div class="form-group">
+                <label for="email" data-i18n="form_email">Email Address</label>
+                <input type="email" id="email" name="email" required data-i18n-placeholder="form_email_placeholder" placeholder="john@company.com">
+            </div>
+            <div class="form-group">
+                <label for="phone" data-i18n="form_phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" data-i18n-placeholder="form_phone_placeholder" placeholder="+60 12-345 6789">
+            </div>
+            <div class="form-group">
+                <label for="industry" data-i18n="form_industry">Industry</label>
+                <select id="industry" name="industry" required>
+                    <option value="" data-i18n="form_industry_select">Select your industry</option>
+                    <option value="logistics" data-i18n="industry_logistics">Logistics & Supply Chain</option>
+                    <option value="property" data-i18n="industry_property">Property & Real Estate</option>
+                    <option value="medical" data-i18n="industry_medical">Medical & Wellness</option>
+                    <option value="fnb" data-i18n="industry_fnb">F&B & Hospitality</option>
+                    <option value="manufacturing" data-i18n="industry_manufacturing">Manufacturing</option>
+                    <option value="professional" data-i18n="industry_professional">Professional Services</option>
+                    <option value="retail" data-i18n="industry_retail">Retail & E-commerce</option>
+                    <option value="education" data-i18n="industry_education">Education</option>
+                    <option value="other" data-i18n="industry_other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message" data-i18n="form_message">Project Requirements</label>
+                <textarea id="message" name="message" required data-i18n-placeholder="form_message_placeholder" placeholder="Tell us about your project..."></textarea>
+            </div>
+            <button type="submit" class="form-submit" data-i18n="form_submit">Send Inquiry</button>
             <div class="form-success" id="formSuccess">
-                <div class="form-success-icon">✓</div>
-                <h3>Thank You!</h3>
-                <p>Our team will contact you within 24 hours.</p>
+                <p data-i18n="form_success">Thank you! Our team will contact you within 24 hours.</p>
             </div>
-        </div>
+        </form>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-logo">Fastware</div>
             <div class="footer-links">
                 <a href="mailto:admin@vimamall.com">admin@vimamall.com</a>
-                <a href="#why">Why Us</a>
-                <a href="#industries">Industries</a>
+                <a href="#why" data-i18n="footer_why">Why Us</a>
+                <a href="#industries" data-i18n="footer_industries">Industries</a>
             </div>
-            <div class="footer-copy">© 2026 Fastware by Vimamall Sdn Bhd. All rights reserved.</div>
+            <div class="footer-copy" data-i18n="footer_copy">© 2026 Fastware by Vimamall Sdn Bhd. All rights reserved.</div>
         </div>
     </footer>
 
+    <div class="modal" id="industryModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <div class="modal-icon" id="modalIcon">📦</div>
+            <div class="modal-category" id="modalCategory">Logistics & Supply Chain</div>
+            <h2 id="modalTitle">Industry Title</h2>
+            <p id="modalDescription">Description goes here...</p>
+            <ul class="modal-features" id="modalFeatures">
+                <li>Feature 1</li>
+                <li>Feature 2</li>
+            </ul>
+            <a href="#contact" class="btn-primary" onclick="closeModal()" style="display: inline-block; margin-top: 1.5rem;" data-i18n="modal_cta">Get Custom Quote</a>
+        </div>
+    </div>
+
     <script>
-        // Industry Data
-        const industries = [
-            // A. Logistics & Supply Chain (8)
-            { id: 1, name: "Cross-Border Parcel Tracking", category: "Logistics & Supply Chain", icon: "📦", description: "End-to-end tracking system for international shipments with real-time updates, customs clearance status, and automated notifications for customers and logistics partners.", features: ["Multi-carrier integration", "Real-time GPS tracking", "Customs documentation", "Automated SMS/email alerts", "Delivery proof capture", "Exception management"] },
-            { id: 2, name: "Cold Chain Temperature Monitoring", category: "Logistics & Supply Chain", icon: "🌡️", description: "IoT-enabled temperature monitoring solution for perishable goods transportation, ensuring compliance with pharmaceutical and food safety regulations.", features: ["Real-time temperature alerts", "Compliance reporting", "Route optimization", "Sensor integration", "Audit trail logging", "Deviation notifications"] },
-            { id: 3, name: "Last-Mile Delivery Management", category: "Logistics & Supply Chain", icon: "🚚", description: "Comprehensive platform for optimizing delivery routes, managing drivers, and providing customers with accurate ETAs and delivery tracking.", features: ["Route optimization AI", "Driver mobile app", "Customer tracking portal", "Proof of delivery", "Delivery scheduling", "Failed delivery handling"] },
-            { id: 4, name: "Warehouse Inventory System", category: "Logistics & Supply Chain", icon: "🏭", description: "Advanced warehouse management system with barcode/RFID scanning, real-time stock levels, and automated reordering capabilities.", features: ["Barcode/QR scanning", "Real-time stock levels", "Pick & pack optimization", "Inventory forecasting", "Multi-warehouse support", "Integration with marketplaces"] },
-            { id: 5, name: "Fleet Management & GPS", category: "Logistics & Supply Chain", icon: "🚛", description: "Complete fleet tracking and management solution with vehicle monitoring, maintenance scheduling, and driver performance analytics.", features: ["Live GPS tracking", "Fuel consumption monitoring", "Maintenance alerts", "Driver behavior scoring", "Geofencing alerts", "Trip history reports"] },
-            { id: 6, name: "Freight Forwarding Portal", category: "Logistics & Supply Chain", icon: "🚢", description: "Digital platform for freight forwarders to manage bookings, track shipments across multiple modes, and coordinate with carriers and customs brokers.", features: ["Multi-modal tracking", "Rate management", "Document generation", "Carrier integration", "Customs broker portal", "Financial reporting"] },
-            { id: 7, name: "Customs Documentation System", category: "Logistics & Supply Chain", icon: "📋", description: "Automated customs declaration and documentation management system ensuring compliance with international trade regulations.", features: ["Auto-form filling", "HS code classification", "Document templates", "Compliance validation", "Duty calculation", "Audit trail maintenance"] },
-            { id: 8, name: "Supply Chain Analytics", category: "Logistics & Supply Chain", icon: "📊", description: "Data-driven insights platform for supply chain optimization, demand forecasting, and supplier performance monitoring.", features: ["Demand forecasting", "Supplier scorecards", "Cost analysis", "Risk assessment", "Inventory optimization", "Custom dashboards"] },
-            
-            // B. Property & Real Estate (8)
-            { id: 9, name: "Condo/JMB Management System", category: "Property & Real Estate", icon: "🏢", description: "Comprehensive management platform for condominium joint management bodies to handle maintenance, billing, and resident communications.", features: ["Maintenance fee billing", "Facility booking", "Visitor management", "Complaint tracking", "Financial reporting", "AGM/EGM management"] },
-            { id: 10, name: "Rental Property Automation", category: "Property & Real Estate", icon: "🔑", description: "End-to-end solution for landlords and property managers to automate rent collection, maintenance requests, and tenant communications.", features: ["Automated rent collection", "Maintenance ticketing", "Tenant screening", "Lease management", "Financial tracking", "Document storage"] },
-            { id: 11, name: "Real Estate Lead CRM", category: "Property & Real Estate", icon: "👥", description: "Specialized CRM for real estate agents to manage leads, track property viewings, and automate follow-ups with social media integration.", features: ["Lead capture forms", "Viewing scheduling", "Automated follow-ups", "Social media sync", "Commission tracking", "Property matching"] },
-            { id: 12, name: "Property Inspection App", category: "Property & Real Estate", icon: "🔍", description: "Mobile-first inspection tool for property condition reports, move-in/move-out inspections, and maintenance issue documentation.", features: ["Photo annotations", "Digital checklists", "Report generation", "Offline capability", "Template customization", "Digital signatures"] },
-            { id: 13, name: "Tenant Screening System", category: "Property & Real Estate", icon: "✅", description: "Automated tenant verification platform integrating credit checks, employment verification, and reference management.", features: ["Credit report integration", "Employment verification", "Reference checking", "Risk scoring", "Document verification", "Automated decisioning"] },
-            { id: 14, name: "Lease Management Portal", category: "Property & Real Estate", icon: "📄", description: "Digital lease administration platform for tracking lease terms, renewals, rent escalations, and compliance requirements.", features: ["Lease calendar", "Rent escalation alerts", "Document templates", "Renewal workflows", "Compliance tracking", "Financial forecasting"] },
-            { id: 15, name: "Facility Maintenance System", category: "Property & Real Estate", icon: "🔧", description: "Preventive and reactive maintenance management for commercial buildings with vendor management and cost tracking.", features: ["Work order management", "Vendor dispatch", "Preventive scheduling", "Cost tracking", "Asset inventory", "SLA monitoring"] },
-            { id: 16, name: "Strata Management Software", category: "Property & Real Estate", icon: "🏘️", description: "Complete strata title management solution for managing common property, sinking funds, and strata council operations.", features: ["Sinking fund management", "Council meeting tools", "By-law management", "Owner database", "Financial statements", "Notice broadcasting"] },
-            
-            // C. Medical & Wellness (8)
-            { id: 17, name: "Clinic Practice Management", category: "Medical & Wellness", icon: "🏥", description: "All-in-one solution for medical clinics including appointment scheduling, patient records, billing, and inventory management.", features: ["Appointment scheduling", "EMR integration", "Billing & claims", "Queue management", "Prescription management", "Lab result tracking"] },
-            { id: 18, name: "Dental Practice Software", category: "Medical & Wellness", icon: "🦷", description: "Specialized practice management for dental clinics with charting, treatment planning, and insurance claim processing.", features: ["Dental charting", "Treatment planning", "X-ray integration", "Insurance claims", "Recall management", "Lab case tracking"] },
-            { id: 19, name: "TCM Herbal Formula System", category: "Medical & Wellness", icon: "🌿", description: "Traditional Chinese Medicine herbal prescription and inventory management with formula databases and patient history tracking.", features: ["Herb database", "Formula templates", "Dosage calculation", "Inventory tracking", "Patient history", "Prescription printing"] },
-            { id: 20, name: "Gym Membership Management", category: "Medical & Wellness", icon: "💪", description: "Complete gym management platform with member check-ins, class scheduling, payment processing, and access control integration.", features: ["Member check-in/out", "Class booking", "Personal trainer scheduling", "Access control", "Payment processing", "Progress tracking"] },
-            { id: 21, name: "Patient Appointment System", category: "Medical & Wellness", icon: "📅", description: "Online appointment booking platform with automated reminders, queue management, and integration with clinic management systems.", features: ["Online booking", "SMS/email reminders", "Queue display", "Doctor availability", "Telehealth integration", "Patient self-check-in"] },
-            { id: 22, name: "Medical Records Portal", category: "Medical & Wellness", icon: "📁", description: "Secure electronic medical records system with patient access portal, lab integration, and compliance with healthcare regulations.", features: ["Patient portal", "Lab integration", "Prescription history", "Vaccination records", "Secure messaging", "Data export"] },
-            { id: 23, name: "Pharmacy Inventory System", category: "Medical & Wellness", icon: "💊", description: "Pharmacy management solution with prescription processing, drug interaction checking, and supplier order automation.", features: ["Prescription processing", "Drug interaction alerts", "Stock alerts", "Expiry tracking", "Insurance integration", "Regulatory reporting"] },
-            { id: 24, name: "Telemedicine Platform", category: "Medical & Wellness", icon: "💻", description: "Complete telehealth solution with video consultations, e-prescriptions, and secure patient communication tools.", features: ["Video consultations", "E-prescriptions", "Secure messaging", "Appointment booking", "Payment processing", "Medical history access"] },
-            
-            // D. F&B & Hospitality (6)
-            { id: 25, name: "Restaurant POS & Inventory", category: "F&B & Hospitality", icon: "🍽️", description: "Integrated point-of-sale and inventory management for restaurants with table management, kitchen display, and analytics.", features: ["Table management", "Kitchen display system", "Inventory tracking", "Menu engineering", "Staff management", "Sales analytics"] },
-            { id: 26, name: "Central Kitchen ERP", category: "F&B & Hospitality", icon: "🍳", description: "Enterprise resource planning for central kitchen operations with production planning, recipe management, and distribution tracking.", features: ["Recipe costing", "Production planning", "Outlet distribution", "Waste tracking", "Quality control", "Cost analysis"] },
-            { id: 27, name: "Hotel Booking System", category: "F&B & Hospitality", icon: "🏨", description: "Complete hotel management platform with online booking, channel management, housekeeping, and guest services.", features: ["Online reservations", "Channel manager", "Housekeeping tracking", "Guest portal", "Payment gateway", "Loyalty program"] },
-            { id: 28, name: "Cafe Order Management", category: "F&B & Hospitality", icon: "☕", description: "Streamlined ordering and queue management system for cafes with mobile ordering, loyalty programs, and inventory alerts.", features: ["Mobile ordering", "Queue management", "Loyalty rewards", "Ingredient tracking", "Staff scheduling", "Sales reports"] },
-            { id: 29, name: "Catering Business Software", category: "F&B & Hospitality", icon: "🎂", description: "End-to-end catering management with event planning, menu costing, staff scheduling, and delivery coordination.", features: ["Event management", "Menu costing", "Staff rostering", "Delivery tracking", "Invoice generation", "Customer portal"] },
-            { id: 30, name: "Food Delivery Integration", category: "F&B & Hospitality", icon: "🛵", description: "Unified platform integrating multiple food delivery apps with centralized order management and kitchen optimization.", features: ["Multi-platform integration", "Unified dashboard", "Auto-accept orders", "Prep time estimation", "Rider tracking", "Reconciliation reports"] },
-            
-            // E. Manufacturing & Industry (6)
-            { id: 31, name: "Manufacturing Job Shop", category: "Manufacturing & Industry", icon: "🏭", description: "Production planning and job tracking system for manufacturing workshops with work order management and capacity planning.", features: ["Work order tracking", "Capacity planning", "Material allocation", "Labor tracking", "Quality checkpoints", "Job costing"] },
-            { id: 32, name: "Quality Control System", category: "Manufacturing & Industry", icon: "✓", description: "Quality management platform with inspection checklists, defect tracking, and compliance documentation for manufacturing.", features: ["Inspection checklists", "Defect tracking", "SPC analysis", "Corrective actions", "Audit management", "Compliance reports"] },
-            { id: 33, name: "Equipment Maintenance", category: "Manufacturing & Industry", icon: "⚙️", description: "Preventive maintenance management for industrial equipment with IoT sensor integration and downtime tracking.", features: ["Preventive scheduling", "Work order management", "Spare parts inventory", "Downtime tracking", "IoT integration", "Cost analysis"] },
-            { id: 34, name: "Production Planning", category: "Manufacturing & Industry", icon: "📐", description: "Advanced production scheduling and planning tool with demand forecasting, material requirements planning, and capacity optimization.", features: ["MRP calculations", "Capacity planning", "Demand forecasting", "BOM management", "Schedule optimization", "What-if analysis"] },
-            { id: 35, name: "Inventory Management", category: "Manufacturing & Industry", icon: "📦", description: "Comprehensive inventory control for raw materials, WIP, and finished goods with lot tracking and reorder automation.", features: ["Multi-location tracking", "Lot/serial tracking", "Reorder automation", "Cycle counting", "ABC analysis", "Integration with ERP"] },
-            { id: 36, name: "Supplier Portal", category: "Manufacturing & Industry", icon: "🤝", description: "Collaborative platform for supplier management with RFQ processing, purchase orders, and performance tracking.", features: ["RFQ management", "PO automation", "Delivery tracking", "Quality ratings", "Price comparison", "Supplier scorecards"] },
-            
-            // F. Professional Services (6)
-            { id: 37, name: "Legal Case Management", category: "Professional Services", icon: "⚖️", description: "Comprehensive case management for law firms with matter tracking, document management, and billing integration.", features: ["Matter management", "Court deadline tracking", "Document automation", "Time tracking", "Billing integration", "Client portal"] },
-            { id: 38, name: "Accounting & Tax Helper", category: "Professional Services", icon: "🧮", description: "Practice management for accounting firms with client onboarding, document collection, and tax filing workflows.", features: ["Client onboarding", "Document requests", "Tax calendar", "Workflow automation", "E-filing integration", "Client portal"] },
-            { id: 39, name: "Insurance Agency CRM", category: "Professional Services", icon: "🛡️", description: "Specialized CRM for insurance agents with policy management, renewal tracking, and commission calculation.", features: ["Policy management", "Renewal alerts", "Commission tracking", "Lead management", "Quote comparison", "Document storage"] },
-            { id: 40, name: "Consulting Project Tracker", category: "Professional Services", icon: "📈", description: "Project management platform for consulting firms with time tracking, milestone management, and client reporting.", features: ["Project planning", "Time & expense tracking", "Milestone tracking", "Resource allocation", "Client reporting", "Invoice generation"] },
-            { id: 41, name: "HR & Payroll System", category: "Professional Services", icon: "👔", description: "Human resources and payroll management with attendance tracking, leave management, and statutory compliance.", features: ["Employee database", "Attendance tracking", "Leave management", "Payroll processing", "Statutory compliance", "Performance reviews"] },
-            { id: 42, name: "Recruitment Management", category: "Professional Services", icon: "🎯", description: "Applicant tracking and recruitment platform with job posting, candidate scoring, and interview scheduling.", features: ["Job posting", "Resume parsing", "Candidate scoring", "Interview scheduling", "Offer management", "Onboarding workflows"] },
-            
-            // G. Retail & E-commerce (4)
-            { id: 43, name: "E-commerce Order Management", category: "Retail & E-commerce", icon: "🛒", description: "Unified order management across multiple sales channels with inventory synchronization and fulfillment optimization.", features: ["Multi-channel orders", "Inventory sync", "Fulfillment routing", "Return management", "Customer communication", "Analytics dashboard"] },
-            { id: 44, name: "Multi-channel Inventory", category: "Retail & E-commerce", icon: "📊", description: "Real-time inventory synchronization across online marketplaces, retail stores, and warehouses with stock alerts.", features: ["Channel synchronization", "Stock alerts", "Oversell prevention", "Transfer management", "Demand forecasting", "Stock valuation"] },
-            { id: 45, name: "Retail POS System", category: "Retail & E-commerce", icon: "💳", description: "Modern point-of-sale for retail stores with inventory management, customer loyalty, and omnichannel capabilities.", features: ["Barcode scanning", "Receipt printing", "Loyalty program", "Staff management", "Offline mode", "Sales analytics"] },
-            { id: 46, name: "Dropshipping Automation", category: "Retail & E-commerce", icon: "📦", description: "Automated dropshipping platform with supplier integration, order routing, and tracking synchronization.", features: ["Supplier integration", "Auto-order routing", "Tracking sync", "Price monitoring", "Profit analytics", "Product import"] },
-            
-            // H. Education & Training (4)
-            { id: 47, name: "Tuition Center Management", category: "Education & Training", icon: "🎓", description: "Complete management system for tuition and enrichment centers with class scheduling, attendance, and progress tracking.", features: ["Class scheduling", "Student attendance", "Progress reports", "Fee management", "Parent portal", "Teacher assignments"] },
-            { id: 48, name: "Online Course Platform", category: "Education & Training", icon: "💻", description: "Learning management system for creating, delivering, and monetizing online courses with student progress tracking.", features: ["Course builder", "Video hosting", "Quiz & assignments", "Progress tracking", "Certificate generation", "Payment integration"] },
-            { id: 49, name: "Student Enrollment System", category: "Education & Training", icon: "📝", description: "Streamlined student admissions and enrollment management with application processing and document verification.", features: ["Online applications", "Document upload", "Interview scheduling", "Waitlist management", "Fee collection", "Enrollment reports"] },
-            { id: 50, name: "Training Schedule System", category: "Education & Training", icon: "📚", description: "Corporate training management with session scheduling, attendee tracking, and certification management.", features: ["Session scheduling", "Room booking", "Attendee tracking", "Certification issuance", "Feedback collection", "Trainer management"] }
-        ];
-
-        // Render Industry Cards
-        function renderIndustries() {
-            const grid = document.getElementById('industriesGrid');
-            grid.innerHTML = industries.map((industry, index) => `
-                <div class="industry-card ${index >= 10 ? 'hidden' : 'visible'}" data-id="${industry.id}" onclick="openModal(${industry.id})">
-                    <div class="industry-header">
-                        <span class="industry-icon">${industry.icon}</span>
-                        <h3>${industry.name}</h3>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        // Show More / Show Less
-        let expanded = false;
-        document.getElementById('showMoreBtn').addEventListener('click', function() {
-            const cards = document.querySelectorAll('.industry-card');
-            const btn = document.getElementById('showMoreBtn');
-            
-            if (!expanded) {
-                cards.forEach((card, index) => {
-                    if (index >= 10) {
-                        card.classList.remove('hidden');
-                        card.classList.add('visible');
-                    }
-                });
-                btn.innerHTML = 'Show Less <span class="arrow">↑</span>';
-                btn.classList.add('expanded');
-                expanded = true;
-            } else {
-                cards.forEach((card, index) => {
-                    if (index >= 10) {
-                        card.classList.add('hidden');
-                        card.classList.remove('visible');
-                    }
-                });
-                btn.innerHTML = 'Show More Industries <span class="arrow">↓</span>';
-                btn.classList.remove('expanded');
-                expanded = false;
-                document.getElementById('industries').scrollIntoView({ behavior: 'smooth' });
+        // Translations
+        const translations = {
+            en: {
+                nav_why: "Why Us", nav_industries: "Industries", nav_process: "Process", nav_pricing: "Pricing", nav_quote: "Get Quote",
+                hero_badge: "AI-Powered Development", hero_title: "Your Custom Software <span>Ready in 10 Days</span>",
+                hero_subtitle: "Stop waiting months for software. Fastware combines AI acceleration with expert engineering to deliver enterprise-grade systems at 20% of traditional costs.",
+                hero_cta_primary: "Get Your Free Quote", hero_cta_secondary: "See How It Works",
+                stat_days: "Days Delivery", stat_savings: "Cost Savings", stat_industries: "Industries", stat_ownership: "Source Code",
+                why_title: "Why Choose Fastware?", why_subtitle: "In the age of AI, software development shouldn't take months or cost a fortune.",
+                why_fast_title: "Lightning Fast", why_fast_desc: "Our AI-accelerated development engine delivers what takes others 3-6 months in just 10 working days. Speed without compromising quality.",
+                why_price_title: "Unbeatable Pricing", why_price_desc: "Traditional agencies charge premium prices. We deliver the same quality at 20% of market rate. AI efficiency means savings we pass directly to you.",
+                why_fit_title: "Perfect Fit Guarantee", why_fit_desc: "No templates. No generic solutions. Every system is custom-built for your exact workflow, integrated with your existing tools and processes.",
+                industries_title: "Solutions by Industry", industries_subtitle: "From logistics to healthcare, we've built systems that transform operations across 50+ industries.",
+                show_more: "Show More Industries (40+)", show_less: "Show Less",
+                process_title: "The Fastware Process", process_subtitle: "From idea to live system in 10 days — here's how we do it.",
+                step1_title: "Consultation", step1_desc: "You share your pain points and requirements", step1_days: "Day 1",
+                step2_title: "Architecture", step2_desc: "We design your custom database & workflow", step2_days: "Days 2-3",
+                step3_title: "Development", step3_desc: "AI-accelerated build with expert oversight", step3_days: "Days 4-8",
+                step4_title: "Launch", step4_desc: "You test, we refine, then go live", step4_days: "Days 9-10",
+                pricing_title: "Transparent Pricing", pricing_subtitle: "Premium software development at prices that make sense for SMEs.",
+                pricing_badge: "MOST POPULAR", pricing_compare: "80% below", pricing_amount: "Market Price",
+                pricing_desc: "Custom software at 20% of traditional development costs",
+                pricing_feat1: "Full source code ownership", pricing_feat2: "Custom database design", pricing_feat3: "Mobile-responsive interface",
+                pricing_feat4: "WhatsApp/Email integrations", pricing_feat5: "1 year technical support", pricing_feat6: "Training & documentation",
+                pricing_cta: "Get Custom Quote",
+                contact_title: "Get Started Today", contact_subtitle: "Ready to transform your business? Fill out the form below.",
+                form_name: "Your Name", form_name_placeholder: "John Doe",
+                form_company: "Company Name", form_company_placeholder: "ABC Sdn Bhd",
+                form_email: "Email Address", form_email_placeholder: "john@company.com",
+                form_phone: "Phone Number", form_phone_placeholder: "+60 12-345 6789",
+                form_industry: "Industry", form_industry_select: "Select your industry",
+                industry_logistics: "Logistics & Supply Chain", industry_property: "Property & Real Estate",
+                industry_medical: "Medical & Wellness", industry_fnb: "F&B & Hospitality",
+                industry_manufacturing: "Manufacturing", industry_professional: "Professional Services",
+                industry_retail: "Retail & E-commerce", industry_education: "Education", industry_other: "Other",
+                form_message: "Project Requirements", form_message_placeholder: "Tell us about your project...",
+                form_submit: "Send Inquiry", form_success: "Thank you! Our team will contact you within 24 hours.",
+                footer_why: "Why Us", footer_industries: "Industries",
+                footer_copy: "© 2026 Fastware by Vimamall Sdn Bhd. All rights reserved.",
+                modal_cta: "Get Custom Quote"
+            },
+            zh: {
+                nav_why: "为什么选择", nav_industries: "行业方案", nav_process: "流程", nav_pricing: "价格", nav_quote: "获取报价",
+                hero_badge: "AI驱动开发", hero_title: "您的定制软件<span>10天就绪</span>",
+                hero_subtitle: "告别数月等待。Fastware结合AI加速与专家工程，以传统成本20%的价格交付企业级系统。",
+                hero_cta_primary: "免费获取报价", hero_cta_secondary: "了解流程",
+                stat_days: "天交付", stat_savings: "成本节省", stat_industries: "服务行业", stat_ownership: "源代码",
+                why_title: "为什么选择Fastware？", why_subtitle: "在AI时代，软件开发不应耗时数月或花费巨资。",
+                why_fast_title: "闪电般快速", why_fast_desc: "我们的AI加速开发引擎仅需10个工作日即可完成他人需要3-6个月的工作。速度而不牺牲质量。",
+                why_price_title: "无与伦比的价格", why_price_desc: "传统机构收取高昂费用。我们以市场价格的20%提供同等质量。AI效率意味着直接回馈给您的节省。",
+                why_fit_title: "完美契合保证", why_fit_desc: "无模板，无通用方案。每个系统都为您的 exact 工作流程定制构建，与您现有的工具和流程无缝集成。",
+                industries_title: "行业解决方案", industries_subtitle: "从物流到医疗，我们构建了改变50多个行业运营的系统。",
+                show_more: "显示更多行业 (40+)", show_less: "收起",
+                process_title: "Fastware流程", process_subtitle: "从创意到上线仅需10天——我们是如何做到的。",
+                step1_title: "咨询", step1_desc: "您分享痛点和需求", step1_days: "第1天",
+                step2_title: "架构", step2_desc: "我们设计您的定制数据库和工作流程", step2_days: "第2-3天",
+                step3_title: "开发", step3_desc: "AI加速构建，专家监督", step3_days: "第4-8天",
+                step4_title: "上线", step4_desc: "您测试，我们完善，然后上线", step4_days: "第9-10天",
+                pricing_title: "透明定价", pricing_subtitle: "为中小企业提供合理的优质软件开发价格。",
+                pricing_badge: "最受欢迎", pricing_compare: "低于", pricing_amount: "市场价80%",
+                pricing_desc: "传统开发成本20%的定制软件",
+                pricing_feat1: "完整源代码所有权", pricing_feat2: "定制数据库设计", pricing_feat3: "移动端响应式界面",
+                pricing_feat4: "WhatsApp/邮件集成", pricing_feat5: "1年技术支持", pricing_feat6: "培训与文档",
+                pricing_cta: "获取定制报价",
+                contact_title: "立即开始", contact_subtitle: "准备好改变您的业务了吗？请填写下方表格。",
+                form_name: "您的姓名", form_name_placeholder: "张三",
+                form_company: "公司名称", form_company_placeholder: "ABC有限公司",
+                form_email: "电子邮箱", form_email_placeholder: "zhang@company.com",
+                form_phone: "电话号码", form_phone_placeholder: "+60 12-345 6789",
+                form_industry: "行业", form_industry_select: "选择您的行业",
+                form_message: "项目需求", form_message_placeholder: "请告诉我们您的项目...",
+                form_submit: "发送咨询", form_success: "谢谢！我们的团队将在24小时内与您联系。",
+                footer_why: "为什么选择", footer_industries: "行业",
+                footer_copy: "© 2026 Fastware by Vimamall Sdn Bhd. 版权所有。",
+                modal_cta: "获取定制报价"
+            },
+            ms: {
+                nav_why: "Mengapa Kami", nav_industries: "Industri", nav_process: "Proses", nav_pricing: "Harga", nav_quote: "Dapatkan Sebut Harga",
+                hero_badge: "Pembangunan AI", hero_title: "Perisian Tersuai Anda <span>Siap dalam 10 Hari</span>",
+                hero_subtitle: "Hentikan menunggu berbulan-bulan. Fastware menggabungkan pecutan AI dengan kejuruteraan pakar untuk menghantar sistem perusahaan pada 20% kos tradisional.",
+                hero_cta_primary: "Dapatkan Sebut Harga Percuma", hero_cta_secondary: "Lihat Cara Ia Berfungsi",
+                stat_days: "Hari Penghantaran", stat_savings: "Penjimatan Kos", stat_industries: "Industri", stat_ownership: "Kod Sumber",
+                why_title: "Mengapa Pilih Fastware?", why_subtitle: "Di era AI, pembangunan perisian tidak sepatutnya mengambil masa berbulan atau kos mahal.",
+                why_fast_title: "Sepantas Kilat", why_fast_desc: "Enjin pembangunan pecutan AI kami menghantar apa yang mengambil orang lain 3-6 bulan dalam hanya 10 hari bekerja. Kelajuan tanpa mengorbankan kualiti.",
+                why_price_title: "Harga Terbaik", why_price_desc: "Agensi tradisional mengenakan harga premium. Kami menghantar kualiti yang sama pada 20% kadar pasaran. Kecekapan AI bermakna penjimatan yang kami berikan terus kepada anda.",
+                why_fit_title: "Jaminan Muat Sempurna", why_fit_desc: "Tiada templat. Tiada solusi generik. Setiap sistem dibina khas untuk aliran kerja tepat anda, bersepadu dengan alat dan proses sedia ada anda.",
+                industries_title: "Penyelesaian Mengikut Industri", industries_subtitle: "Dari logistik ke penjagaan kesihatan, kami telah membina sistem yang mengubah operasi merentasi 50+ industri.",
+                show_more: "Tunjuk Lebih Banyak Industri (40+)", show_less: "Tunjuk Kurang",
+                process_title: "Proses Fastware", process_subtitle: "Dari idea ke sistem langsung dalam 10 hari — inilah cara kami lakukannya.",
+                step1_title: "Perundingan", step1_desc: "Anda kongsi titik kesakitan dan keperluan", step1_days: "Hari 1",
+                step2_title: "Senibina", step2_desc: "Kami reka pangkalan data & aliran kerja tersuai", step2_days: "Hari 2-3",
+                step3_title: "Pembangunan", step3_desc: "Binaan pecutan AI dengan pemantauan pakar", step3_days: "Hari 4-8",
+                step4_title: "Pelancaran", step4_desc: "Anda uji, kami perbaiki, kemudian dilancarkan", step4_days: "Hari 9-10",
+                pricing_title: "Harga Telus", pricing_subtitle: "Pembangunan perisian premium pada harga yang masuk akal untuk PKS.",
+                pricing_badge: "PALING POPULAR", pricing_compare: "80% bawah", pricing_amount: "Harga Pasaran",
+                pricing_desc: "Perisian tersuai pada 20% kos pembangunan tradisional",
+                pricing_feat1: "Pemilikan kod sumber penuh", pricing_feat2: "Reka bentuk pangkalan data tersuai", pricing_feat3: "Antara muka responsif mudah alih",
+                pricing_feat4: "Integrasi WhatsApp/Emel", pricing_feat5: "Sokongan teknikal 1 tahun", pricing_feat6: "Latihan & dokumentasi",
+                pricing_cta: "Dapatkan Sebut Harga Tersuai",
+                contact_title: "Mulakan Hari Ini", contact_subtitle: "Sedia untuk mengubah perniagaan anda? Isi borang di bawah.",
+                form_name: "Nama Anda", form_name_placeholder: "Ahmad",
+                form_company: "Nama Syarikat", form_company_placeholder: "ABC Sdn Bhd",
+                form_email: "Alamat Emel", form_email_placeholder: "ahmad@syarikat.com",
+                form_phone: "Nombor Telefon", form_phone_placeholder: "+60 12-345 6789",
+                form_industry: "Industri", form_industry_select: "Pilih industri anda",
+                form_message: "Keperluan Projek", form_message_placeholder: "Beritahu kami tentang projek anda...",
+                form_submit: "Hantar Pertanyaan", form_success: "Terima kasih! Pasukan kami akan menghubungi anda dalam masa 24 jam.",
+                footer_why: "Mengapa Kami", footer_industries: "Industri",
+                footer_copy: "© 2026 Fastware oleh Vimamall Sdn Bhd. Hak cipta terpelihara.",
+                modal_cta: "Dapatkan Sebut Harga Tersuai"
+            },
+            ja: {
+                nav_why: "選ばれる理由", nav_industries: "業界", nav_process: "プロセス", nav_pricing: "価格", nav_quote: "見積もりを依頼",
+                hero_badge: "AI駆動開発", hero_title: "<span>10日で完成</span>カスタムソフトウェア",
+                hero_subtitle: "数ヶ月の待ち時間はもう不要。FastwareはAI加速と専門家のエンジニアリングを組み合わせ、従来のコストの20%でエンタープライズ級システムを提供します。",
+                hero_cta_primary: "無料見積もりを依頼", hero_cta_secondary: "仕組みを見る",
+                stat_days: "日納期", stat_savings: "コスト削減", stat_industries: "業界", stat_ownership: "ソースコード",
+                why_title: "なぜFastwareを選ぶのか？", why_subtitle: "AI時代において、ソフトウェア開発に数ヶ月かかり、高額になるべきではありません。",
+                why_fast_title: "驚異的な速さ", why_fast_desc: "当社のAI加速開発エンジンは、他社が3-6ヶ月かけるものをわずか10営業日で実現。品質を損なうことなく高速化します。",
+                why_price_title: "破格の価格", why_price_desc: "従来の代理店は高額な料金を請求します。当社は市場価格の20%で同じ品質を提供。AIの効率性は直接あなたへの節約となります。",
+                why_fit_title: "完璧なフィット保証", why_fit_desc: "テンプレートなし、汎用ソリューションなし。すべてのシステムは正確なワークフロー向けにカスタム構築され、既存のツールやプロセスと統合されます。",
+                industries_title: "業界別ソリューション", industries_subtitle: "物流から医療まで、50以上の業界で運営を変革するシステムを構築しました。",
+                show_more: "さらに業界を表示 (40+)", show_less: "表示を減らす",
+                process_title: "Fastwareプロセス", process_subtitle: "アイデアからライブシステムまで10日—その方法をご紹介します。",
+                step1_title: "相談", step1_desc: "課題と要件を共有", step1_days: "1日目",
+                step2_title: "設計", step2_desc: "カスタムデータベースとワークフローを設計", step2_days: "2-3日目",
+                step3_title: "開発", step3_desc: "専門家の監視のもとAI加速構築", step3_days: "4-8日目",
+                step4_title: "公開", step4_desc: "テスト、改善、公開", step4_days: "9-10日目",
+                pricing_title: "透明な価格設定", pricing_subtitle: "中小企業にとって理にかなったプレミアムソフトウェア開発価格。",
+                pricing_badge: "人気No.1", pricing_compare: "市場価格より", pricing_amount: "80%割引",
+                pricing_desc: "従来の開発コストの20%でカスタムソフトウェア",
+                pricing_feat1: "完全なソースコード所有権", pricing_feat2: "カスタムデータベース設計", pricing_feat3: "モバイル対応インターフェース",
+                pricing_feat4: "WhatsApp/メール統合", pricing_feat5: "1年間の技術サポート", pricing_feat6: "トレーニングとドキュメント",
+                pricing_cta: "カスタム見積もりを依頼",
+                contact_title: "今日から始める", contact_subtitle: "ビジネスの変革の準備はできましたか？以下のフォームにご記入ください。",
+                form_name: "お名前", form_name_placeholder: "山田太郎",
+                form_company: "会社名", form_company_placeholder: "ABC株式会社",
+                form_email: "メールアドレス", form_email_placeholder: "yamada@company.com",
+                form_phone: "電話番号", form_phone_placeholder: "+81 90-1234-5678",
+                form_industry: "業界", form_industry_select: "業界を選択",
+                form_message: "プロジェクト要件", form_message_placeholder: "プロジェクトについて教えてください...",
+                form_submit: "問い合わせを送信", form_success: "ありがとうございます！当社チームが24時間以内にご連絡いたします。",
+                footer_why: "選ばれる理由", footer_industries: "業界",
+                footer_copy: "© 2026 Fastware by Vimamall Sdn Bhd. All rights reserved.",
+                modal_cta: "カスタム見積もりを依頼"
+            },
+            ko: {
+                nav_why: "선택 이유", nav_industries: "업종", nav_process: "프로세스", nav_pricing: "가격", nav_quote: "맞춤 견적 받기",
+                hero_badge: "AI 기반 개발", hero_title: "<span>10일 만에 완성</span>맞춤 소프트웨어",
+                hero_subtitle: "수개월의 대기는 이제 그만. Fastware는 AI 가속화와 전문 엔지니어링을 결합하여 기존 비용의 20%로 엔터프라이즈급 시스템을 제공합니다.",
+                hero_cta_primary: "무료 견적 받기", hero_cta_secondary: "작동 방식 보기",
+                stat_days: "일 배송", stat_savings: "비용 절감", stat_industries: "업종", stat_ownership: "소스 코드",
+                why_title: "왜 Fastware를 선택하나요?", why_subtitle: "AI 시대에 소프트웨어 개발에 수개월이 걸리고 비용이 많이 들어서는 안 됩니다.",
+                why_fast_title: "번개처럼 빠른", why_fast_desc: "당사의 AI 가속 개발 엔진은 타사가 3-6개월이 걸리는 것을 단 10 영업일 만에 제공합니다. 품질을 희생하지 않는 속도.",
+                why_price_title: "무적의 가격", why_price_desc: "기존 대행사는 프리미엄 가격을 청구합니다. 당사는 시장 가격의 20%로 동일한 품질을 제공합니다. AI 효율성은 곧바로 고객님께 돌아가는 절약입니다.",
+                why_fit_title: "완벽한 적합성 보장", why_fit_desc: "템플릿 없음, 범용 솔루션 없음. 모든 시스템은 정확한 워크플로우를 위해 맞춤 제작되며 기존 도구 및 프로세스와 통합됩니다.",
+                industries_title: "업종별 솔루션", industries_subtitle: "물류부터 의료까지, 50개 이상의 업종에서 운영을 혁신하는 시스템을 구축했습니다.",
+                show_more: "더 많은 업종 표시 (40+)", show_less: "접기",
+                process_title: "Fastware 프로세스", process_subtitle: "아이디어에서 라이브 시스템까지 10일—방법을 소개합니다.",
+                step1_title: "상담", step1_desc: "고충과 요구사항 공유", step1_days: "1일차",
+                step2_title: "설계", step2_desc: "맞춤 데이터베이스 및 워크플로우 설계", step2_days: "2-3일차",
+                step3_title: "개발", step3_desc: "전문가 감독하에 AI 가속 구축", step3_days: "4-8일차",
+                step4_title: "출시", step4_desc: "테스트, 개선, 출시", step4_days: "9-10일차",
+                pricing_title: "투명한 가격", pricing_subtitle: "중소기업에 합리적인 프리미엄 소프트웨어 개발 가격.",
+                pricing_badge: "가장 인기", pricing_compare: "시장 가격보다", pricing_amount: "80% 할인",
+                pricing_desc: "기존 개발 비용의 20%로 맞춤 소프트웨어",
+                pricing_feat1: "완전한 소스 코드 소유권", pricing_feat2: "맞춤 데이터베이스 설계", pricing_feat3: "모바일 반응형 인터페이스",
+                pricing_feat4: "WhatsApp/이메일 통합", pricing_feat5: "1년 기술 지원", pricing_feat6: "교육 및 문서",
+                pricing_cta: "맞춤 견적 받기",
+                contact_title: "지금 시작하기", contact_subtitle: "비즈니스 혁신 준비가 되셨나요? 아래 양식을 작성해 주세요.",
+                form_name: "성함", form_name_placeholder: "김철수",
+                form_company: "회사명", form_company_placeholder: "ABC 주식회사",
+                form_email: "이메일 주소", form_email_placeholder: "kim@company.com",
+                form_phone: "전화번호", form_phone_placeholder: "+82 010-1234-5678",
+                form_industry: "업종", form_industry_select: "업종 선택",
+                form_message: "프로젝트 요구사항", form_message_placeholder: "프로젝트에 대해 알려주세요...",
+                form_submit: "문의 보내기", form_success: "감사합니다! 당사 팀이 24시간 이내에 연락드리겠습니다.",
+                footer_why: "선택 이유", footer_industries: "업종",
+                footer_copy: "© 2026 Fastware by Vimamall Sdn Bhd. All rights reserved.",
+                modal_cta: "맞춤 견적 받기"
+            },
+            vi: {
+                nav_why: "Tại Sao Chọn", nav_industries: "Ngành", nav_process: "Quy Trình", nav_pricing: "Giá", nav_quote: "Nhận Báo Giá",
+                hero_badge: "Phát Triển AI", hero_title: "Phần Mềm Tùy Chỉnh <span>Sẵn Sàng Trong 10 Ngày</span>",
+                hero_subtitle: "Dừng chờ đợi hàng tháng trời. Fastware kết hợp tăng tốc AI với kỹ thuật chuyên gia để cung cấp hệ thống cấp doanh nghiệp với 20% chi phí truyền thống.",
+                hero_cta_primary: "Nhận Báo Giá Miễn Phí", hero_cta_secondary: "Xem Cách Hoạt Động",
+                stat_days: "Ngày Giao Hàng", stat_savings: "Tiết Kiệm Chi Phí", stat_industries: "Ngành", stat_ownership: "Mã Nguồn",
+                why_title: "Tại Sao Chọn Fastware?", why_subtitle: "Trong kỷ nguyên AI, phát triển phần mềm không nên mất hàng tháng hoặc tốn kém.",
+                why_fast_title: "Nhanh Như Chớp", why_fast_desc: "Công cụ phát triển tăng tốc AI của chúng tôi cung cấp những gì người khác mất 3-6 tháng chỉ trong 10 ngày làm việc. Tốc độ không ảnh hưởng chất lượng.",
+                why_price_title: "Giá Cả Không Thể Đánh Bại", why_price_desc: "Các cơ quan truyền thống tính giá cao. Chúng tôi cung cấp cùng chất lượng với 20% giá thị trường. Hiệu quả AI có nghĩa là tiết kiệm chuyển trực tiếp cho bạn.",
+                why_fit_title: "Đảm Bảo Phù Hợp Hoàn Hảo", why_fit_desc: "Không mẫu, không giải pháp chung chung. Mọi hệ thống được xây dựng tùy chỉnh cho quy trình làm việc chính xác của bạn, tích hợp với công cụ và quy trình hiện có.",
+                industries_title: "Giải Pháp Theo Ngành", industries_subtitle: "Từ logistics đến chăm sóc sức khỏe, chúng tôi đã xây dựng các hệ thống chuyển đổi hoạt động trên 50+ ngành.",
+                show_more: "Hiển Thị Thêm Ngành (40+)", show_less: "Thu Gọn",
+                process_title: "Quy Trình Fastware", process_subtitle: "Từ ý tưởng đến hệ thống trực tiếp trong 10 ngày—đây là cách chúng tôi thực hiện.",
+                step1_title: "Tư Vấn", step1_desc: "Bạn chia sẻ điểm đau và yêu cầu", step1_days: "Ngày 1",
+                step2_title: "Kiến Trúc", step2_desc: "Chúng tôi thiết kế cơ sở dữ liệu & quy trình tùy chỉnh", step2_days: "Ngày 2-3",
+                step3_title: "Phát Triển", step3_desc: "Xây dựng tăng tốc AI với giám sát chuyên gia", step3_days: "Ngày 4-8",
+                step4_title: "Ra Mắt", step4_desc: "Bạn thử nghiệm, chúng tôi hoàn thiện, sau đó ra mắt", step4_days: "Ngày 9-10",
+                pricing_title: "Giá Cả Minh Bạch", pricing_subtitle: "Phát triển phần mềm cao cấp với giá hợp lý cho doanh nghiệp vừa và nhỏ.",
+                pricing_badge: "PHỔ BIẾN NHẤT", pricing_compare: "thấp hơn", pricing_amount: "80% Giá Thị Trường",
+                pricing_desc: "Phần mềm tùy chỉnh với 20% chi phí phát triển truyền thống",
+                pricing_feat1: "Quyền sở hữu mã nguồn đầy đủ", pricing_feat2: "Thiết kế cơ sở dữ liệu tùy chỉnh", pricing_feat3: "Giao diện đáp ứng di động",
+                pricing_feat4: "Tích hợp WhatsApp/Email", pricing_feat5: "Hỗ trợ kỹ thuật 1 năm", pricing_feat6: "Đào tạo & tài liệu",
+                pricing_cta: "Nhận Báo Giá Tùy Chỉnh",
+                contact_title: "Bắt Đầu Hôm Nay", contact_subtitle: "Sẵn sàng chuyển đổi doanh nghiệp của bạn? Điền vào mẫu dưới đây.",
+                form_name: "Họ Tên", form_name_placeholder: "Nguyễn Văn A",
+                form_company: "Tên Công Ty", form_company_placeholder: "ABC Co., Ltd",
+                form_email: "Địa Chỉ Email", form_email_placeholder: "nguyen@company.com",
+                form_phone: "Số Điện Thoại", form_phone_placeholder: "+84 90-123-4567",
+                form_industry: "Ngành", form_industry_select: "Chọn ngành của bạn",
+                form_message: "Yêu Cầu Dự Án", form_message_placeholder: "Hãy cho chúng tôi biết về dự án của bạn...",
+                form_submit: "Gửi Yêu Cầu", form_success: "Cảm ơn! Đội ngũ của chúng tôi sẽ liên hệ trong vòng 24 giờ.",
+                footer_why: "Tại Sao Chọn", footer_industries: "Ngành",
+                footer_copy: "© 2026 Fastware by Vimamall Sdn Bhd. Bảo lưu mọi quyền.",
+                modal_cta: "Nhận Báo Giá Tùy Chỉnh"
+            },
+            my: {
+                nav_why: "ဘာကြောင့်ရွေးချယ်ရမလဲ", nav_industries: "လုပ်ငန်းများ", nav_process: "လုပ်ငန်းစဉ်", nav_pricing: "စျေးနှုန်း", nav_quote: "စိတ်တိုင်းကျဈေးနှုန်းမေးမြန်းရန်",
+                hero_badge: "AI ဖြင့် အဓိကထား တည်ဆောက်ခြင်း", hero_title: "<span>၁၀ ရက်အတွင်း</span>စိတ်တိုင်းက် Software",
+                hero_subtitle: "လများစွာစောင့်ဆိုင်းရန် မလိုအပ်တော့ပါ။ Fastware သည် AI အရှိန်နှင့် ပညာရှင်အင်ဂျင်နီယာဝန်ဆောင်မှုများကို ပေါင်းစပ်ကာ ရိုးရာကုန်ကျစရိတ် ၂၀% ဖြင့် စီးပွားရေးလုပ်ငန်းအဆင့် စနစ်များကို ပေးဆောင်ပါသည်။",
+                hero_cta_primary: "အခမဲ့ ဈေးနှုန်းမေးမြန်းရန်", hero_cta_secondary: "အလုပ်လုပ်ပုံကြည့်ရန်",
+                stat_days: "ရက် ပေးပို့ချိန်", stat_savings: "ကုန်ကျစရိတ်ချွေသုံးမှု", stat_industries: "လုပ်ငန်း", stat_ownership: "ကုဒ်ပိုင်ဆိုင်မှု",
+                why_title: "ဘာကြောင့် Fastware ကို ရွေးချယ်ရမလဲ?", why_subtitle: "AI ခေတ်တွင် software တည်ဆောက်ရန် လများစွာကာလယူပြီး ကုန်ကျစရိတ်များမြင့်မားသင့်သည် မဟုတ်ပါ။",
+                why_fast_title: "လျင်မြန်စွာ", why_fast_desc: "ကျွန်ုပ်တို့၏ AI အရှိန်တင်တည်ဆောက်မှု engine သည် အခြားသူများ ၃-၆ လယူသော အရာများကို ၁၀ ရက်အတွင်း ပြီးစီး၏။ အရည်အသွေးကို မစောင့်စိုရဘဲ အရှိန်မြင့်။",
+                why_price_title: "အကောင်းဆုံး စျေးနှုန်း", why_price_desc: "ရိုးရာအgency များသည် ပremium ဈေးနှုန်းများ တောင်းခံသည်။ ကျွန်ုပ်တို့သည် စျေးကွက်ဈေးနှုန်း ၂၀% ဖြင့် တူညီသောအရည်အသွေးကို ပေးဆောင်သည်။ AI ထိရောက်မှုသည် သင့်ထံသို့ တိုက်ရိုက်ရောက်ရှိသည့် ချွေသုံးမှုဖြစ်သည်။",
+                why_fit_title: "ပြီးပြည့်စုံသော ကိုက်ညီမှုအာမခံ", why_fit_desc: "template မရှိ၊ အထွေထွေဖြေရှင်းချက် မရှိ။ ပုံမှန်စနစ်တိုင်းကို သင်၏အတိအကျ workflow အတွက် custom-built လုပ်ထားပြီး သင့်ရှိပြီးသား tools နှင့် စနစ်များနှင့်ပေါင်းစပ်ထားသည်။",
+                industries_title: "လုပ်ငန်းအလိုက် ဖြေရှင်းချက်များ", industries_subtitle: "လူသယ်ယူပို့ဆောင်ရေးမှ ကျန်းမာရေးအထိ ၅၀ ကျော်လုပ်ငန်းအထိ လုပ်ငန်းများကို ပြောင်းလဲစေသော စနစ်များကို ကျွန်ုပ်တို့တည်ဆောက်ခဲ့သည်။",
+                show_more: "လုပ်ငန်းများ ပိုမိုပြသရန် (၄၀+)", show_less: "ပိုနည်းသော်ပြသရန်",
+                process_title: "Fastware လုပ်ငန်းစဉ်", process_subtitle: "စိတ်ကူးမှ live စနစ်အထိ ၁၀ ရက်—ဤသို့ပြုလုပ်သည်။",
+                step1_title: "တိုင်ပင်", step1_desc: "သင်၏အခက်အခဲများနှင့် လိုအပ်ချက်များကို မျှဝေပါ", step1_days: "၁ ရက်",
+                step2_title: "ဒီဇိုင်း", step2_desc: "သင်၏စိတ်တိုင်းက် database နှင့် workflow ကို ဒီဇိုင်းလုပ်ပါ", step2_days: "၂-၃ ရက်",
+                step3_title: "တည်ဆောက်မှု", step3_desc: "ပညာရှင်ကြပ်မတ်မှုဖြင့် AI အရှိန်တင်တည်ဆောက်ခြင်း", step3_days: "၄-၈ ရက်",
+                step4_title: "ချိတ်ဆက်မှု", step4_desc: "စမ်းသပ်ပါ၊ ကျွန်ုပ်တို့ ပိုမိုကောင်းမွန်စေပါသည်၊ ထို့နောက် live ဖြစ်၏", step4_days: "၉-၁၀ ရက်",
+                pricing_title: "ပွင့်လင်းသောစျေးနှုန်း", pricing_subtitle: "SME များအတွက် ဟုတ်တိုင်းဟုတ်သည့် premium software တည်ဆောက်မှုစျေးနှုန်း။",
+                pricing_badge: "အရင်ယှဉ်ဆန်းသစ်ဆုံး", pricing_compare: "စျေးကွက်ဈေးနှုန်းထက်", pricing_amount: "၈၀% လျှော့ဈေး",
+                pricing_desc: "ရိုးရာတည်ဆောက်မှုကုန်ကျစရိတ် ၂၀% ဖြင့် စိတ်တိုင်းက် software",
+                pricing_feat1: "ပြီးပြည့်စုံသော source code ပိုင်ဆိုင်မှု", pricing_feat2: "စိတ်တိုင်းက် database ဒီဇိုင်", pricing_feat3: "Mobile-responsive interface",
+                pricing_feat4: "WhatsApp/Email ချိတ်ဆက်မှု", pricing_feat5: "၁ နှစ်နည်းပညာထောက်ပံ့မှု", pricing_feat6: "သင်တန်းနှင့် စာရွက်စာတမ်း",
+                pricing_cta: "စိတ်တိုင်းကျ ဈေးနှုန်းမေးမြန်းရန်",
+                contact_title: "ယနေ့စတင်ပါ", contact_subtitle: "သင်၏လုပ်ငန်းကို ပြောင်းလဲရန်အသင့်ဖြစ်ပါသလား? အောက်ပါဖောင်ဖြည့်ပါ။",
+                form_name: "အမည်", form_name_placeholder: "မောင်အောင်",
+                form_company: "ကုမ္ပဏီအမည်", form_company_placeholder: "ABC Co., Ltd",
+                form_email: "အီးမေးလ်လိပ်စာ", form_email_placeholder: "aung@company.com",
+                form_phone: "ဖုန်းနံပါတ်", form_phone_placeholder: "+၉၅ ၉-၁၂၃-၄၅၆၇",
+                form_industry: "လုပ်ငန်း", form_industry_select: "သင်၏လုပ်ငန်းကို ရွေးချယ်ပါ",
+                form_message: "ပရောဂျက်လိုအပ်ချက်များ", form_message_placeholder: "သင်၏ပရောဂျက်အကြောင်း ပြောပြပါ...",
+                form_submit: "စုံစမ်းမေးမြန်းမှုပေးပို့ရန်", form_success: "ကျေးဇူးတင်ပါသည်! ကျွန်ုပ်တို့အဖွဲ့သည် ၂၄ နာရီအတွင်း ဆက်သွယ်ပါမည်။",
+                footer_why: "ဘာကြောင့်ရွေးချယ်ရမလဲ", footer_industries: "လုပ်ငန်း",
+                footer_copy: "© ၂၀၂၆ Fastware by Vimamall Sdn Bhd။ မူပိုင်ခွင့်အခွင့်အရေးအားလုံး ရရှိသည်။",
+                modal_cta: "စိတ်တိုင်းကျ ဈေးနှုန်းမေးမြန်းရန်"
             }
+        };
+
+        // Current language
+        let currentLang = localStorage.getItem('fastware_language') || 'en';
+        
+        // Initialize language
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('languageSelector').value = currentLang;
+            applyTranslations(currentLang);
         });
 
-        // Modal Functions
-        function openModal(id) {
-            const industry = industries.find(i => i.id === id);
-            if (!industry) return;
+        // Change language
+        function changeLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('fastware_language', lang);
+            applyTranslations(lang);
+        }
+
+        // Apply translations
+        function applyTranslations(lang) {
+            const t = translations[lang];
+            if (!t) return;
             
-            document.getElementById('modalIcon').textContent = industry.icon;
-            document.getElementById('modalCategory').textContent = industry.category;
-            document.getElementById('modalTitle').textContent = industry.name;
-            document.getElementById('modalDescription').textContent = industry.description;
-            document.getElementById('modalFeatures').innerHTML = industry.features.map(f => `<li>${f}</li>`).join('');
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (t[key]) {
+                    if (key === 'hero_title') {
+                        el.innerHTML = t[key];
+                    } else {
+                        el.textContent = t[key];
+                    }
+                }
+            });
             
-            document.getElementById('industryModal').classList.add('active');
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.getAttribute('data-i18n-placeholder');
+                if (t[key]) {
+                    el.placeholder = t[key];
+                }
+            });
+        }
+
+        // Show more industries
+        function toggleIndustries() {
+            const hidden = document.getElementById('hiddenIndustries');
+            const btn = document.getElementById('showMoreBtn');
+            const t = translations[currentLang];
+            
+            if (hidden.classList.contains('show')) {
+                hidden.classList.remove('show');
+                btn.textContent = t.show_more || 'Show More Industries (40+)';
+            } else {
+                hidden.classList.add('show');
+                btn.textContent = t.show_less || 'Show Less';
+            }
+        }
+
+        // Modal functions
+        function openModal(industry) {
+            document.getElementById('industryModal').classList.add('show');
             document.body.style.overflow = 'hidden';
         }
 
         function closeModal() {
-            document.getElementById('industryModal').classList.remove('active');
+            document.getElementById('industryModal').classList.remove('show');
             document.body.style.overflow = '';
         }
 
-        document.getElementById('modalClose').addEventListener('click', closeModal);
+        // Form submission
+        function handleSubmit(e) {
+            e.preventDefault();
+            document.getElementById('formSuccess').classList.add('show');
+            e.target.reset();
+            setTimeout(() => {
+                document.getElementById('formSuccess').classList.remove('show');
+            }, 5000);
+        }
+
+        // Close modal on outside click
         document.getElementById('industryModal').addEventListener('click', function(e) {
             if (e.target === this) closeModal();
-        });
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') closeModal();
-        });
-
-        // Form Success Handler
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            // Netlify handles the actual submission
-            // This just shows the success message after submission
-            setTimeout(() => {
-                document.getElementById('contactForm').style.display = 'none';
-                document.getElementById('formSuccess').classList.add('active');
-            }, 500);
-        });
-
-        // Initialize
-        renderIndustries();
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
         });
     </script>
 </body>
