@@ -31,7 +31,6 @@
         .nav-links a:hover { color: var(--accent-dark); }
         .nav-cta { background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end)); color: white !important; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; }
         
-        /* Language Selector */
         .lang-selector { position: relative; }
         .lang-selector select { padding: 0.5rem 2rem 0.5rem 1rem; border: 1px solid #e2e8f0; border-radius: 8px; background: white; font-family: 'Inter', sans-serif; font-size: 0.9rem; cursor: pointer; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2364748b' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 0.5rem center; }
         .lang-selector select:focus { outline: none; border-color: var(--accent); }
@@ -114,6 +113,20 @@
         .form-submit:hover { transform: translateY(-2px); }
         .form-success { display: none; background: #d1fae5; color: #065f46; padding: 1rem; border-radius: 10px; text-align: center; margin-top: 1rem; }
         .form-success.show { display: block; }
+
+        /* Testimonials Section */
+        .testimonials-section { background: var(--gray); padding: 6rem 2rem; }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 1200px; margin: 0 auto; }
+        .testimonial-card { background: white; padding: 2.5rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); transition: transform 0.3s, box-shadow 0.3s; }
+        .testimonial-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
+        .testimonial-stars { color: #fbbf24; font-size: 1.25rem; margin-bottom: 1rem; }
+        .testimonial-quote { font-size: 1rem; color: var(--text); line-height: 1.7; margin-bottom: 1.5rem; font-style: italic; }
+        .testimonial-quote::before { content: '"'; }
+        .testimonial-quote::after { content: '"'; }
+        .testimonial-author { display: flex; align-items: center; gap: 1rem; }
+        .testimonial-avatar { width: 50px; height: 50px; background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end)); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.25rem; }
+        .testimonial-info h4 { font-weight: 700; color: var(--text); }
+        .testimonial-info p { color: var(--text-light); font-size: 0.9rem; }
         
         .cta-section { text-align: center; padding: 6rem 2rem; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%); color: white; }
         .cta-section h2 { font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; }
@@ -126,6 +139,17 @@
         .footer-links a { color: #94a3b8; text-decoration: none; transition: color 0.3s; }
         .footer-links a:hover { color: var(--accent); }
         .footer-copy { color: #64748b; font-size: 0.9rem; }
+        .footer-address { color: #94a3b8; font-size: 0.9rem; text-align: right; }
+        .footer-address strong { color: white; display: block; margin-bottom: 0.25rem; }
+
+        /* WhatsApp Widget */
+        .whatsapp-widget { position: fixed; bottom: 30px; right: 30px; z-index: 9999; }
+        .whatsapp-btn { width: 60px; height: 60px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); cursor: pointer; transition: transform 0.3s, box-shadow 0.3s; text-decoration: none; }
+        .whatsapp-btn:hover { transform: scale(1.1); box-shadow: 0 6px 30px rgba(37, 211, 102, 0.5); }
+        .whatsapp-btn svg { width: 32px; height: 32px; fill: white; }
+        .whatsapp-tooltip { position: absolute; bottom: 75px; right: 0; background: white; color: var(--text); padding: 0.75rem 1rem; border-radius: 8px; font-size: 0.875rem; font-weight: 500; box-shadow: 0 4px 20px rgba(0,0,0,0.15); white-space: nowrap; opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s; }
+        .whatsapp-widget:hover .whatsapp-tooltip { opacity: 1; visibility: visible; }
+        .whatsapp-tooltip::after { content: ''; position: absolute; bottom: -8px; right: 20px; border-width: 8px 8px 0; border-style: solid; border-color: white transparent transparent; }
         
         .modal { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); z-index: 2000; justify-content: center; align-items: center; padding: 2rem; }
         .modal.show { display: flex; }
@@ -133,8 +157,8 @@
         .modal-close { position: absolute; top: 1rem; right: 1rem; width: 40px; height: 40px; border-radius: 50%; background: var(--gray); border: none; font-size: 1.5rem; cursor: pointer; transition: background 0.3s; }
         .modal-close:hover { background: #e2e8f0; }
         .modal-icon { font-size: 3rem; margin-bottom: 1rem; }
-        .modal h2 { font-size: 1.75rem; margin-bottom: 1rem; }
         .modal-category { color: var(--accent-dark); font-weight: 600; margin-bottom: 1rem; }
+        .modal h2 { font-size: 1.75rem; margin-bottom: 1rem; }
         .modal p { color: var(--text-light); line-height: 1.7; margin-bottom: 1.5rem; }
         .modal-features { list-style: none; }
         .modal-features li { padding: 0.5rem 0; padding-left: 1.5rem; position: relative; }
@@ -143,11 +167,17 @@
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.25rem; }
             .stats-grid { grid-template-columns: repeat(2, 1fr); }
-            .why-grid, .industries-grid, .timeline { grid-template-columns: 1fr; }
+            .why-grid, .industries-grid, .timeline, .testimonials-grid { grid-template-columns: 1fr; }
             .timeline::before { display: none; }
             .nav-links { display: none; }
             .pricing-amount { font-size: 3rem; }
             .lang-selector { margin-left: auto; }
+            .footer-content { flex-direction: column; text-align: center; }
+            .footer-address { text-align: center; }
+            .testimonial-card { padding: 1.5rem; }
+            .whatsapp-widget { bottom: 20px; right: 20px; }
+            .whatsapp-btn { width: 55px; height: 55px; }
+            .whatsapp-btn svg { width: 28px; height: 28px; }
         }
     </style>
 </head>
@@ -246,7 +276,6 @@
             <p data-i18n="industries_subtitle">From logistics to healthcare, we've built systems that transform operations across 50+ industries.</p>
         </div>
         <div class="industries-grid" id="industriesGrid">
-            <!-- First 10 industries -->
             <div class="industry-card" onclick="openModal('logistics1')">
                 <div class="industry-header">
                     <span class="industry-icon">📦</span>
@@ -360,7 +389,6 @@
         </div>
         <button class="show-more-btn" id="showMoreBtn" onclick="toggleIndustries()" data-i18n="show_more">Show More Industries (40+)</button>
         <div class="hidden-industries industries-grid" id="hiddenIndustries">
-            <!-- Additional 40 industries would go here -->
         </div>
     </section>
 
@@ -472,6 +500,65 @@
         </form>
     </section>
 
+    <section class="testimonials-section" id="testimonials">
+        <div class="section-title">
+            <h2 data-i18n="testimonials_title">What Our Clients Say</h2>
+            <p data-i18n="testimonials_subtitle">Real results from businesses like yours.</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-quote" data-i18n="testimonial_1_quote">Fastware built our condo management system in just 10 days. The QR visitor pass and maintenance tracking have made our operations 3x more efficient.</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">AR</div>
+                    <div class="testimonial-info">
+                        <h4 data-i18n="testimonial_1_name">Ahmad Razak</h4>
+                        <p data-i18n="testimonial_1_company">JMB Seri Raya Condo</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-quote" data-i18n="testimonial_2_quote">The clinic management system is exactly what we needed. Appointment scheduling, digital records, and patient reminders - all automated now.</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">SL</div>
+                    <div class="testimonial-info">
+                        <h4 data-i18n="testimonial_2_name">Sarah Lim</h4>
+                        <p data-i18n="testimonial_2_company">Lim's Dental Clinic</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-quote" data-i18n="testimonial_3_quote">Our cross-border parcel tracking portal handles 1000+ orders daily. Fastware delivered at 1/5th the cost of other quotes we received.</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">RK</div>
+                    <div class="testimonial-info">
+                        <h4 data-i18n="testimonial_3_name">Rajesh Kumar</h4>
+                        <p data-i18n="testimonial_3_company">Kumar Logistics Sdn Bhd</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-quote" data-i18n="testimonial_4_quote">The case management system streamlined our entire practice. Client billing used to take days, now it's automatic.</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">MW</div>
+                    <div class="testimonial-info">
+                        <h4 data-i18n="testimonial_4_name">Michelle Wong</h4>
+                        <p data-i18n="testimonial_4_company">Wong & Associates Legal</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2 data-i18n="cta_title">Ready to Get Started?</h2>
+        <p data-i18n="cta_subtitle">Join hundreds of businesses that have transformed their operations with Fastware.</p>
+        <a href="#contact" class="btn-primary" data-i18n="cta_button">Get Your Free Quote</a>
+    </section>
+
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-logo">Fastware</div>
@@ -480,9 +567,23 @@
                 <a href="#why" data-i18n="footer_why">Why Us</a>
                 <a href="#industries" data-i18n="footer_industries">Industries</a>
             </div>
+            <div class="footer-address">
+                <strong data-i18n="footer_company">Vimamall Sdn Bhd</strong>
+                <span data-i18n="footer_address">Uncang Emas, Kuala Lumpur, Malaysia</span><br>
+                <span data-i18n="footer_appointment">Visitors welcome by appointment</span>
+            </div>
             <div class="footer-copy" data-i18n="footer_copy">© 2026 Fastware by Vimamall Sdn Bhd. All rights reserved.</div>
         </div>
     </footer>
+
+    <div class="whatsapp-widget">
+        <div class="whatsapp-tooltip" data-i18n="whatsapp_tooltip">Chat with us on WhatsApp</div>
+        <a href="https://wa.me/60147648554?text=Hi%20Fastware%2C%20I'm%20interested%20in%20custom%20software%20development%20for%20my%20business." target="_blank" class="whatsapp-btn" aria-label="Chat on WhatsApp">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+        </a>
+    </div>
 
     <div class="modal" id="industryModal">
         <div class="modal-content">
@@ -500,7 +601,6 @@
     </div>
 
     <script>
-        // Translations
         const translations = {
             en: {
                 nav_why: "Why Us", nav_industries: "Industries", nav_process: "Process", nav_pricing: "Pricing", nav_quote: "Get Quote",
@@ -513,6 +613,16 @@
                 why_price_title: "Unbeatable Pricing", why_price_desc: "Traditional agencies charge premium prices. We deliver the same quality at 20% of market rate. AI efficiency means savings we pass directly to you.",
                 why_fit_title: "Perfect Fit Guarantee", why_fit_desc: "No templates. No generic solutions. Every system is custom-built for your exact workflow, integrated with your existing tools and processes.",
                 industries_title: "Solutions by Industry", industries_subtitle: "From logistics to healthcare, we've built systems that transform operations across 50+ industries.",
+                ind_1_title: "Cross-Border Parcel Tracking", ind_1_feat1: "Real-time tracking portals", ind_1_feat2: "Automated customs docs", ind_1_feat3: "Customer notifications",
+                ind_2_title: "Condo/JMB Management", ind_2_feat1: "Maintenance fee tracking", ind_2_feat2: "Visitor QR-pass system", ind_2_feat3: "Facility booking",
+                ind_3_title: "Clinic Practice Management", ind_3_feat1: "Appointment scheduling", ind_3_feat2: "Digital medical records", ind_3_feat3: "Patient portal",
+                ind_4_title: "Restaurant POS & Inventory", ind_4_feat1: "Order management", ind_4_feat2: "Kitchen display system", ind_4_feat3: "Stock tracking",
+                ind_5_title: "Manufacturing Job Shop", ind_5_feat1: "Production tracking", ind_5_feat2: "Machine scheduling", ind_5_feat3: "Quality control",
+                ind_6_title: "Legal Case Management", ind_6_feat1: "Case timeline tracking", ind_6_feat2: "Document management", ind_6_feat3: "Client billing",
+                ind_7_title: "E-commerce Order Management", ind_7_feat1: "Multi-channel sync", ind_7_feat2: "Inventory management", ind_7_feat3: "Order fulfillment",
+                ind_8_title: "Tuition Center Management", ind_8_feat1: "Student enrollment", ind_8_feat2: "Class scheduling", ind_8_feat3: "Progress tracking",
+                ind_9_title: "Cold Chain Monitoring", ind_9_feat1: "Temperature logging", ind_9_feat2: "GPS route tracking", ind_9_feat3: "Alert notifications",
+                ind_10_title: "Rental Property Automation", ind_10_feat1: "Tenant management", ind_10_feat2: "Rent collection", ind_10_feat3: "Maintenance requests",
                 show_more: "Show More Industries (40+)", show_less: "Show Less",
                 process_title: "The Fastware Process", process_subtitle: "From idea to live system in 10 days — here's how we do it.",
                 step1_title: "Consultation", step1_desc: "You share your pain points and requirements", step1_days: "Day 1",
@@ -537,9 +647,20 @@
                 industry_retail: "Retail & E-commerce", industry_education: "Education", industry_other: "Other",
                 form_message: "Project Requirements", form_message_placeholder: "Tell us about your project...",
                 form_submit: "Send Inquiry", form_success: "Thank you! Our team will contact you within 24 hours.",
+                testimonials_title: "What Our Clients Say", testimonials_subtitle: "Real results from businesses like yours.",
+                testimonial_1_quote: "Fastware built our condo management system in just 10 days. The QR visitor pass and maintenance tracking have made our operations 3x more efficient.",
+                testimonial_1_name: "Ahmad Razak", testimonial_1_company: "JMB Seri Raya Condo",
+                testimonial_2_quote: "The clinic management system is exactly what we needed. Appointment scheduling, digital records, and patient reminders - all automated now.",
+                testimonial_2_name: "Sarah Lim", testimonial_2_company: "Lim's Dental Clinic",
+                testimonial_3_quote: "Our cross-border parcel tracking portal handles 1000+ orders daily. Fastware delivered at 1/5th the cost of other quotes we received.",
+                testimonial_3_name: "Rajesh Kumar", testimonial_3_company: "Kumar Logistics Sdn Bhd",
+                testimonial_4_quote: "The case management system streamlined our entire practice. Client billing used to take days, now it's automatic.",
+                testimonial_4_name: "Michelle Wong", testimonial_4_company: "Wong & Associates Legal",
+                cta_title: "Ready to Get Started?", cta_subtitle: "Join hundreds of businesses that have transformed their operations with Fastware.", cta_button: "Get Your Free Quote",
                 footer_why: "Why Us", footer_industries: "Industries",
+                footer_company: "Vimamall Sdn Bhd", footer_address: "Uncang Emas, Kuala Lumpur, Malaysia", footer_appointment: "Visitors welcome by appointment",
                 footer_copy: "© 2026 Fastware by Vimamall Sdn Bhd. All rights reserved.",
-                modal_cta: "Get Custom Quote"
+                modal_cta: "Get Custom Quote", whatsapp_tooltip: "Chat with us on WhatsApp"
             },
             zh: {
                 nav_why: "为什么选择", nav_industries: "行业方案", nav_process: "流程", nav_pricing: "价格", nav_quote: "获取报价",
@@ -550,8 +671,18 @@
                 why_title: "为什么选择Fastware？", why_subtitle: "在AI时代，软件开发不应耗时数月或花费巨资。",
                 why_fast_title: "闪电般快速", why_fast_desc: "我们的AI加速开发引擎仅需10个工作日即可完成他人需要3-6个月的工作。速度而不牺牲质量。",
                 why_price_title: "无与伦比的价格", why_price_desc: "传统机构收取高昂费用。我们以市场价格的20%提供同等质量。AI效率意味着直接回馈给您的节省。",
-                why_fit_title: "完美契合保证", why_fit_desc: "无模板，无通用方案。每个系统都为您的 exact 工作流程定制构建，与您现有的工具和流程无缝集成。",
+                why_fit_title: "完美契合保证", why_fit_desc: "无模板，无通用方案。每个系统都为您的工作流程定制构建，与您现有的工具和流程无缝集成。",
                 industries_title: "行业解决方案", industries_subtitle: "从物流到医疗，我们构建了改变50多个行业运营的系统。",
+                ind_1_title: "跨境包裹追踪", ind_1_feat1: "实时追踪门户", ind_1_feat2: "自动报关文档", ind_1_feat3: "客户通知",
+                ind_2_title: "公寓/管委会管理", ind_2_feat1: "管理费追踪", ind_2_feat2: "访客二维码通行证", ind_2_feat3: "设施预订",
+                ind_3_title: "诊所管理", ind_3_feat1: "预约排程", ind_3_feat2: "电子病历", ind_3_feat3: "患者门户",
+                ind_4_title: "餐厅POS与库存", ind_4_feat1: "订单管理", ind_4_feat2: "厨房显示系统", ind_4_feat3: "库存追踪",
+                ind_5_title: "制造业车间", ind_5_feat1: "生产追踪", ind_5_feat2: "机器排程", ind_5_feat3: "质量控制",
+                ind_6_title: "法律案件管理", ind_6_feat1: "案件时间线追踪", ind_6_feat2: "文档管理", ind_6_feat3: "客户计费",
+                ind_7_title: "电商订单管理", ind_7_feat1: "多渠道同步", ind_7_feat2: "库存管理", ind_7_feat3: "订单履行",
+                ind_8_title: "补习中心管理", ind_8_feat1: "学生报名", ind_8_feat2: "课程排程", ind_8_feat3: "进度追踪",
+                ind_9_title: "冷链监控", ind_9_feat1: "温度记录", ind_9_feat2: "GPS路线追踪", ind_9_feat3: "警报通知",
+                ind_10_title: "租赁物业自动化", ind_10_feat1: "租户管理", ind_10_feat2: "租金收取", ind_10_feat3: "维修请求",
                 show_more: "显示更多行业 (40+)", show_less: "收起",
                 process_title: "Fastware流程", process_subtitle: "从创意到上线仅需10天——我们是如何做到的。",
                 step1_title: "咨询", step1_desc: "您分享痛点和需求", step1_days: "第1天",
@@ -572,9 +703,20 @@
                 form_industry: "行业", form_industry_select: "选择您的行业",
                 form_message: "项目需求", form_message_placeholder: "请告诉我们您的项目...",
                 form_submit: "发送咨询", form_success: "谢谢！我们的团队将在24小时内与您联系。",
+                testimonials_title: "客户评价", testimonials_subtitle: "来自与您类似企业的真实成果。",
+                testimonial_1_quote: "Fastware仅用10天就为我们构建了公寓管理系统。二维码访客通行证和维护追踪使我们的运营效率提高了3倍。",
+                testimonial_1_name: "Ahmad Razak", testimonial_1_company: "JMB Seri Raya Condo",
+                testimonial_2_quote: "诊所管理系统正是我们所需要的。预约排程、电子病历和患者提醒——现在全部自动化了。",
+                testimonial_2_name: "Sarah Lim", testimonial_2_company: "Lim's Dental Clinic",
+                testimonial_3_quote: "我们的跨境包裹追踪门户每天处理1000多个订单。Fastware的报价是其他报价的五分之一。",
+                testimonial_3_name: "Rajesh Kumar", testimonial_3_company: "Kumar Logistics Sdn Bhd",
+                testimonial_4_quote: "案件管理系统简化了我们的整个业务。客户计费过去需要几天，现在全自动了。",
+                testimonial_4_name: "Michelle Wong", testimonial_4_company: "Wong & Associates Legal",
+                cta_title: "准备开始了吗？", cta_subtitle: "加入数百家已经通过Fastware改变运营的企业。", cta_button: "获取免费报价",
                 footer_why: "为什么选择", footer_industries: "行业",
+                footer_company: "Vimamall Sdn Bhd", footer_address: "Uncang Emas, 吉隆坡, 马来西亚", footer_appointment: "欢迎预约参观",
                 footer_copy: "© 2026 Fastware by Vimamall Sdn Bhd. 版权所有。",
-                modal_cta: "获取定制报价"
+                modal_cta: "获取定制报价", whatsapp_tooltip: "通过WhatsApp与我们聊天"
             },
             ms: {
                 nav_why: "Mengapa Kami", nav_industries: "Industri", nav_process: "Proses", nav_pricing: "Harga", nav_quote: "Dapatkan Sebut Harga",
@@ -587,6 +729,16 @@
                 why_price_title: "Harga Terbaik", why_price_desc: "Agensi tradisional mengenakan harga premium. Kami menghantar kualiti yang sama pada 20% kadar pasaran. Kecekapan AI bermakna penjimatan yang kami berikan terus kepada anda.",
                 why_fit_title: "Jaminan Muat Sempurna", why_fit_desc: "Tiada templat. Tiada solusi generik. Setiap sistem dibina khas untuk aliran kerja tepat anda, bersepadu dengan alat dan proses sedia ada anda.",
                 industries_title: "Penyelesaian Mengikut Industri", industries_subtitle: "Dari logistik ke penjagaan kesihatan, kami telah membina sistem yang mengubah operasi merentasi 50+ industri.",
+                ind_1_title: "Jejak Parcel Lintas Sempadan", ind_1_feat1: "Portal jejak masa nyata", ind_1_feat2: "Dokumen kastam automatik", ind_1_feat3: "Pemberitahuan pelanggan",
+                ind_2_title: "Pengurusan Condo/JMB", ind_2_feat1: "Jejak yuran penyelenggaraan", ind_2_feat2: "Sistem QR-pass pelawat", ind_2_feat3: "Tempahan kemudahan",
+                ind_3_title: "Pengurusan Klinik", ind_3_feat1: "Penjadualan temujanji", ind_3_feat2: "Rekod perubatan digital", ind_3_feat3: "Portal pesakit",
+                ind_4_title: "POS & Inventori Restoran", ind_4_feat1: "Pengurusan pesanan", ind_4_feat2: "Sistem paparan dapur", ind_4_feat3: "Jejak stok",
+                ind_5_title: "Job Shop Pembuatan", ind_5_feat1: "Jejak pengeluaran", ind_5_feat2: "Penjadualan mesin", ind_5_feat3: "Kawalan kualiti",
+                ind_6_title: "Pengurusan Kes Undang-Undang", ind_6_feat1: "Jejak garis masa kes", ind_6_feat2: "Pengurusan dokumen", ind_6_feat3: "Pengebilan pelanggan",
+                ind_7_title: "Pengurusan Pesanan E-dagang", ind_7_feat1: "Penyegerakan multi-saluran", ind_7_feat2: "Pengurusan inventori", ind_7_feat3: "Pemenuhan pesanan",
+                ind_8_title: "Pengurusan Pusat Tuisyen", ind_8_feat1: "Pendaftaran pelajar", ind_8_feat2: "Penjadualan kelas", ind_8_feat3: "Jejak kemajuan",
+                ind_9_title: "Pemantauan Rantaian Sejuk", ind_9_feat1: "Log suhu", ind_9_feat2: "Jejak laluan GPS", ind_9_feat3: "Pemberitahuan amaran",
+                ind_10_title: "Automasi Hartanah Sewa", ind_10_feat1: "Pengurusan penyewa", ind_10_feat2: "Kutipan sewa", ind_10_feat3: "Permintaan penyelenggaraan",
                 show_more: "Tunjuk Lebih Banyak Industri (40+)", show_less: "Tunjuk Kurang",
                 process_title: "Proses Fastware", process_subtitle: "Dari idea ke sistem langsung dalam 10 hari — inilah cara kami lakukannya.",
                 step1_title: "Perundingan", step1_desc: "Anda kongsi titik kesakitan dan keperluan", step1_days: "Hari 1",
@@ -607,9 +759,20 @@
                 form_industry: "Industri", form_industry_select: "Pilih industri anda",
                 form_message: "Keperluan Projek", form_message_placeholder: "Beritahu kami tentang projek anda...",
                 form_submit: "Hantar Pertanyaan", form_success: "Terima kasih! Pasukan kami akan menghubungi anda dalam masa 24 jam.",
+                testimonials_title: "Apa Kata Pelanggan Kami", testimonials_subtitle: "Keputusan sebenar dari perniagaan seperti anda.",
+                testimonial_1_quote: "Fastware membina sistem pengurusan kondominium kami dalam hanya 10 hari. QR pass pelawat dan jejak penyelenggaraan telah menjadikan operasi kami 3x lebih cekap.",
+                testimonial_1_name: "Ahmad Razak", testimonial_1_company: "JMB Seri Raya Condo",
+                testimonial_2_quote: "Sistem pengurusan klinik adalah tepat apa yang kami perlukan. Penjadualan temujanji, rekod digital, dan peringatan pesakit—semua automatik sekarang.",
+                testimonial_2_name: "Sarah Lim", testimonial_2_company: "Lim's Dental Clinic",
+                testimonial_3_quote: "Portal jejak parcel lintas sempadan kami mengendalikan 1000+ pesanan setiap hari. Fastware menghantar pada 1/5 kos sebut harga lain yang kami terima.",
+                testimonial_3_name: "Rajesh Kumar", testimonial_3_company: "Kumar Logistics Sdn Bhd",
+                testimonial_4_quote: "Sistem pengurusan kes mempermudah keseluruhan amalan kami. Pengebilan pelanggan dulu mengambil masa berhari-hari, kini automatik.",
+                testimonial_4_name: "Michelle Wong", testimonial_4_company: "Wong & Associates Legal",
+                cta_title: "Sedia untuk Bermula?", cta_subtitle: "Sertai beratus-ratus perniagaan yang telah mengubah operasi mereka dengan Fastware.", cta_button: "Dapatkan Sebut Harga Percuma",
                 footer_why: "Mengapa Kami", footer_industries: "Industri",
+                footer_company: "Vimamall Sdn Bhd", footer_address: "Uncang Emas, Kuala Lumpur, Malaysia", footer_appointment: "Pelawat dialu-alukan dengan temujanji",
                 footer_copy: "© 2026 Fastware oleh Vimamall Sdn Bhd. Hak cipta terpelihara.",
-                modal_cta: "Dapatkan Sebut Harga Tersuai"
+                modal_cta: "Dapatkan Sebut Harga Tersuai", whatsapp_tooltip: "Berbual dengan kami di WhatsApp"
             },
             ja: {
                 nav_why: "選ばれる理由", nav_industries: "業界", nav_process: "プロセス", nav_pricing: "価格", nav_quote: "見積もりを依頼",
@@ -622,6 +785,16 @@
                 why_price_title: "破格の価格", why_price_desc: "従来の代理店は高額な料金を請求します。当社は市場価格の20%で同じ品質を提供。AIの効率性は直接あなたへの節約となります。",
                 why_fit_title: "完璧なフィット保証", why_fit_desc: "テンプレートなし、汎用ソリューションなし。すべてのシステムは正確なワークフロー向けにカスタム構築され、既存のツールやプロセスと統合されます。",
                 industries_title: "業界別ソリューション", industries_subtitle: "物流から医療まで、50以上の業界で運営を変革するシステムを構築しました。",
+                ind_1_title: "越境小包追跡", ind_1_feat1: "リアルタイム追跡ポータル", ind_1_feat2: "自動税関書類", ind_1_feat3: "顧客通知",
+                ind_2_title: "マンション/JMB管理", ind_2_feat1: "管理費追跡", ind_2_feat2: "訪問者QRパスシステム", ind_2_feat3: "施設予約",
+                ind_3_title: "クリニック管理", ind_3_feat1: "予約スケジューリング", ind_3_feat2: "電子カルテ", ind_3_feat3: "患者ポータル",
+                ind_4_title: "レストランPOS・在庫", ind_4_feat1: "注文管理", ind_4_feat2: "キッチンディスプレイ", ind_4_feat3: "在庫追跡",
+                ind_5_title: "製造業ジョブショップ", ind_5_feat1: "生産追跡", ind_5_feat2: "機械スケジューリング", ind_5_feat3: "品質管理",
+                ind_6_title: "法律事務所管理", ind_6_feat1: "案件タイムライン追跡", ind_6_feat2: "文書管理", ind_6_feat3: "顧客請求",
+                ind_7_title: "EC注文管理", ind_7_feat1: "マルチチャネル同期", ind_7_feat2: "在庫管理", ind_7_feat3: "注文履行",
+                ind_8_title: "学習塾管理", ind_8_feat1: "生徒登録", ind_8_feat2: "クラススケジューリング", ind_8_feat3: "進捗追跡",
+                ind_9_title: "コールドチェーン監視", ind_9_feat1: "温度ログ記録", ind_9_feat2: "GPSルート追跡", ind_9_feat3: "アラート通知",
+                ind_10_title: "賃貸物件自動化", ind_10_feat1: "テナント管理", ind_10_feat2: "家賃徴収", ind_10_feat3: "メンテナンス依頼",
                 show_more: "さらに業界を表示 (40+)", show_less: "表示を減らす",
                 process_title: "Fastwareプロセス", process_subtitle: "アイデアからライブシステムまで10日—その方法をご紹介します。",
                 step1_title: "相談", step1_desc: "課題と要件を共有", step1_days: "1日目",
@@ -642,21 +815,42 @@
                 form_industry: "業界", form_industry_select: "業界を選択",
                 form_message: "プロジェクト要件", form_message_placeholder: "プロジェクトについて教えてください...",
                 form_submit: "問い合わせを送信", form_success: "ありがとうございます！当社チームが24時間以内にご連絡いたします。",
+                testimonials_title: "お客様の声", testimonials_subtitle: "あなたと同様の企業からの実際の成果。",
+                testimonial_1_quote: "Fastwareはわずか10日でマンション管理システムを構築しました。QR訪問者パスとメンテナンス追跡により、業務効率が3倍向上しました。",
+                testimonial_1_name: "Ahmad Razak", testimonial_1_company: "JMB Seri Raya Condo",
+                testimonial_2_quote: "クリニック管理システムはまさに私たちに必要なものでした。予約スケジューリング、電子カルテ、患者リマインダー—すべて自動化されました。",
+                testimonial_2_name: "Sarah Lim", testimonial_2_company: "Lim's Dental Clinic",
+                testimonial_3_quote: "越境小包追跡ポータルは毎日1000件以上の注文を処理しています。Fastwareは他の見積もりの5分の1のコストで納品しました。",
+                testimonial_3_name: "Rajesh Kumar", testimonial_3_company: "Kumar Logistics Sdn Bhd",
+                testimonial_4_quote: "案件管理システムにより、業務全体が効率化されました。顧客請求に数日かかっていましたが、今は自動です。",
+                testimonial_4_name: "Michelle Wong", testimonial_4_company: "Wong & Associates Legal",
+                cta_title: "始める準備はできましたか？", cta_subtitle: "Fastwareで運営を変革した数百の企業に参加してください。", cta_button: "無料見積もりを依頼",
                 footer_why: "選ばれる理由", footer_industries: "業界",
+                footer_company: "Vimamall Sdn Bhd", footer_address: "Uncang Emas, クアラルンプール, マレーシア", footer_appointment: "予約制で来社歓迎",
                 footer_copy: "© 2026 Fastware by Vimamall Sdn Bhd. All rights reserved.",
-                modal_cta: "カスタム見積もりを依頼"
+                modal_cta: "カスタム見積もりを依頼", whatsapp_tooltip: "WhatsAppでチャット"
             },
             ko: {
                 nav_why: "선택 이유", nav_industries: "업종", nav_process: "프로세스", nav_pricing: "가격", nav_quote: "맞춤 견적 받기",
                 hero_badge: "AI 기반 개발", hero_title: "<span>10일 만에 완성</span>맞춤 소프트웨어",
                 hero_subtitle: "수개월의 대기는 이제 그만. Fastware는 AI 가속화와 전문 엔지니어링을 결합하여 기존 비용의 20%로 엔터프라이즈급 시스템을 제공합니다.",
-                hero_cta_primary: "무료 견적 받기", hero_cta_secondary: "작동 방식 보기",
+                hero_cta_primary: "묣료 견적 받기", hero_cta_secondary: "작동 방식 보기",
                 stat_days: "일 배송", stat_savings: "비용 절감", stat_industries: "업종", stat_ownership: "소스 코드",
                 why_title: "왜 Fastware를 선택하나요?", why_subtitle: "AI 시대에 소프트웨어 개발에 수개월이 걸리고 비용이 많이 들어서는 안 됩니다.",
                 why_fast_title: "번개처럼 빠른", why_fast_desc: "당사의 AI 가속 개발 엔진은 타사가 3-6개월이 걸리는 것을 단 10 영업일 만에 제공합니다. 품질을 희생하지 않는 속도.",
                 why_price_title: "무적의 가격", why_price_desc: "기존 대행사는 프리미엄 가격을 청구합니다. 당사는 시장 가격의 20%로 동일한 품질을 제공합니다. AI 효율성은 곧바로 고객님께 돌아가는 절약입니다.",
                 why_fit_title: "완벽한 적합성 보장", why_fit_desc: "템플릿 없음, 범용 솔루션 없음. 모든 시스템은 정확한 워크플로우를 위해 맞춤 제작되며 기존 도구 및 프로세스와 통합됩니다.",
                 industries_title: "업종별 솔루션", industries_subtitle: "물류부터 의료까지, 50개 이상의 업종에서 운영을 혁신하는 시스템을 구축했습니다.",
+                ind_1_title: "국경 간 소포 추적", ind_1_feat1: "실시간 추적 포털", ind_1_feat2: "자동 세관 문서", ind_1_feat3: "고객 알림",
+                ind_2_title: "콘도/JMB 관리", ind_2_feat1: "관리비 추적", ind_2_feat2: "방문자 QR 패스 시스템", ind_2_feat3: "시설 예약",
+                ind_3_title: "의원 관리", ind_3_feat1: "예약 일정 관리", ind_3_feat2: "전자 의료 기록", ind_3_feat3: "환자 포털",
+                ind_4_title: "레스토랑 POS 및 재고", ind_4_feat1: "주문 관리", ind_4_feat2: "주방 디스플레이 시스템", ind_4_feat3: "재고 추적",
+                ind_5_title: "제조 작업장", ind_5_feat1: "생산 추적", ind_5_feat2: "기계 일정 관리", ind_5_feat3: "품질 관리",
+                ind_6_title: "법률 사건 관리", ind_6_feat1: "사건 타임라인 추적", ind_6_feat2: "문서 관리", ind_6_feat3: "고객 청구",
+                ind_7_title: "전자상거래 주문 관리", ind_7_feat1: "다중 채널 동기화", ind_7_feat2: "재고 관리", ind_7_feat3: "주문 이행",
+                ind_8_title: "학원 관리", ind_8_feat1: "학생 등록", ind_8_feat2: "수업 일정 관리", ind_8_feat3: "진도 추적",
+                ind_9_title: "콜드체인 모니터링", ind_9_feat1: "온도 기록", ind_9_feat2: "GPS 경로 추적", ind_9_feat3: "경고 알림",
+                ind_10_title: "임대 자산 자동화", ind_10_feat1: "임차인 관리", ind_10_feat2: "임금 수금", ind_10_feat3: "유지보수 요청",
                 show_more: "더 많은 업종 표시 (40+)", show_less: "접기",
                 process_title: "Fastware 프로세스", process_subtitle: "아이디어에서 라이브 시스템까지 10일—방법을 소개합니다.",
                 step1_title: "상담", step1_desc: "고충과 요구사항 공유", step1_days: "1일차",
@@ -676,22 +870,43 @@
                 form_phone: "전화번호", form_phone_placeholder: "+82 010-1234-5678",
                 form_industry: "업종", form_industry_select: "업종 선택",
                 form_message: "프로젝트 요구사항", form_message_placeholder: "프로젝트에 대해 알려주세요...",
-                form_submit: "문의 보내기", form_success: "감사합니다! 당사 팀이 24시간 이내에 연락드리겠습니다.",
+                form_submit: "문의 별내기", form_success: "감사합니다! 당사 팀이 24시간 이내에 연락드리겠습니다.",
+                testimonials_title: "고객 후기", testimonials_subtitle: "귀하와 유사한 기업의 실제 결과.",
+                testimonial_1_quote: "Fastware는 단 10일 만에 콘도 관리 시스템을 구축했습니다. QR 방문자 패스와 유지보수 추적으로 운영 효율이 3배 향상되었습니다.",
+                testimonial_1_name: "Ahmad Razak", testimonial_1_company: "JMB Seri Raya Condo",
+                testimonial_2_quote: "의원 관리 시스템은 정확히 우리가 필요로 했던 것입니다. 예약 일정 관리, 전자 기록, 환자 알림—이제 모두 자동화되었습니다.",
+                testimonial_2_name: "Sarah Lim", testimonial_2_company: "Lim's Dental Clinic",
+                testimonial_3_quote: "국경 간 소포 추적 포털은 매일 1000건 이상의 주문을 처리합니다. Fastware는 다른 견적의 5분의 1 비용으로 제공했습니다.",
+                testimonial_3_name: "Rajesh Kumar", testimonial_3_company: "Kumar Logistics Sdn Bhd",
+                testimonial_4_quote: "사건 관리 시스템이 전체 업무를 간소화했습니다. 고객 청구에 며칠이 걸렸는데 이제는 자동입니다.",
+                testimonial_4_name: "Michelle Wong", testimonial_4_company: "Wong & Associates Legal",
+                cta_title: "시작할 준비가 되셨나요?", cta_subtitle: "Fastware로 운영을 혁신한 수백 개의 기업에 참여하세요.", cta_button: "묣료 견적 받기",
                 footer_why: "선택 이유", footer_industries: "업종",
+                footer_company: "Vimamall Sdn Bhd", footer_address: "Uncang Emas, 쿠알라룸푸르, 말레이시아", footer_appointment: "예약 방문 환영",
                 footer_copy: "© 2026 Fastware by Vimamall Sdn Bhd. All rights reserved.",
-                modal_cta: "맞춤 견적 받기"
+                modal_cta: "맞춤 견적 받기", whatsapp_tooltip: "WhatsApp에서 채팅"
             },
             vi: {
                 nav_why: "Tại Sao Chọn", nav_industries: "Ngành", nav_process: "Quy Trình", nav_pricing: "Giá", nav_quote: "Nhận Báo Giá",
                 hero_badge: "Phát Triển AI", hero_title: "Phần Mềm Tùy Chỉnh <span>Sẵn Sàng Trong 10 Ngày</span>",
-                hero_subtitle: "Dừng chờ đợi hàng tháng trời. Fastware kết hợp tăng tốc AI với kỹ thuật chuyên gia để cung cấp hệ thống cấp doanh nghiệp với 20% chi phí truyền thống.",
+                hero_subtitle: "Dừng chờ đợi hàng tháng trở. Fastware kết hợp tăng tốc AI với kỹ thuật chuyên gia để cung cấp hệ thống cấp doanh nghiệp với 20% chi phí truyền thống.",
                 hero_cta_primary: "Nhận Báo Giá Miễn Phí", hero_cta_secondary: "Xem Cách Hoạt Động",
                 stat_days: "Ngày Giao Hàng", stat_savings: "Tiết Kiệm Chi Phí", stat_industries: "Ngành", stat_ownership: "Mã Nguồn",
                 why_title: "Tại Sao Chọn Fastware?", why_subtitle: "Trong kỷ nguyên AI, phát triển phần mềm không nên mất hàng tháng hoặc tốn kém.",
-                why_fast_title: "Nhanh Như Chớp", why_fast_desc: "Công cụ phát triển tăng tốc AI của chúng tôi cung cấp những gì người khác mất 3-6 tháng chỉ trong 10 ngày làm việc. Tốc độ không ảnh hưởng chất lượng.",
+                why_fast_title: "Nhanh Như Chớp", why_fast_desc: "Công cụ phát triển tăng tốc AI của chúng tôi cung cấp những gì ngườ khác mất 3-6 tháng chỉ trong 10 ngày làm việc. Tốc độ không ảnh hưởng chất lượng.",
                 why_price_title: "Giá Cả Không Thể Đánh Bại", why_price_desc: "Các cơ quan truyền thống tính giá cao. Chúng tôi cung cấp cùng chất lượng với 20% giá thị trường. Hiệu quả AI có nghĩa là tiết kiệm chuyển trực tiếp cho bạn.",
                 why_fit_title: "Đảm Bảo Phù Hợp Hoàn Hảo", why_fit_desc: "Không mẫu, không giải pháp chung chung. Mọi hệ thống được xây dựng tùy chỉnh cho quy trình làm việc chính xác của bạn, tích hợp với công cụ và quy trình hiện có.",
                 industries_title: "Giải Pháp Theo Ngành", industries_subtitle: "Từ logistics đến chăm sóc sức khỏe, chúng tôi đã xây dựng các hệ thống chuyển đổi hoạt động trên 50+ ngành.",
+                ind_1_title: "Theo Dõi Bưu Kiện Xuyên Biên Giới", ind_1_feat1: "Cổng theo dõi thờ gian thực", ind_1_feat2: "Tài liệu hải quan tự động", ind_1_feat3: "Thông báo khách hàng",
+                ind_2_title: "Quản Lý Chung Cư/JMB", ind_2_feat1: "Theo dõi phí bảo trì", ind_2_feat2: "Hệ thống QR-pass khách", ind_2_feat3: "Đặt cơ sở vật chất",
+                ind_3_title: "Quản Lý Phòng Khám", ind_3_feat1: "Lập lịch hẹn", ind_3_feat2: "Hồ sơ y tế kỹ thuật số", ind_3_feat3: "Cổng bệnh nhân",
+                ind_4_title: "POS & Kho Nhà Hàng", ind_4_feat1: "Quản lý đơn hàng", ind_4_feat2: "Hệ thống hiển thị bếp", ind_4_feat3: "Theo dõi tồn kho",
+                ind_5_title: "Xưởng Sản Xuất", ind_5_feat1: "Theo dõi sản xuất", ind_5_feat2: "Lập lịch máy móc", ind_5_feat3: "Kiểm soát chất lượng",
+                ind_6_title: "Quản Lý Vụ Án Pháp Lý", ind_6_feat1: "Theo dõi tiến độ vụ án", ind_6_feat2: "Quản lý tài liệu", ind_6_feat3: "Thanh toán khách hàng",
+                ind_7_title: "Quản Lý Đơn Hàng TMĐT", ind_7_feat1: "Đồng bộ đa kênh", ind_7_feat2: "Quản lý tồn kho", ind_7_feat3: "Hoàn thiện đơn hàng",
+                ind_8_title: "Quản Lý Trung Tâm Gia Sư", ind_8_feat1: "Tuyển sinh học viên", ind_8_feat2: "Lập lịch lớp học", ind_8_feat3: "Theo dõi tiến độ",
+                ind_9_title: "Giám Sát Chuỗi Lạnh", ind_9_feat1: "Ghi log nhiệt độ", ind_9_feat2: "Theo dõi tuyến đường GPS", ind_9_feat3: "Thông báo cảnh báo",
+                ind_10_title: "Tự Động Hóa Cho Thuê", ind_10_feat1: "Quản lý ngườ thuê", ind_10_feat2: "Thu tiền thuê", ind_10_feat3: "Yêu cầu bảo trì",
                 show_more: "Hiển Thị Thêm Ngành (40+)", show_less: "Thu Gọn",
                 process_title: "Quy Trình Fastware", process_subtitle: "Từ ý tưởng đến hệ thống trực tiếp trong 10 ngày—đây là cách chúng tôi thực hiện.",
                 step1_title: "Tư Vấn", step1_desc: "Bạn chia sẻ điểm đau và yêu cầu", step1_days: "Ngày 1",
@@ -704,7 +919,7 @@
                 pricing_feat1: "Quyền sở hữu mã nguồn đầy đủ", pricing_feat2: "Thiết kế cơ sở dữ liệu tùy chỉnh", pricing_feat3: "Giao diện đáp ứng di động",
                 pricing_feat4: "Tích hợp WhatsApp/Email", pricing_feat5: "Hỗ trợ kỹ thuật 1 năm", pricing_feat6: "Đào tạo & tài liệu",
                 pricing_cta: "Nhận Báo Giá Tùy Chỉnh",
-                contact_title: "Bắt Đầu Hôm Nay", contact_subtitle: "Sẵn sàng chuyển đổi doanh nghiệp của bạn? Điền vào mẫu dưới đây.",
+                contact_title: "Bắt Đầu Hôm Nay", contact_subtitle: "Sẵn sàng chuyển đổi doanh nghiệp của bạn? Điền vào mẫu dướ đây.",
                 form_name: "Họ Tên", form_name_placeholder: "Nguyễn Văn A",
                 form_company: "Tên Công Ty", form_company_placeholder: "ABC Co., Ltd",
                 form_email: "Địa Chỉ Email", form_email_placeholder: "nguyen@company.com",
@@ -712,44 +927,20 @@
                 form_industry: "Ngành", form_industry_select: "Chọn ngành của bạn",
                 form_message: "Yêu Cầu Dự Án", form_message_placeholder: "Hãy cho chúng tôi biết về dự án của bạn...",
                 form_submit: "Gửi Yêu Cầu", form_success: "Cảm ơn! Đội ngũ của chúng tôi sẽ liên hệ trong vòng 24 giờ.",
+                testimonials_title: "Khách Hàng Nói Gì", testimonials_subtitle: "Kết quả thực tế từ doanh nghiệp như bạn.",
+                testimonial_1_quote: "Fastware xây dựng hệ thống quản lý chung cư chỉ trong 10 ngày. Thẻ khách QR và theo dõi bảo trì đã giúp vận hành hiệu quả hơn 3 lần.",
+                testimonial_1_name: "Ahmad Razak", testimonial_1_company: "JMB Seri Raya Condo",
+                testimonial_2_quote: "Hệ thống quản lý phòng khám chính xác là những gì chúng tôi cần. Lập lịch hẹn, hồ sơ kỹ thuật số, nhắc nhở bệnh nhân—tất cả tự động.",
+                testimonial_2_name: "Sarah Lim", testimonial_2_company: "Lim's Dental Clinic",
+                testimonial_3_quote: "Cổng theo dõi bưu kiện xuyên biên giới xử lý 1000+ đơn hàng mỗi ngày. Fastware giao hàng với 1/5 chi phí so với báo giá khác.",
+                testimonial_3_name: "Rajesh Kumar", testimonial_3_company: "Kumar Logistics Sdn Bhd",
+                testimonial_4_quote: "Hệ thống quản lý vụ án đã hợp lý hóa toàn bộ hoạt động. Thanh toán khách hàng trước đây mất ngày, giờ tự động.",
+                testimonial_4_name: "Michelle Wong", testimonial_4_company: "Wong & Associates Legal",
+                cta_title: "Sẵn Sàng Bắt Đầu?", cta_subtitle: "Tham gia hàng trăm doanh nghiệp đã chuyển đổi vận hành với Fastware.", cta_button: "Nhận Báo Giá Miễn Phí",
                 footer_why: "Tại Sao Chọn", footer_industries: "Ngành",
+                footer_company: "Vimamall Sdn Bhd", footer_address: "Uncang Emas, Kuala Lumpur, Malaysia", footer_appointment: "Tiếp khách theo lịch hẹn",
                 footer_copy: "© 2026 Fastware by Vimamall Sdn Bhd. Bảo lưu mọi quyền.",
-                modal_cta: "Nhận Báo Giá Tùy Chỉnh"
-            },
-            my: {
-                nav_why: "ဘာကြောင့်ရွေးချယ်ရမလဲ", nav_industries: "လုပ်ငန်းများ", nav_process: "လုပ်ငန်းစဉ်", nav_pricing: "စျေးနှုန်း", nav_quote: "စိတ်တိုင်းကျဈေးနှုန်းမေးမြန်းရန်",
-                hero_badge: "AI ဖြင့် အဓိကထား တည်ဆောက်ခြင်း", hero_title: "<span>၁၀ ရက်အတွင်း</span>စိတ်တိုင်းက် Software",
-                hero_subtitle: "လများစွာစောင့်ဆိုင်းရန် မလိုအပ်တော့ပါ။ Fastware သည် AI အရှိန်နှင့် ပညာရှင်အင်ဂျင်နီယာဝန်ဆောင်မှုများကို ပေါင်းစပ်ကာ ရိုးရာကုန်ကျစရိတ် ၂၀% ဖြင့် စီးပွားရေးလုပ်ငန်းအဆင့် စနစ်များကို ပေးဆောင်ပါသည်။",
-                hero_cta_primary: "အခမဲ့ ဈေးနှုန်းမေးမြန်းရန်", hero_cta_secondary: "အလုပ်လုပ်ပုံကြည့်ရန်",
-                stat_days: "ရက် ပေးပို့ချိန်", stat_savings: "ကုန်ကျစရိတ်ချွေသုံးမှု", stat_industries: "လုပ်ငန်း", stat_ownership: "ကုဒ်ပိုင်ဆိုင်မှု",
-                why_title: "ဘာကြောင့် Fastware ကို ရွေးချယ်ရမလဲ?", why_subtitle: "AI ခေတ်တွင် software တည်ဆောက်ရန် လများစွာကာလယူပြီး ကုန်ကျစရိတ်များမြင့်မားသင့်သည် မဟုတ်ပါ။",
-                why_fast_title: "လျင်မြန်စွာ", why_fast_desc: "ကျွန်ုပ်တို့၏ AI အရှိန်တင်တည်ဆောက်မှု engine သည် အခြားသူများ ၃-၆ လယူသော အရာများကို ၁၀ ရက်အတွင်း ပြီးစီး၏။ အရည်အသွေးကို မစောင့်စိုရဘဲ အရှိန်မြင့်။",
-                why_price_title: "အကောင်းဆုံး စျေးနှုန်း", why_price_desc: "ရိုးရာအgency များသည် ပremium ဈေးနှုန်းများ တောင်းခံသည်။ ကျွန်ုပ်တို့သည် စျေးကွက်ဈေးနှုန်း ၂၀% ဖြင့် တူညီသောအရည်အသွေးကို ပေးဆောင်သည်။ AI ထိရောက်မှုသည် သင့်ထံသို့ တိုက်ရိုက်ရောက်ရှိသည့် ချွေသုံးမှုဖြစ်သည်။",
-                why_fit_title: "ပြီးပြည့်စုံသော ကိုက်ညီမှုအာမခံ", why_fit_desc: "template မရှိ၊ အထွေထွေဖြေရှင်းချက် မရှိ။ ပုံမှန်စနစ်တိုင်းကို သင်၏အတိအကျ workflow အတွက် custom-built လုပ်ထားပြီး သင့်ရှိပြီးသား tools နှင့် စနစ်များနှင့်ပေါင်းစပ်ထားသည်။",
-                industries_title: "လုပ်ငန်းအလိုက် ဖြေရှင်းချက်များ", industries_subtitle: "လူသယ်ယူပို့ဆောင်ရေးမှ ကျန်းမာရေးအထိ ၅၀ ကျော်လုပ်ငန်းအထိ လုပ်ငန်းများကို ပြောင်းလဲစေသော စနစ်များကို ကျွန်ုပ်တို့တည်ဆောက်ခဲ့သည်။",
-                show_more: "လုပ်ငန်းများ ပိုမိုပြသရန် (၄၀+)", show_less: "ပိုနည်းသော်ပြသရန်",
-                process_title: "Fastware လုပ်ငန်းစဉ်", process_subtitle: "စိတ်ကူးမှ live စနစ်အထိ ၁၀ ရက်—ဤသို့ပြုလုပ်သည်။",
-                step1_title: "တိုင်ပင်", step1_desc: "သင်၏အခက်အခဲများနှင့် လိုအပ်ချက်များကို မျှဝေပါ", step1_days: "၁ ရက်",
-                step2_title: "ဒီဇိုင်း", step2_desc: "သင်၏စိတ်တိုင်းက် database နှင့် workflow ကို ဒီဇိုင်းလုပ်ပါ", step2_days: "၂-၃ ရက်",
-                step3_title: "တည်ဆောက်မှု", step3_desc: "ပညာရှင်ကြပ်မတ်မှုဖြင့် AI အရှိန်တင်တည်ဆောက်ခြင်း", step3_days: "၄-၈ ရက်",
-                step4_title: "ချိတ်ဆက်မှု", step4_desc: "စမ်းသပ်ပါ၊ ကျွန်ုပ်တို့ ပိုမိုကောင်းမွန်စေပါသည်၊ ထို့နောက် live ဖြစ်၏", step4_days: "၉-၁၀ ရက်",
-                pricing_title: "ပွင့်လင်းသောစျေးနှုန်း", pricing_subtitle: "SME များအတွက် ဟုတ်တိုင်းဟုတ်သည့် premium software တည်ဆောက်မှုစျေးနှုန်း။",
-                pricing_badge: "အရင်ယှဉ်ဆန်းသစ်ဆုံး", pricing_compare: "စျေးကွက်ဈေးနှုန်းထက်", pricing_amount: "၈၀% လျှော့ဈေး",
-                pricing_desc: "ရိုးရာတည်ဆောက်မှုကုန်ကျစရိတ် ၂၀% ဖြင့် စိတ်တိုင်းက် software",
-                pricing_feat1: "ပြီးပြည့်စုံသော source code ပိုင်ဆိုင်မှု", pricing_feat2: "စိတ်တိုင်းက် database ဒီဇိုင်", pricing_feat3: "Mobile-responsive interface",
-                pricing_feat4: "WhatsApp/Email ချိတ်ဆက်မှု", pricing_feat5: "၁ နှစ်နည်းပညာထောက်ပံ့မှု", pricing_feat6: "သင်တန်းနှင့် စာရွက်စာတမ်း",
-                pricing_cta: "စိတ်တိုင်းကျ ဈေးနှုန်းမေးမြန်းရန်",
-                contact_title: "ယနေ့စတင်ပါ", contact_subtitle: "သင်၏လုပ်ငန်းကို ပြောင်းလဲရန်အသင့်ဖြစ်ပါသလား? အောက်ပါဖောင်ဖြည့်ပါ။",
-                form_name: "အမည်", form_name_placeholder: "မောင်အောင်",
-                form_company: "ကုမ္ပဏီအမည်", form_company_placeholder: "ABC Co., Ltd",
-                form_email: "အီးမေးလ်လိပ်စာ", form_email_placeholder: "aung@company.com",
-                form_phone: "ဖုန်းနံပါတ်", form_phone_placeholder: "+၉၅ ၉-၁၂၃-၄၅၆၇",
-                form_industry: "လုပ်ငန်း", form_industry_select: "သင်၏လုပ်ငန်းကို ရွေးချယ်ပါ",
-                form_message: "ပရောဂျက်လိုအပ်ချက်များ", form_message_placeholder: "သင်၏ပရောဂျက်အကြောင်း ပြောပြပါ...",
-                form_submit: "စုံစမ်းမေးမြန်းမှုပေးပို့ရန်", form_success: "ကျေးဇူးတင်ပါသည်! ကျွန်ုပ်တို့အဖွဲ့သည် ၂၄ နာရီအတွင်း ဆက်သွယ်ပါမည်။",
-                footer_why: "ဘာကြောင့်ရွေးချယ်ရမလဲ", footer_industries: "လုပ်ငန်း",
-                footer_copy: "© ၂၀၂၆ Fastware by Vimamall Sdn Bhd။ မူပိုင်ခွင့်အခွင့်အရေးအားလုံး ရရှိသည်။",
-                modal_cta: "စိတ်တိုင်းကျ ဈေးနှုန်းမေးမြန်းရန်"
+                modal_cta: "Nhận Báo Giá Tùy Chỉnh", whatsapp_tooltip: "Trò chuyện qua WhatsApp"
             },
             th: {
                 nav_why: "ทำไมเลือกเรา", nav_industries: "อุตสาหกรรม", nav_process: "กระบวนการ", nav_pricing: "ราคา", nav_quote: "ขอใบเสนอราคา",
@@ -762,6 +953,16 @@
                 why_price_title: "ราคาที่ดีที่สุด", why_price_desc: "เอเจนซี่แบบดั้งเดิมเก็บราคาแพง เราส่งมอบคุณภาพเดียวกันในราคา 20% ของราคาตลาด ประสิทธิภาพของ AI หมายถึงการประหยัดที่เราส่งตรงถึงคุณ",
                 why_fit_title: "รับประกันความเหมาะสม", why_fit_desc: "ไม่มีเทมเพลต ไม่มีโซลูชันทั่วไป ทุกระบบสร้างขึ้นมาเฉพาะสำหรับเวิร์กโฟลว์ของคุณ ผสานเข้ากับเครื่องมือและกระบวนการที่มีอยู่ของคุณ",
                 industries_title: "โซลูชันตามอุตสาหกรรม", industries_subtitle: "จากโลจิสติกส์ไปจนถึงการแพทย์ เราได้สร้างระบบที่เปลี่ยนแปลงการดำเนินงานในกว่า 50 อุตสาหกรรม",
+                ind_1_title: "ติดตามพัสดุข้ามพรมแดน", ind_1_feat1: "พอร์ทัลติดตามแบบเรียลไทม์", ind_1_feat2: "เอกสารศุลกากรอัตโนมัติ", ind_1_feat3: "การแจ้งเตือนลูกค้า",
+                ind_2_title: "การจัดการคอนโด/JMB", ind_2_feat1: "ติดตามค่าบำรุงรักษา", ind_2_feat2: "ระบบ QR-pass สำหรับผู้มาเยือน", ind_2_feat3: "การจองสิ่งอำนวยความสะดวก",
+                ind_3_title: "การจัดการคลินิก", ind_3_feat1: "การนัดหมาย", ind_3_feat2: "ประวัติการรักษาดิจิทัล", ind_3_feat3: "พอร์ทัลผู้ป่วย",
+                ind_4_title: "POS และสต็อกร้านอาหาร", ind_4_feat1: "การจัดการออเดอร์", ind_4_feat2: "ระบบแสดงผลห้องครัว", ind_4_feat3: "การติดตามสต็อก",
+                ind_5_title: "โรงงานผลิต Job Shop", ind_5_feat1: "ติดตามการผลิต", ind_5_feat2: "การจัดตารางเครื่องจักร", ind_5_feat3: "การควบคุมคุณภาพ",
+                ind_6_title: "การจัดการคดีความ", ind_6_feat1: "ติดตามไทม์ไลน์คดี", ind_6_feat2: "การจัดการเอกสาร", ind_6_feat3: "การเรียกเก็บเงินลูกค้า",
+                ind_7_title: "การจัดการออเดอร์อีคอมเมิร์ซ", ind_7_feat1: "ซิงค์หลายช่องทาง", ind_7_feat2: "การจัดการสินค้าคงคลัง", ind_7_feat3: "การเติมเต็มออเดอร์",
+                ind_8_title: "การจัดการสถาบันกวดวิชา", ind_8_feat1: "การลงทะเบียนนักเรียน", ind_8_feat2: "การจัดตารางเรียน", ind_8_feat3: "ติดตามความก้าวหน้า",
+                ind_9_title: "การตรวจสอบห่วงโซ่ความเย็น", ind_9_feat1: "บันทึกอุณหภูมิ", ind_9_feat2: "ติดตามเส้นทาง GPS", ind_9_feat3: "การแจ้งเตือน",
+                ind_10_title: "ระบบอัตโนมัติสำหรับเช่า", ind_10_feat1: "การจัดการผู้เช่า", ind_10_feat2: "การเก็บค่าเช่า", ind_10_feat3: "คำขอซ่อมบำรุง",
                 show_more: "แสดงอุตสาหกรรมเพิ่มเติม (40+)", show_less: "แสดงน้อยลง",
                 process_title: "กระบวนการ Fastware", process_subtitle: "จากไอเดียสู่ระบบที่ใช้งานได้ใน 10 วัน — นี่คือวิธีที่เราทำ",
                 step1_title: "ปรึกษา", step1_desc: "คุณแชร์จุดปวดและความต้องการ", step1_days: "วันที่ 1",
@@ -782,9 +983,20 @@
                 form_industry: "อุตสาหกรรม", form_industry_select: "เลือกอุตสาหกรรมของคุณ",
                 form_message: "ความต้องการโครงการ", form_message_placeholder: "บอกเราเกี่ยวกับโครงการของคุณ...",
                 form_submit: "ส่งคำถาม", form_success: "ขอบคุณ! ทีมของเราจะติดต่อกลับภายใน 24 ชั่วโมง",
+                testimonials_title: "ลูกค้าพูดถึงเรา", testimonials_subtitle: "ผลลัพธ์จริงจากธุรกิจเช่นเดียวกับคุณ",
+                testimonial_1_quote: "Fastware สร้างระบบการจัดการคอนโดในเวลาเพียง 10 วัน บัตรผ่าน QR สำหรับผู้มาเยือนและการติดตามการบำรุงรักษาทำให้การดำเนินงานของเรามีประสิทธิภาพมากขึ้น 3 เท่า",
+                testimonial_1_name: "Ahmad Razak", testimonial_1_company: "JMB Seri Raya Condo",
+                testimonial_2_quote: "ระบบการจัดการคลินิกคือสิ่งที่เราต้องการพอดี การนัดหมาย ประวัติดิจิทัล และการแจ้งเตือนผู้ป่วย—ตอนนี้ทั้งหมดเป็นอัตโนมัติ",
+                testimonial_2_name: "Sarah Lim", testimonial_2_company: "Lim's Dental Clinic",
+                testimonial_3_quote: "พอร์ทัลติดตามพัสดุข้ามพรมแดนของเราจัดการคำสั่งซื้อมากกว่า 1000 รายการต่อวัน Fastware ส่งมอบด้วยต้นทุนเพียง 1/5 ของใบเสนอราคาอื่น",
+                testimonial_3_name: "Rajesh Kumar", testimonial_3_company: "Kumar Logistics Sdn Bhd",
+                testimonial_4_quote: "ระบบการจัดการคดีทำให้การปฏิบัติงานทั้งหมดของเราราบรื่น การเรียกเก็บเงินลูกค้าเคยใช้เวลาเป็นวัน ตอนนี้เป็นอัตโนมัติ",
+                testimonial_4_name: "Michelle Wong", testimonial_4_company: "Wong & Associates Legal",
+                cta_title: "พร้อมที่จะเริ่มต้นหรือยัง?", cta_subtitle: "เข้าร่วมกับธุรกิจหลายร้อยแห่งที่ได้เปลี่ยนแปลงการดำเนินงานด้วย Fastware", cta_button: "ขอใบเสนอราคาฟรี",
                 footer_why: "ทำไมเลือกเรา", footer_industries: "อุตสาหกรรม",
+                footer_company: "Vimamall Sdn Bhd", footer_address: "Uncang Emas, กรุงกัวลาลัมเปอร์, มาเลเซีย", footer_appointment: "ต้อนรับผู้มาเยือนตามการนัดหมาย",
                 footer_copy: "© 2026 Fastware by Vimamall Sdn Bhd. สงวนลิขสิทธิ์",
-                modal_cta: "ขอใบเสนอราคา"
+                modal_cta: "ขอใบเสนอราคา", whatsapp_tooltip: "แชทผ่าน WhatsApp"
             },
             id: {
                 nav_why: "Mengapa Kami", nav_industries: "Industri", nav_process: "Proses", nav_pricing: "Harga", nav_quote: "Dapatkan Penawaran",
@@ -797,6 +1009,16 @@
                 why_price_title: "Harga Terbaik", why_price_desc: "Agensi tradisional mengenakan harga premium. Kami memberikan kualitas yang sama dengan 20% harga pasar. Efisiensi AI berarti penghematan yang kami berikan langsung kepada Anda.",
                 why_fit_title: "Jaminan Kesesuaian Sempurna", why_fit_desc: "Tidak ada template. Tidak ada solusi generik. Setiap sistem dibangun khusus untuk alur kerja tepat Anda, terintegrasi dengan alat dan proses yang ada.",
                 industries_title: "Solusi Berdasarkan Industri", industries_subtitle: "Dari logistik hingga kesehatan, kami telah membangun sistem yang mengubah operasi di lebih dari 50 industri.",
+                ind_1_title: "Pelacakan Paket Lintas Batas", ind_1_feat1: "Portal pelacakan real-time", ind_1_feat2: "Dokumen bea cukai otomatis", ind_1_feat3: "Pemberitahuan pelanggan",
+                ind_2_title: "Manajemen Apartemen/JMB", ind_2_feat1: "Pelacakan biaya perawatan", ind_2_feat2: "Sistem QR-pass pengunjung", ind_2_feat3: "Pemesanan fasilitas",
+                ind_3_title: "Manajemen Klinik", ind_3_feat1: "Penjadwalan janji temu", ind_3_feat2: "Rekam medis digital", ind_3_feat3: "Portal pasien",
+                ind_4_title: "POS & Inventori Restoran", ind_4_feat1: "Manajemen pesanan", ind_4_feat2: "Sistem tampilan dapur", ind_4_feat3: "Pelacakan stok",
+                ind_5_title: "Job Shop Manufaktur", ind_5_feat1: "Pelacakan produksi", ind_5_feat2: "Penjadwalan mesin", ind_5_feat3: "Kontrol kualitas",
+                ind_6_title: "Manajemen Kasus Hukum", ind_6_feat1: "Pelacakan linimasa kasus", ind_6_feat2: "Manajemen dokumen", ind_6_feat3: "Penagihan klien",
+                ind_7_title: "Manajemen Pesanan E-commerce", ind_7_feat1: "Sinkronisasi multi-channel", ind_7_feat2: "Manajemen inventori", ind_7_feat3: "Pemenuhan pesanan",
+                ind_8_title: "Manajemen Bimbingan Belajar", ind_8_feat1: "Pendaftaran siswa", ind_8_feat2: "Penjadwalan kelas", ind_8_feat3: "Pelacakan kemajuan",
+                ind_9_title: "Pemantauan Rantai Dingin", ind_9_feat1: "Pencatatan suhu", ind_9_feat2: "Pelacakan rute GPS", ind_9_feat3: "Notifikasi peringatan",
+                ind_10_title: "Otomasi Properti Sewa", ind_10_feat1: "Manajemen penyewa", ind_10_feat2: "Pengumpulan sewa", ind_10_feat3: "Permintaan perawatan",
                 show_more: "Tampilkan Lebih Banyak Industri (40+)", show_less: "Tampilkan Lebih Sedikit",
                 process_title: "Proses Fastware", process_subtitle: "Dari ide ke sistem yang aktif dalam 10 hari — inilah cara kami melakukannya.",
                 step1_title: "Konsultasi", step1_desc: "Anda membagikan masalah dan kebutuhan", step1_days: "Hari 1",
@@ -817,9 +1039,20 @@
                 form_industry: "Industri", form_industry_select: "Pilih industri Anda",
                 form_message: "Kebutuhan Proyek", form_message_placeholder: "Ceritakan tentang proyek Anda...",
                 form_submit: "Kirim Pertanyaan", form_success: "Terima kasih! Tim kami akan menghubungi Anda dalam 24 jam.",
+                testimonials_title: "Apa Kata Klien Kami", testimonials_subtitle: "Hasil nyata dari bisnis seperti Anda.",
+                testimonial_1_quote: "Fastware membangun sistem manajemen apartemen kami hanya dalam 10 hari. QR pass pengunjung dan pelacakan perawatan telah membuat operasi kami 3x lebih efisien.",
+                testimonial_1_name: "Ahmad Razak", testimonial_1_company: "JMB Seri Raya Condo",
+                testimonial_2_quote: "Sistem manajemen klinik adalah tepat apa yang kami butuhkan. Penjadwalan janji temu, rekam medis digital, dan pengingat pasien—semua otomatis sekarang.",
+                testimonial_2_name: "Sarah Lim", testimonial_2_company: "Lim's Dental Clinic",
+                testimonial_3_quote: "Portal pelacakan paket lintas batas kami menangani 1000+ pesanan setiap hari. Fastware menyerahkan dengan biaya 1/5 dari penawaran lain yang kami terima.",
+                testimonial_3_name: "Rajesh Kumar", testimonial_3_company: "Kumar Logistics Sdn Bhd",
+                testimonial_4_quote: "Sistem manajemen kasus menyederhanakan seluruh praktik kami. Penagihan klien dulu memakan waktu berhari-hari, sekarang otomatis.",
+                testimonial_4_name: "Michelle Wong", testimonial_4_company: "Wong & Associates Legal",
+                cta_title: "Siap Memulai?", cta_subtitle: "Bergabung dengan ratusan bisnis yang telah mengubah operasi mereka dengan Fastware.", cta_button: "Dapatkan Penawaran Gratis",
                 footer_why: "Mengapa Kami", footer_industries: "Industri",
+                footer_company: "Vimamall Sdn Bhd", footer_address: "Uncang Emas, Kuala Lumpur, Malaysia", footer_appointment: "Pengunjung dipersilakan dengan janji temu",
                 footer_copy: "© 2026 Fastware by Vimamall Sdn Bhd. Hak cipta dilindungi.",
-                modal_cta: "Dapatkan Penawaran Kustom"
+                modal_cta: "Dapatkan Penawaran Kustom", whatsapp_tooltip: "Chat di WhatsApp"
             },
             hi: {
                 nav_why: "क्यों चुनें", nav_industries: "उद्योग", nav_process: "प्रक्रिया", nav_pricing: "मूल्य", nav_quote: "कोटेशन प्राप्त करें",
@@ -832,6 +1065,16 @@
                 why_price_title: "अपराजेय मूल्य", why_price_desc: "पारंपरिक एजेंसियां प्रीमियम कीमतें लेती हैं। हम बाजार दर का 20% में समान गुणवत्ता वितरित करते हैं। AI दक्षता का अर्थ है बचत जो सीधे आप तक पहुंचती है।",
                 why_fit_title: "पूर्ण फिट गारंटी", why_fit_desc: "कोई टेम्प्लेट नहीं। कोई सामान्य समाधान नहीं। प्रत्येक सिस्टम आपके सटीक वर्कफ़्लो के लिए कस्टम-बिल्ट है, आपके मौजूदा उपकरणों और प्रक्रियाओं के साथ एकीकृत।",
                 industries_title: "उद्योग के अनुसार समाधान", industries_subtitle: "लॉजिस्टिक्स से लेकर स्वास्थ्य देखभाल तक, हमने 50+ उद्योगों में संचालन को बदलने वाली प्रणालियां बनाई हैं।",
+                ind_1_title: "क्रॉस-बॉर्डर पार्सल ट्रैकिंग", ind_1_feat1: "रील-टाइम ट्रैकिंग पोर्टल", ind_1_feat2: "स्वचालित सीमा शुल्क दस्तावेज़", ind_1_feat3: "ग्राहक सूचनाएं",
+                ind_2_title: "अपार्टमेंट/JMB प्रबंधन", ind_2_feat1: "रखरखाव शुल्क ट्रैकिंग", ind_2_feat2: "आगंतुक QR-पास सिस्टम", ind_2_feat3: "सुविधा बुकिंग",
+                ind_3_title: "क्लिनिक प्रबंधन", ind_3_feat1: "अपॉइंटमेंट शेड्यूलिंग", ind_3_feat2: "डिजिटल मेडिकल रिकॉर्ड्स", ind_3_feat3: "रोगी पोर्टल",
+                ind_4_title: "रेस्टोरेंट POS और इन्वेंट्री", ind_4_feat1: "ऑर्डर प्रबंधन", ind_4_feat2: "किचन डिस्प्ले सिस्टम", ind_4_feat3: "स्टॉक ट्रैकिंग",
+                ind_5_title: "विनिर्माण जॉब शॉप", ind_5_feat1: "उत्पादन ट्रैकिंग", ind_5_feat2: "मशीन शेड्यूलिंग", ind_5_feat3: "गुणवत्ता नियंत्रण",
+                ind_6_title: "कानूनी केस प्रबंधन", ind_6_feat1: "केस टाइमलाइन ट्रैकिंग", ind_6_feat2: "दस्तावेज़ प्रबंधन", ind_6_feat3: "क्लाइंट बिलिंग",
+                ind_7_title: "ई-कॉमर्स ऑर्डर प्रबंधन", ind_7_feat1: "मल्टी-चैनल सिंक", ind_7_feat2: "इन्वेंट्री प्रबंधन", ind_7_feat3: "ऑर्डर पूर्ति",
+                ind_8_title: "ट्यूशन सेंटर प्रबंधन", ind_8_feat1: "छात्र नामांकन", ind_8_feat2: "कक्षा शेड्यूलिंग", ind_8_feat3: "प्रगति ट्रैकिंग",
+                ind_9_title: "कोल्ड चेन निगरानी", ind_9_feat1: "तापमान लॉगिंग", ind_9_feat2: "GPS रूट ट्रैकिंग", ind_9_feat3: "अलर्ट सूचनाएं",
+                ind_10_title: "रेंटल प्रॉपर्टी ऑटोमेशन", ind_10_feat1: "किरायेदार प्रबंधन", ind_10_feat2: "किराया संग्रह", ind_10_feat3: "रखरखाव अनुरोध",
                 show_more: "और उद्योग दिखाएं (40+)", show_less: "कम दिखाएं",
                 process_title: "Fastware प्रक्रिया", process_subtitle: "विचार से लाइव सिस्टम तक 10 दिन — यहां बताया गया है कि हम यह कैसे करते हैं।",
                 step1_title: "परामर्श", step1_desc: "आप अपनी समस्याओं और आवश्यकताओं को साझा करते हैं", step1_days: "दिन 1",
@@ -852,9 +1095,20 @@
                 form_industry: "उद्योग", form_industry_select: "अपना उद्योग चुनें",
                 form_message: "प्रोजेक्ट आवश्यकताएं", form_message_placeholder: "हमें अपने प्रोजेक्ट के बारे में बताएं...",
                 form_submit: "पूछताछ भेजें", form_success: "धन्यवाद! हमारी टीम 24 घंटों के भीतर संपर्क करेगी।",
+                testimonials_title: "हमारे ग्राहक क्या कहते हैं", testimonials_subtitle: "आपके जैसे व्यवसायों से वास्तविक परिणाम।",
+                testimonial_1_quote: "Fastware ने सिर्फ 10 दिनों में हमारा अपार्टमेंट प्रबंधन प्रणाली बनाया। QR आगंतुक पास और रखरखाव ट्रैकिंग ने हमारे संचालन को 3 गुना अधिक कुशल बना दिया है।",
+                testimonial_1_name: "Ahmad Razak", testimonial_1_company: "JMB Seri Raya Condo",
+                testimonial_2_quote: "क्लिनिक प्रबंधन प्रणाली वास्तव में वह है जो हमें चाहिए था। अपॉइंटमेंट शेड्यूलिंग, डिजिटल रिकॉर्ड्स, और रोगी अनुस्मारक—अब सब कुछ स्वचालित।",
+                testimonial_2_name: "Sarah Lim", testimonial_2_company: "Lim's Dental Clinic",
+                testimonial_3_quote: "हमारा क्रॉस-बॉर्डर पार्सल ट्रैकिंग पोर्टल रोजाना 1000+ ऑर्डर संभालता है। Fastware ने अन्य कोटेशन के 1/5 खर्च पर वितरित किया।",
+                testimonial_3_name: "Rajesh Kumar", testimonial_3_company: "Kumar Logistics Sdn Bhd",
+                testimonial_4_quote: "केस प्रबंधन प्रणाली ने हमारी पूरी प्रैक्टिस को सुव्यवस्थित कर दिया। क्लाइंट बिलिंग में पहले दिन लगते थे, अब यह स्वचालित है।",
+                testimonial_4_name: "Michelle Wong", testimonial_4_company: "Wong & Associates Legal",
+                cta_title: "शुरू करने के लिए तैयार हैं?", cta_subtitle: "Fastware के साथ अपने संचालन को बदलने वाले सैकड़ों व्यवसायों में शामिल हों।", cta_button: "मुफ्त कोटेशन प्राप्त करें",
                 footer_why: "क्यों चुनें", footer_industries: "उद्योग",
+                footer_company: "Vimamall Sdn Bhd", footer_address: "Uncang Emas, कुआलालंपुर, मलेशिया", footer_appointment: "अपॉइंटमेंट के अनुसार आगंतुक स्वागत योग्य",
                 footer_copy: "© 2026 Fastware by Vimamall Sdn Bhd. सर्वाधिकार सुरक्षित।",
-                modal_cta: "कस्टम कोटेशन प्राप्त करें"
+                modal_cta: "कस्टम कोटेशन प्राप्त करें", whatsapp_tooltip: "WhatsApp पर चैट करें"
             },
             ur: {
                 nav_why: "کیوں منتخب کریں", nav_industries: "صنعتیں", nav_process: "عمل", nav_pricing: "قیمت", nav_quote: "اقتباس حاصل کریں",
@@ -867,6 +1121,16 @@
                 why_price_title: "ناقابل شکست قیمت", why_price_desc: "روایتی ایجنسیاں پریمیم قیمتیں لیتی ہیں۔ ہم مارکیٹ کی شرح کا 20% میں یکساں معیار فراہم کرتے ہیں۔ AI کی کارکردگی کا مطلب ہے بچت جو براہ راست آپ تک پہنچتی ہے۔",
                 why_fit_title: "مکمل فٹ گارنٹی", why_fit_desc: "کوئی ٹیمپلیٹ نہیں۔ کوئی عمومی حل نہیں۔ ہر نظام آپ کے بالکل درست ورک فلو کے لیے کسٹم بلٹ ہے، آپ کے موجودہ ٹولز اور عمل کے ساتھ مربوط۔",
                 industries_title: "صنعت کے لحاظ سے حل", industries_subtitle: "لاجسٹکس سے لے کر صحت کی دیکھ بھال تک، ہم نے 50+ صنعتوں میں آپریشنز کو تبدیل کرنے والے نظام تعمیر کیے ہیں۔",
+                ind_1_title: "بارڈر پارسل ٹریکنگ", ind_1_feat1: "ریئل ٹائم ٹریکنگ پورٹلز", ind_1_feat2: "خودکار کسٹم دستاویزات", ind_1_feat3: "کسٹمر نوٹیفیکیشنز",
+                ind_2_title: "اپارٹمنٹ/JMB مینجمنٹ", ind_2_feat1: "میینٹیننس فیس ٹریکنگ", ind_2_feat2: "وزیٹر QR پاس سسٹم", ind_2_feat3: "سہولت بکنگ",
+                ind_3_title: "کلینک مینجمنٹ", ind_3_feat1: "اپائنٹمنٹ شیڈولنگ", ind_3_feat2: "ڈیجیٹل میڈیکل ریکارڈز", ind_3_feat3: "مریض پورٹل",
+                ind_4_title: "ریسٹورنٹ POS اور انوینٹری", ind_4_feat1: "آرڈر مینجمنٹ", ind_4_feat2: "کچن ڈسپلے سسٹم", ind_4_feat3: "اسٹاک ٹریکنگ",
+                ind_5_title: "مینوفیکچرنگ جاب شاپ", ind_5_feat1: "پروڈکشن ٹریکنگ", ind_5_feat2: "مشین شیڈولنگ", ind_5_feat3: "کوالٹی کنٹرول",
+                ind_6_title: "قانونی کیس مینجمنٹ", ind_6_feat1: "کیس ٹائم لائن ٹریکنگ", ind_6_feat2: "دستاویزات کا انتظام", ind_6_feat3: "کلائنٹ بلنگ",
+                ind_7_title: "ای کامرس آرڈر مینجمنٹ", ind_7_feat1: "ملٹی چینل سنک", ind_7_feat2: "انوینٹری مینجمنٹ", ind_7_feat3: "آرڈر فلفیلمنٹ",
+                ind_8_title: " ٹیوشن سینٹر مینجمنٹ", ind_8_feat1: "طلباء کا اندراج", ind_8_feat2: "کلاس شیڈولنگ", ind_8_feat3: "پیش رفت کی ٹریکنگ",
+                ind_9_title: "کلڈ چین مانیٹرنگ", ind_9_feat1: "درجہ حرارت لاگنگ", ind_9_feat2: "GPS روٹ ٹریکنگ", ind_9_feat3: "الرٹ نوٹیفیکیشنز",
+                ind_10_title: "رینٹل پراپرٹی آٹومیشن", ind_10_feat1: "کرایہ دار کا انتظام", ind_10_feat2: "کرایہ وصولی", ind_10_feat3: "دیکھ بھال کے درخواستیں",
                 show_more: "مزید صنعتیں دکھائیں (40+)", show_less: "کم دکھائیں",
                 process_title: "Fastware کا عمل", process_subtitle: "خیال سے لائیو سسٹم تک 10 دن — یہاں بتایا گیا ہے کہ ہم یہ کیسے کرتے ہیں۔",
                 step1_title: "مشاورت", step1_desc: "آپ اپنے مسائل اور ضروریات کا اشتراک کرتے ہیں", step1_days: "دن 1",
@@ -887,9 +1151,20 @@
                 form_industry: "صنعت", form_industry_select: "اپنی صنعت منتخب کریں",
                 form_message: "پروجیکٹ کی ضروریات", form_message_placeholder: "ہمیں اپنے پروجیکٹ کے بارے میں بتائیں...",
                 form_submit: "پوچھ گچھ بھیجیں", form_success: "شکریہ! ہماری ٹیم 24 گھنٹوں کے اندر رابطہ کرے گی۔",
+                testimonials_title: "ہمارے گاہک کیا کہتے ہیں", testimonials_subtitle: "آپ کے جیسے کاروبار سے حقیقی نتائج۔",
+                testimonial_1_quote: "Fastware نے صرف 10 دنوں میں ہمارا اپارٹمنٹ مینجمنٹ سسٹم تعمیر کیا۔ QR وزٹر پاس اور دیکھ بھال ٹریکنگ نے ہمارے آپریشنز کو 3 گنا زیادہ موثر بنا دیا ہے۔",
+                testimonial_1_name: "Ahmad Razak", testimonial_1_company: "JMB Seri Raya Condo",
+                testimonial_2_quote: "کلینک مینجمنٹ سسٹم بالکل وہی ہے جو ہمیں چاہیے تھا۔ اپائنٹمنٹ شیڈولنگ، ڈیجیٹل ریکارڈز، اور مریض یاد دہانیاں—اب سب کچھ خودکار ہے۔",
+                testimonial_2_name: "Sarah Lim", testimonial_2_company: "Lim's Dental Clinic",
+                testimonial_3_quote: "ہمارا بارڈر پارسل ٹریکنگ پورٹل روزانہ 1000+ آرڈرز ہینڈل کرتا ہے۔ Fastware نے دوسرے اقتباسات کے مقابلے میں 1/5 لاگت پر فراہم کیا۔",
+                testimonial_3_name: "Rajesh Kumar", testimonial_3_company: "Kumar Logistics Sdn Bhd",
+                testimonial_4_quote: "کیس مینجمنٹ سسٹم نے ہماری پوری پریکٹس کو ہموار کر دیا۔ کلائنٹ بلنگ میں پہلے دن لگتے تھے، اب یہ خودکار ہے۔",
+                testimonial_4_name: "Michelle Wong", testimonial_4_company: "Wong & Associates Legal",
+                cta_title: "شروع کرنے کے لیے تیار ہیں؟", cta_subtitle: "سینکڑوں کاروبار میں شامل ہوں جنہوں نے Fastware کے ساتھ اپنے آپریشنز کو تبدیل کیا ہے۔", cta_button: "مفت اقتباس حاصل کریں",
                 footer_why: "کیوں منتخب کریں", footer_industries: "صنعتیں",
+                footer_company: "Vimamall Sdn Bhd", footer_address: "Uncang Emas, کوالالمپور، ملائیشیا", footer_appointment: "ملاقات کی بنیاد پر ملاقاتیوں کا خیرمقدم",
                 footer_copy: "© 2026 Fastware by Vimamall Sdn Bhd. جملہ حقوق محفوظ ہیں۔",
-                modal_cta: "کسٹم اقتباس حاصل کریں"
+                modal_cta: "کسٹم اقتباس حاصل کریں", whatsapp_tooltip: "WhatsApp پر چیٹ کریں"
             },
             ru: {
                 nav_why: "Почему мы", nav_industries: "Отрасли", nav_process: "Процесс", nav_pricing: "Цены", nav_quote: "Получить предложение",
@@ -902,6 +1177,16 @@
                 why_price_title: "Непревзойденная цена", why_price_desc: "Традиционные агентства берут премиальные цены. Мы предоставляем такое же качество за 20% от рыночной цены. Эффективность ИИ означает экономию, которую мы передаем прямо вам.",
                 why_fit_title: "Гарантия идеальной посадки", why_fit_desc: "Никаких шаблонов. Никаких универсальных решений. Каждая система создается индивидуально для вашего точного рабочего процесса, интегрируется с существующими инструментами и процессами.",
                 industries_title: "Решения по отраслям", industries_subtitle: "От логистики до здравоохранения — мы создали системы, которые меняют операции в более чем 50 отраслях.",
+                ind_1_title: "Трансграничное отслеживание посылок", ind_1_feat1: "Порталы отслеживания в реальном времени", ind_1_feat2: "Автоматические таможенные документы", ind_1_feat3: "Уведомления клиентов",
+                ind_2_title: "Управление кондоминиумом/JMB", ind_2_feat1: "Отслеживание коммунальных платежей", ind_2_feat2: "QR-пропускная система для посетителей", ind_2_feat3: "Бронирование объектов",
+                ind_3_title: "Управление клиникой", ind_3_feat1: "Планирование приемов", ind_3_feat2: "Электронные медицинские записи", ind_3_feat3: "Портал пациента",
+                ind_4_title: "POS и инвентаризация ресторана", ind_4_feat1: "Управление заказами", ind_4_feat2: "Система дисплея на кухне", ind_4_feat3: "Отслеживание запасов",
+                ind_5_title: "Производственный цех", ind_5_feat1: "Отслеживание производства", ind_5_feat2: "Планирование оборудования", ind_5_feat3: "Контроль качества",
+                ind_6_title: "Управление юридическими делами", ind_6_feat1: "Отслеживание временной шкалы дел", ind_6_feat2: "Управление документами", ind_6_feat3: "Биллинг клиентов",
+                ind_7_title: "Управление заказами электронной коммерции", ind_7_feat1: "Мультиканальная синхронизация", ind_7_feat2: "Управление запасами", ind_7_feat3: "Выполнение заказов",
+                ind_8_title: "Управление учебным центром", ind_8_feat1: "Зачисление студентов", ind_8_feat2: "Планирование занятий", ind_8_feat3: "Отслеживание прогресса",
+                ind_9_title: "Мониторинг холодовой цепи", ind_9_feat1: "Регистрация температуры", ind_9_feat2: "Отслеживание маршрута GPS", ind_9_feat3: "Оповещения",
+                ind_10_title: "Автоматизация арендной недвижимости", ind_10_feat1: "Управление арендаторами", ind_10_feat2: "Сбор арендной платы", ind_10_feat3: "Запросы на обслуживание",
                 show_more: "Показать больше отраслей (40+)", show_less: "Показать меньше",
                 process_title: "Процесс Fastware", process_subtitle: "От идеи до работающей системы за 10 дней — вот как мы это делаем.",
                 step1_title: "Консультация", step1_desc: "Вы делитесь своими проблемами и требованиями", step1_days: "День 1",
@@ -922,9 +1207,20 @@
                 form_industry: "Отрасль", form_industry_select: "Выберите вашу отрасль",
                 form_message: "Требования к проекту", form_message_placeholder: "Расскажите нам о вашем проекте...",
                 form_submit: "Отправить запрос", form_success: "Спасибо! Наша команда свяжется с вами в течение 24 часов.",
+                testimonials_title: "Что говорят наши клиенты", testimonials_subtitle: "Реальные результаты от бизнеса, похожего на ваш.",
+                testimonial_1_quote: "Fastware построила систему управления нашим кондоминиумом всего за 10 дней. QR-пропуск для посетителей и отслеживание обслуживания сделали нашу работу в 3 раза эффективнее.",
+                testimonial_1_name: "Ahmad Razak", testimonial_1_company: "JMB Seri Raya Condo",
+                testimonial_2_quote: "Система управления клиникой — это именно то, что нам нужно. Планирование приемов, цифровые записи и напоминания пациентам — теперь все автоматизировано.",
+                testimonial_2_name: "Sarah Lim", testimonial_2_company: "Lim's Dental Clinic",
+                testimonial_3_quote: "Наш портал трансграничного отслеживания посылок обрабатывает 1000+ заказов ежедневно. Fastware доставили за 1/5 стоимости других предложений.",
+                testimonial_3_name: "Rajesh Kumar", testimonial_3_company: "Kumar Logistics Sdn Bhd",
+                testimonial_4_quote: "Система управления делами оптимизировала всю нашу практику. Биллинг клиентов раньше занимал дни, теперь это автоматически.",
+                testimonial_4_name: "Michelle Wong", testimonial_4_company: "Wong & Associates Legal",
+                cta_title: "Готовы начать?", cta_subtitle: "Присоединяйтесь к сотням компаний, которые преобразовали свои операции с Fastware.", cta_button: "Получить бесплатное предложение",
                 footer_why: "Почему мы", footer_industries: "Отрасли",
+                footer_company: "Vimamall Sdn Bhd", footer_address: "Uncang Emas, Куала-Лумпур, Малайзия", footer_appointment: "Посетители приветствуются по предварительной записи",
                 footer_copy: "© 2026 Fastware by Vimamall Sdn Bhd. Все права защищены.",
-                modal_cta: "Получить индивидуальное предложение"
+                modal_cta: "Получить индивидуальное предложение", whatsapp_tooltip: "Чат в WhatsApp"
             },
             fr: {
                 nav_why: "Pourquoi Nous", nav_industries: "Industries", nav_process: "Processus", nav_pricing: "Tarifs", nav_quote: "Obtenir un devis",
@@ -937,6 +1233,16 @@
                 why_price_title: "Prix imbattable", why_price_desc: "Les agences traditionnelles facturent des prix premium. Nous livrons la même qualité à 20% du prix du marché. L'efficacité de l'IA signifie des économies que nous vous transmettons directement.",
                 why_fit_title: "Garantie d'adaptation parfaite", why_fit_desc: "Pas de modèles. Pas de solutions génériques. Chaque système est construit sur mesure pour votre workflow exact, intégré avec vos outils et processus existants.",
                 industries_title: "Solutions par industrie", industries_subtitle: "De la logistique aux soins de santé, nous avons construit des systèmes qui transforment les opérations dans plus de 50 industries.",
+                ind_1_title: "Suivi de colis transfrontalier", ind_1_feat1: "Portails de suivi en temps réel", ind_1_feat2: "Documents douaniers automatisés", ind_1_feat3: "Notifications clients",
+                ind_2_title: "Gestion de copropriété/JMB", ind_2_feat1: "Suivi des charges", ind_2_feat2: "Système QR-pass visiteurs", ind_2_feat3: "Réservation d'équipements",
+                ind_3_title: "Gestion de clinique", ind_3_feat1: "Planification des rendez-vous", ind_3_feat2: "Dossiers médicaux numériques", ind_3_feat3: "Portail patient",
+                ind_4_title: "POS et inventaire restaurant", ind_4_feat1: "Gestion des commandes", ind_4_feat2: "Système d'affichage cuisine", ind_4_feat3: "Suivi des stocks",
+                ind_5_title: "Atelier de fabrication", ind_5_feat1: "Suivi de production", ind_5_feat2: "Planification machines", ind_5_feat3: "Contrôle qualité",
+                ind_6_title: "Gestion de cas juridiques", ind_6_feat1: "Suivi de la chronologie des cas", ind_6_feat2: "Gestion documentaire", ind_6_feat3: "Facturation clients",
+                ind_7_title: "Gestion des commandes e-commerce", ind_7_feat1: "Synchronisation multi-canal", ind_7_feat2: "Gestion des stocks", ind_7_feat3: "Exécution des commandes",
+                ind_8_title: "Gestion de centre de tutorat", ind_8_feat1: "Inscription des étudiants", ind_8_feat2: "Planification des cours", ind_8_feat3: "Suivi des progrès",
+                ind_9_title: "Surveillance de la chaîne du froid", ind_9_feat1: "Enregistrement des températures", ind_9_feat2: "Suivi d'itinéraire GPS", ind_9_feat3: "Alertes",
+                ind_10_title: "Automatisation locative", ind_10_feat1: "Gestion des locataires", ind_10_feat2: "Collecte des loyers", ind_10_feat3: "Demandes de maintenance",
                 show_more: "Afficher plus d'industries (40+)", show_less: "Afficher moins",
                 process_title: "Processus Fastware", process_subtitle: "De l'idée au système en ligne en 10 jours — voici comment nous procédons.",
                 step1_title: "Consultation", step1_desc: "Vous partagez vos points de douleur et exigences", step1_days: "Jour 1",
@@ -957,9 +1263,20 @@
                 form_industry: "Industrie", form_industry_select: "Sélectionnez votre industrie",
                 form_message: "Besoins du projet", form_message_placeholder: "Parlez-nous de votre projet...",
                 form_submit: "Envoyer la demande", form_success: "Merci ! Notre équipe vous contactera sous 24 heures.",
+                testimonials_title: "Ce que disent nos clients", testimonials_subtitle: "Résultats réels d'entreprises comme la vôtre.",
+                testimonial_1_quote: "Fastware a construit notre système de gestion de copropriété en seulement 10 jours. Le pass visiteur QR et le suivi de maintenance ont rendu nos opérations 3 fois plus efficaces.",
+                testimonial_1_name: "Ahmad Razak", testimonial_1_company: "JMB Seri Raya Condo",
+                testimonial_2_quote: "Le système de gestion de clinique est exactement ce dont nous avions besoin. Planification des rendez-vous, dossiers numériques et rappels patients — tout est automatisé maintenant.",
+                testimonial_2_name: "Sarah Lim", testimonial_2_company: "Lim's Dental Clinic",
+                testimonial_3_quote: "Notre portail de suivi de colis transfrontalier gère 1000+ commandes par jour. Fastware a livré à 1/5 du coût des autres devis.",
+                testimonial_3_name: "Rajesh Kumar", testimonial_3_company: "Kumar Logistics Sdn Bhd",
+                testimonial_4_quote: "Le système de gestion de cas a rationalisé toute notre pratique. La facturation des clients prenait des jours, maintenant c'est automatique.",
+                testimonial_4_name: "Michelle Wong", testimonial_4_company: "Wong & Associates Legal",
+                cta_title: "Prêt à commencer ?", cta_subtitle: "Rejoignez des centaines d'entreprises qui ont transformé leurs opérations avec Fastware.", cta_button: "Obtenir un devis gratuit",
                 footer_why: "Pourquoi Nous", footer_industries: "Industries",
+                footer_company: "Vimamall Sdn Bhd", footer_address: "Uncang Emas, Kuala Lumpur, Malaisie", footer_appointment: "Visiteurs acceptés sur rendez-vous",
                 footer_copy: "© 2026 Fastware by Vimamall Sdn Bhd. Tous droits réservés.",
-                modal_cta: "Obtenir un devis personnalisé"
+                modal_cta: "Obtenir un devis personnalisé", whatsapp_tooltip: "Discuter sur WhatsApp"
             },
             es: {
                 nav_why: "Por Qué Nosotros", nav_industries: "Industrias", nav_process: "Proceso", nav_pricing: "Precios", nav_quote: "Obtener cotización",
@@ -972,6 +1289,16 @@
                 why_price_title: "Precio imbatible", why_price_desc: "Las agencias tradicionales cobran precios premium. Entregamos la misma calidad al 20% del precio de mercado. La eficiencia de IA significa ahorros que pasamos directamente a ti.",
                 why_fit_title: "Garantía de ajuste perfecto", why_fit_desc: "Sin plantillas. Sin soluciones genéricas. Cada sistema está construido a medida para tu flujo de trabajo exacto, integrado con tus herramientas y procesos existentes.",
                 industries_title: "Soluciones por industria", industries_subtitle: "Desde logística hasta salud, hemos construido sistemas que transforman operaciones en más de 50 industrias.",
+                ind_1_title: "Seguimiento de paquetes transfronterizo", ind_1_feat1: "Portales de seguimiento en tiempo real", ind_1_feat2: "Documentos aduaneros automatizados", ind_1_feat3: "Notificaciones a clientes",
+                ind_2_title: "Gestión de condominio/JMB", ind_2_feat1: "Seguimiento de cuotas de mantenimiento", ind_2_feat2: "Sistema QR-pass para visitantes", ind_2_feat3: "Reserva de instalaciones",
+                ind_3_title: "Gestión de clínica", ind_3_feat1: "Programación de citas", ind_3_feat2: "Registros médicos digitales", ind_3_feat3: "Portal del paciente",
+                ind_4_title: "POS e inventario de restaurante", ind_4_feat1: "Gestión de pedidos", ind_4_feat2: "Sistema de pantalla de cocina", ind_4_feat3: "Seguimiento de inventario",
+                ind_5_title: "Taller de manufactura", ind_5_feat1: "Seguimiento de producción", ind_5_feat2: "Programación de máquinas", ind_5_feat3: "Control de calidad",
+                ind_6_title: "Gestión de casos legales", ind_6_feat1: "Seguimiento de cronología de casos", ind_6_feat2: "Gestión documental", ind_6_feat3: "Facturación de clientes",
+                ind_7_title: "Gestión de pedidos e-commerce", ind_7_feat1: "Sincronización multicanal", ind_7_feat2: "Gestión de inventario", ind_7_feat3: "Cumplimiento de pedidos",
+                ind_8_title: "Gestión de centro de tutorías", ind_8_feat1: "Inscripción de estudiantes", ind_8_feat2: "Programación de clases", ind_8_feat3: "Seguimiento de progreso",
+                ind_9_title: "Monitoreo de cadena de frío", ind_9_feat1: "Registro de temperatura", ind_9_feat2: "Seguimiento de ruta GPS", ind_9_feat3: "Alertas",
+                ind_10_title: "Automatización de propiedades en alquiler", ind_10_feat1: "Gestión de inquilinos", ind_10_feat2: "Cobro de alquiler", ind_10_feat3: "Solicitudes de mantenimiento",
                 show_more: "Mostrar más industrias (40+)", show_less: "Mostrar menos",
                 process_title: "Proceso Fastware", process_subtitle: "De la idea al sistema en vivo en 10 días — así es como lo hacemos.",
                 step1_title: "Consulta", step1_desc: "Compartes tus puntos de dolor y requisitos", step1_days: "Día 1",
@@ -992,29 +1319,92 @@
                 form_industry: "Industria", form_industry_select: "Selecciona tu industria",
                 form_message: "Requisitos del proyecto", form_message_placeholder: "Cuéntanos sobre tu proyecto...",
                 form_submit: "Enviar consulta", form_success: "¡Gracias! Nuestro equipo te contactará en 24 horas.",
+                testimonials_title: "Lo que dicen nuestros clientes", testimonials_subtitle: "Resultados reales de empresas como la tuya.",
+                testimonial_1_quote: "Fastware construyó nuestro sistema de gestión de condominios en solo 10 días. El pase de visitante QR y el seguimiento de mantenimiento han hecho nuestras operaciones 3 veces más eficientes.",
+                testimonial_1_name: "Ahmad Razak", testimonial_1_company: "JMB Seri Raya Condo",
+                testimonial_2_quote: "El sistema de gestión de clínica es exactamente lo que necesitábamos. Programación de citas, registros digitales y recordatorios de pacientes — todo automatizado ahora.",
+                testimonial_2_name: "Sarah Lim", testimonial_2_company: "Lim's Dental Clinic",
+                testimonial_3_quote: "Nuestro portal de seguimiento de paquetes transfronterizo maneja 1000+ pedidos diarios. Fastware entregó a 1/5 del costo de otras cotizaciones.",
+                testimonial_3_name: "Rajesh Kumar", testimonial_3_company: "Kumar Logistics Sdn Bhd",
+                testimonial_4_quote: "El sistema de gestión de casos optimizó toda nuestra práctica. La facturación de clientes solía tomar días, ahora es automática.",
+                testimonial_4_name: "Michelle Wong", testimonial_4_company: "Wong & Associates Legal",
+                cta_title: "¿Listo para empezar?", cta_subtitle: "Únete a cientos de empresas que han transformado sus operaciones con Fastware.", cta_button: "Obtener cotización gratis",
                 footer_why: "Por Qué Nosotros", footer_industries: "Industrias",
+                footer_company: "Vimamall Sdn Bhd", footer_address: "Uncang Emas, Kuala Lumpur, Malasia", footer_appointment: "Visitantes bienvenidos con cita previa",
                 footer_copy: "© 2026 Fastware by Vimamall Sdn Bhd. Todos los derechos reservados.",
-                modal_cta: "Obtener cotización personalizada"
+                modal_cta: "Obtener cotización personalizada", whatsapp_tooltip: "Chatear en WhatsApp"
+            },
+            my: {
+                nav_why: "ဘာကြောင့်ရွေးချယ်ရမလဲ", nav_industries: "လုပ်ငန်းများ", nav_process: "လုပ်ငန်းစဉ်", nav_pricing: "စျေးနှုန်း", nav_quote: "စိတ်တိုင်းကျဈေးနှုန်းမေးမြန်းရန်",
+                hero_badge: "AI ဖြင့် အဓိကထား တည်ဆောက်ခြင်း", hero_title: "စိတ်တိုင်းက် Software<span>၁၀ ရက်အတွင်း</span>",
+                hero_subtitle: "လများစွာစောင့်ဆိုင်းရန် မလိုအပ်တော့ပါ။ Fastware သည် AI အရှိန်နှင့် ပညာရှင်အင်ဂျင်နီယာဝန်ဆောင်မှုများကို ပေါင်းစပ်ကာ ရိုးရာကုန်ကျစရိတ် ၂၀% ဖြင့် စီးပွားရေးလုပ်ငန်းအဆင့် စနစ်များကို ပေးဆောင်ပါသည်။",
+                hero_cta_primary: "အခမဲ့ ဈေးနှုန်းမေးမြန်းရန်", hero_cta_secondary: "အလုပ်လုပ်ပုံကြည့်ရန်",
+                stat_days: "ရက် ပေးပို့ချိန်", stat_savings: "ကုန်ကျစရိတ်ချွေသုံးမှု", stat_industries: "လုပ်ငန်း", stat_ownership: "ကုဒ်ပိုင်ဆိုင်မှု",
+                why_title: "ဘာကြောင့် Fastware ကို ရွေးချယ်ရမလဲ?", why_subtitle: "AI ခေတ်တွင် software တည်ဆောက်ရန် လများစွာကာလယူပြီး ကုန်ကျစရိတ်များမြင့်မားသင့်သည် မဟုတ်ပါ။",
+                why_fast_title: "လျင်မြန်စွာ", why_fast_desc: "ကျွန်ုပ်တို့၏ AI အရှိန်တင်တည်ဆောက်မှု engine သည် အခြားသူများ ၃-၆ လယူသော အရာများကို ၁၀ ရက်အတွင်း ပြီးစီး၏။ အရည်အသွေးကို မစောင့်စိုရဘဲ အရှိန်မြင့်။",
+                why_price_title: "အကောင်းဆုံး စျေးနှုန်း", why_price_desc: "ရိုးရာအgency များသည် premium ဈေးနှုန်းများ တောင်းခံသည်။ ကျွန်ုပ်တို့သည် စျေးကွက်ဈေးနှုန်း ၂၀% ဖြင့် တူညီသောအရည်အသွေးကို ပေးဆောင်သည်။ AI ထိရောက်မှုသည် သင့်ထံသို့ တိုက်ရိုက်ရောက်ရှိသည့် ချွေသုံးမှူဖြစ်သည်။",
+                why_fit_title: "ပြီးပြည့်စုံသော ကိုက်ညီမှုအာမခံ", why_fit_desc: "template မရှိ၊ အထွေထွေဖြေရှင်းချက် မရှိ။ ပုံမှန်စနစ်တိုင်းကို သင်၏အတိအကျ workflow အတွက် custom-built လုပ်ထားပြီး သင့်ရှိပြီးသား tools နှင့် စနစ်များနှင့်ပေါင်းစပ်ထားသည်။",
+                industries_title: "လုပ်ငန်းအလိုက် ဖြေရှင်းချက်များ", industries_subtitle: "လူသယ်ယူပို့ဆောင်ရေးမှ ကျန်းမာရေးအထိ ၅၀ ကျော်လုပ်ငန်းအထိ လုပ်ငန်းများကို ပြောင်းလဲစေသော စနစ်များကို ကျွန်ုပ်တို့တည်ဆောက်ခဲ့သည်။",
+                ind_1_title: "နယ်စပ်ဖြတ်ကျော် အိတ်အထုပ်ခ-tracking", ind_1_feat1: "အချိန်နှင့်တစ်ပြေးညီ tracking portals", ind_1_feat2: "အလိုအလျောက် ကုန်သွယ်ရေးခွပစ္စည်းများ", ind_1_feat3: "ဖောက်သည်အသိပေးချက်များ",
+                ind_2_title: "ကွန်ဒို/JMB စီမံခန့်ခွဲမှု", ind_2_feat1: "ထိန်းသိမ်းစရိတ် tracking", ind_2_feat2: "ဧည့်သည် QR-pass စနစ်", ind_2_feat3: "ဆောင်ရွက်ချက်များ booking",
+                ind_3_title: "ဆေးခန်း စီမံခန့်ခွဲမှု", ind_3_feat1: "အချိန်မှချိန်းသ定", ind_3_feat2: "ဒစ်ဂျစ်တယ် ဆေးဘက်ဆိုင်ရာ မှတ်တမ်းများ", ind_3_feat3: "လူနာများ portal",
+                ind_4_title: "စားသောက်ဆိုင် POS နှင့် စီမံခန့်ခွဲမှု", ind_4_feat1: "အမိန့်စီမံခန့်ခွဲမှု", ind_4_feat2: "မီးဖိုပြင် display စနစ်", ind_4_feat3: "ကုန်လက်ကျန် tracking",
+                ind_5_title: "ထုတ်လုပ်ရေး Job Shop", ind_5_feat1: "ထုတ်လုပ်မှု tracking", ind_5_feat2: "စက်ပစ္စည်း scheduling", ind_5_feat3: "အရည်အသွေးထိန်းချုပ်မှု",
+                ind_6_title: "ဥပဒေ အမှုစီမံခန့်ခွဲမှု", ind_6_feat1: "အမှု timeline tracking", ind_6_feat2: "စာရွက်စာတမ်း စီမံခန့်ခွဲမှု", ind_6_feat3: "ဖောက်သည်ငွေတောင်းခံမှု",
+                ind_7_title: "အွန်လိုင်း အမိန့်စီမံခန့်ခွဲမှု", ind_7_feat1: "အကန့်အသီးသီး sync", ind_7_feat2: "ကုန်လက်ကျန် စီမံခန့်ခွဲမှု", ind_7_feat3: "အမိန့် ဖြည့်ဆည်းမှု",
+                ind_8_title: "သင်တန်း စင်တာ စီမံခန့်ခွဲမှု", ind_8_feat1: "ကျောင်းသား အသစ်များစာရင်း", ind_8_feat2: "အတန်း scheduling", ind_8_feat3: "အခြေအနေ tracking",
+                ind_9_title: "အေးခဲထိန်းသိမ်းမှု စောင့်ကြည့်မှု", ind_9_feat1: "အပူချိန် မှတ်တမ်း", ind_9_feat2: "GPS လမ်းကြောင် tracking", ind_9_feat3: "သတိပေးချက်များ",
+                ind_10_title: "ငှားရမ်းခြင်း ပိုင်ဆိုင်မှု အလိုအလျောက်စနစ်", ind_10_feat1: "ငှားရမ်းသူ စီမံခန့်ခွဲမှု", ind_10_feat2: "ငှားရမ်းကြေး စုစည်းမှု", ind_10_feat3: "ထိန်းသိမ်းရေး တောင်းဆိုမှုများ",
+                show_more: "လုပ်ငန်းများ ပိုမိုပြသရန် (၄၀+)", show_less: "ပိုနည်းသော်ပြသရန်",
+                process_title: "Fastware လုပ်ငန်းစဉ်", process_subtitle: "စိတ်ကူးမှ live စနစ်အထိ ၁၀ ရက်—ဤသို့ပြုလုပ်သည်။",
+                step1_title: "တိုင်ပင်", step1_desc: "သင်၏အခက်အခဲများနှင့် လိုအပ်ချက်များကို မျှဝေပါ", step1_days: "၁ ရက်",
+                step2_title: "ဒီဇိုင်း", step2_desc: "သင်၏စိတ်တိုင်းက် database နှင့် workflow ကို ဒီဇိုင်းလုပ်ပါ", step2_days: "၂-၃ ရက်",
+                step3_title: "တည်ဆောက်မှု", step3_desc: "ပညာရှင်ကြပ်မတ်မှုဖြင့် AI အရှိန်တင်တည်ဆောက်ခြင်း", step3_days: "၄-၈ ရက်",
+                step4_title: "ချိတ်ဆက်မှု", step4_desc: "စမ်းသပ်ပါ၊ ကျွန်ုပ်တို့ ပိုမိုကောင်းမွန်စေပါသည်၊ ထို့နောက် live ဖြစ်၏", step4_days: "၉-၁၀ ရက်",
+                pricing_title: "ပွင့်လင်းသောစျေးနှုန်း", pricing_subtitle: "SME များအတွက် ဟုတ်တိုင်းဟုတ်သည့် premium software တည်ဆောက်မှုစျေးနှုန်း။",
+                pricing_badge: "အရင်ယှဉ်ဆန်းသစ်ဆုံး", pricing_compare: "စျေးကွက်ဈေးနှုန်းထက်", pricing_amount: "၈၀% လျှော့ဈေး",
+                pricing_desc: "ရိုးရာတည်ဆောက်မှုကုန်ကျစရိတ် ၂၀% ဖြင့် စိတ်တိုင်းက် software",
+                pricing_feat1: "ပြီးပြည့်စုံသော source code ပိုင်ဆိုင်မှု", pricing_feat2: "စိတ်တိုင်းက် database ဒီဇိုင်", pricing_feat3: "Mobile-responsive interface",
+                pricing_feat4: "WhatsApp/Email ချိတ်ဆက်မှု", pricing_feat5: "၁ နှစ်နည်းပညာထောက်ပံ့မှု", pricing_feat6: "သင်တန်းနှင့် စာရွက်စာတမ်း",
+                pricing_cta: "စိတ်တိုင်းကျ ဈေးနှုန်းမေးမြန်းရန်",
+                contact_title: "ယနေ့စတင်ပါ", contact_subtitle: "သင်၏လုပ်ငန်းကို ပြောင်းလဲရန်အသင့်ဖြစ်ပါသလား? အောက်ပါဖောင်ဖြည့်ပါ။",
+                form_name: "အမည်", form_name_placeholder: "မောင်အောင်",
+                form_company: "ကုမ္ပဏီအမည်", form_company_placeholder: "ABC Co., Ltd",
+                form_email: "အီးမေးလ်လိပ်စာ", form_email_placeholder: "aung@company.com",
+                form_phone: "ဖုန်းနံပါတ်", form_phone_placeholder: "+၉၅ ၉-၁၂၃-၄၅၆၇",
+                form_industry: "လုပ်ငန်း", form_industry_select: "သင်၏လုပ်ငန်းကို ရွေးချယ်ပါ",
+                form_message: "ပရောဂျက်လိုအပ်ချက်များ", form_message_placeholder: "သင်၏ပရောဂျက်အကြောင်း ပြောပြပါ...",
+                form_submit: "စုံစမ်းမေးမြန်းမှုပေးပို့ရန်", form_success: "ကျေးဇူးတင်ပါသည်! ကျွန်ုပ်တို့အဖွဲ့သည် ၂၄ နာရီအတွင်း ဆက်သွယ်ပါမည်။",
+                testimonials_title: "ဖောက်သည်များ ပြောကြားချက်", testimonials_subtitle: "သင့်နှင့်ဆင်တူသည့်လုပ်ငန်းများမှ အသက်ဝင်သောရလဒ်များ။",
+                testimonial_1_quote: "Fastware သည် ကွန်ဒိုစီမံခန့်ခွဲမှုစနစ်ကို ၁၀ ရက်အတွင်းသာ တည်ဆောက်ပေးခဲ့သည်။ QR ဧည့်သည်လက်မှတ်နှင့် ထိန်းသိမ်းရေးလိုက်လံခြင်းများသည် ကျွန်ုပ်တို့၏လုပ်ငန်းလည်ပတ်မှုကို 3ဆပိုမိုထိရောက်စေသည်။",
+                testimonial_1_name: "Ahmad Razak", testimonial_1_company: "JMB Seri Raya Condo",
+                testimonial_2_quote: "ဆေးခန်းစီမံခန့်ခွဲမှုစနစ်သည် ကျွန်ုပ်တို့လိုအပ်သည့်အရာဖြစ်သည်။ အချိန်မှချိန်းသ定၊ ဒစ်ဂျစ်တယ်မှတ်တမ်းများ၊ လူနာသတိပေးချက်များ—ယခုအလိုအလျောက်ဖြစ်သည်။",
+                testimonial_2_name: "Sarah Lim", testimonial_2_company: "Lim's Dental Clinic",
+                testimonial_3_quote: "နယ်စပ်ဖြတ်ကျော် အိတ်အထုပ်ခ-tracking portal သည် နေ့စဉ် 1000+ အမိန့်များကို ကိုင်တွယ်သည်။ Fastware သည် အခြားဈေးနှုန်းများထက် ၅ပုံ၁ပုံနှင့်ပေးဆောင်သည်။",
+                testimonial_3_name: "Rajesh Kumar", testimonial_3_company: "Kumar Logistics Sdn Bhd",
+                testimonial_4_quote: "အမှုစီမံခန့်ခွဲမှုစနစ်သည် ကျွန်ုပ်တို့၏လုပ်ငန်းလည်ပတ်မှုအားလုံးကို လွှဉ့်ချသွားသည်။ ဖောက်သည်ငွေတောင်းခံမှုသည် ရက်များစွဲကျဘူး၊ ယခုအလိုအလျောက်ဖြစ်သည်။",
+                testimonial_4_name: "Michelle Wong", testimonial_4_company: "Wong & Associates Legal",
+                cta_title: "စတင်ရန်အသင့်ဖြစ်ပါသလား?", cta_subtitle: "Fastware ဖြင့် လုပ်ငန်းလည်ပတ်မှုများကို ပြောင်းလဲထားသည့်လုပ်ငန်းများစွာတွင် ပါဝင်ပါ။", cta_button: "အခမဲ့ ဈေးနှုန်းမေးမြန်းရန်",
+                footer_why: "ဘာကြောင့်ရွေးချယ်ရမလဲ", footer_industries: "လုပ်ငန်း",
+                footer_company: "Vimamall Sdn Bhd", footer_address: "Uncang Emas, ကွာလာလမ်ပူ, မလေးရှား", footer_appointment: "ချိန်းဆိုမှုဖြင့်ဧည့်သည်များကိုကြိုဆိုသည်",
+                footer_copy: "© ၂၀၂၆ Fastware by Vimamall Sdn Bhd။ မူပိုင်ခွင့်အခွင့်အရေးအားလုံး ရရှိသည်။",
+                modal_cta: "စိတ်တိုင်းကျ ဈေးနှုန်းမေးမြန်းရန်", whatsapp_tooltip: "WhatsApp ဖြင့် စကားပြောရန်"
             }
         };
 
-        // Current language
         let currentLang = localStorage.getItem('fastware_language') || 'en';
         
-        // Initialize language
         document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('languageSelector').value = currentLang;
             applyTranslations(currentLang);
         });
 
-        // Change language
         function changeLanguage(lang) {
             currentLang = lang;
             localStorage.setItem('fastware_language', lang);
             applyTranslations(lang);
         }
 
-        // Apply translations
         function applyTranslations(lang) {
             const t = translations[lang];
             if (!t) return;
@@ -1038,7 +1428,6 @@
             });
         }
 
-        // Show more industries
         function toggleIndustries() {
             const hidden = document.getElementById('hiddenIndustries');
             const btn = document.getElementById('showMoreBtn');
@@ -1053,7 +1442,6 @@
             }
         }
 
-        // Modal functions
         function openModal(industry) {
             document.getElementById('industryModal').classList.add('show');
             document.body.style.overflow = 'hidden';
@@ -1064,7 +1452,6 @@
             document.body.style.overflow = '';
         }
 
-        // Form submission
         function handleSubmit(e) {
             e.preventDefault();
             document.getElementById('formSuccess').classList.add('show');
@@ -1074,7 +1461,6 @@
             }, 5000);
         }
 
-        // Close modal on outside click
         document.getElementById('industryModal').addEventListener('click', function(e) {
             if (e.target === this) closeModal();
         });
