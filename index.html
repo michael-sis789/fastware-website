@@ -389,6 +389,447 @@
         </div>
         <button class="show-more-btn" id="showMoreBtn" onclick="toggleIndustries()" data-i18n="show_more">Show More Industries (40+)</button>
         <div class="hidden-industries industries-grid" id="hiddenIndustries">
+            <!-- Additional 40 Industries -->
+            <div class="industry-card" onclick="openModal('logistics3')">
+                <div class="industry-header">
+                    <span class="industry-icon">🚛</span>
+                    <h3 data-i18n="ind_11_title">Fleet Management</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_11_feat1">Vehicle tracking</li>
+                    <li data-i18n="ind_11_feat2">Fuel monitoring</li>
+                    <li data-i18n="ind_11_feat3">Maintenance alerts</li>
+                </ul>
+            </div>
+            <div class="industry-card" onclick="openModal('logistics4')">
+                <div class="industry-header">
+                    <span class="industry-icon">📋</span>
+                    <h3 data-i18n="ind_12_title">Warehouse Management</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_12_feat1">Inventory control</li>
+                    <li data-i18n="ind_12_feat2">Pick & pack system</li>
+                    <li data-i18n="ind_12_feat3">Barcode scanning</li>
+                </ul>
+            </div>
+            <div class="industry-card" onclick="openModal('fnb2')">
+                <div class="industry-header">
+                    <span class="industry-icon">☕</span>
+                    <h3 data-i18n="ind_13_title">Cafe & Bakery POS</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_13_feat1">Quick order entry</li>
+                    <li data-i18n="ind_13_feat2">Ingredient tracking</li>
+                    <li data-i18n="ind_13_feat3">Loyalty program</li>
+                </ul>
+            </div>
+            <div class="industry-card" onclick="openModal('fnb3')">
+                <div class="industry-header">
+                    <span class="industry-icon">🍔</span>
+                    <h3 data-i18n="ind_14_title">Fast Food Chain</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_14_feat1">Drive-thru integration</li>
+                    <li data-i18n="ind_14_feat2">Kitchen automation</li>
+                    <li data-i18n="ind_14_feat3">Multi-store sync</li>
+                </ul>
+            </div>
+            <div class="industry-card" onclick="openModal('retail2')">
+                <div class="industry-header">
+                    <span class="industry-icon">👗</span>
+                    <h3 data-i18n="ind_15_title">Fashion Retail</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_15_feat1">Size/color matrix</li>
+                    <li data-i18n="ind_15_feat2">Seasonal tracking</li>
+                    <li data-i18n="ind_15_feat3">Style management</li>
+                </ul>
+            </div>
+            <div class="industry-card" onclick="openModal('retail3')">
+                <div class="industry-header">
+                    <span class="industry-icon">💊</span>
+                    <h3 data-i18n="ind_16_title">Pharmacy POS</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_16_feat1">Prescription tracking</li>
+                    <li data-i18n="ind_16_feat2">Batch management</li>
+                    <li data-i18n="ind_16_feat3">Expiry alerts</li>
+                </ul>
+            </div>
+            <div class="industry-card" onclick="openModal('healthcare2')">
+                <div class="industry-header">
+                    <span class="industry-icon">🦷</span>
+                    <h3 data-i18n="ind_17_title">Dental Practice</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_17_feat1">Treatment plans</li>
+                    <li data-i18n="ind_17_feat2">X-ray storage</li>
+                    <li data-i18n="ind_17_feat3">Insurance claims</li>
+                </ul>
+            </div>
+            <div class="industry-card" onclick="openModal('healthcare3')">
+                <div class="industry-header">
+                    <span class="industry-icon">💆</span>
+                    <h3 data-i18n="ind_18_title">Spa & Wellness</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_18_feat1">Booking system</li>
+                    <li data-i18n="ind_18_feat2">Package tracking</li>
+                    <li data-i18n="ind_18_feat3">Staff scheduling</li>
+                </ul>
+            </div>
+            <div class="industry-card" onclick="openModal('manufacturing2')">
+                <div class="industry-header">
+                    <span class="industry-icon">🏭</span>
+                    <h3 data-i18n="ind_19_title">Factory Automation</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_19_feat1">IoT sensors</li>
+                    <li data-i18n="ind_19_feat2">Predictive maintenance</li>
+                    <li data-i18n="ind_19_feat3">OEE tracking</li>
+                </ul>
+            </div>
+            <div class="industry-card" onclick="openModal('manufacturing3')">
+                <div class="industry-header">
+                    <span class="industry-icon">🔧</span>
+                    <h3 data-i18n="ind_20_title">Workshop Management</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_20_feat1">Job card system</li>
+                    <li data-i18n="ind_20_feat2">Parts inventory</li>
+                    <li data-i18n="ind_20_feat3">Labor tracking</li>
+                </ul>
+            </div>
+            <div class="industry-card" onclick="openModal('construction1')">
+                <div class="industry-header">
+                    <span class="industry-icon">🏗️</span>
+                    <h3 data-i18n="ind_21_title">Construction Project</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_21_feat1">Progress tracking</li>
+                    <li data-i18n="ind_21_feat2">Material management</li>
+                    <li data-i18n="ind_21_feat3">Subcontractor portal</li>
+                </ul>
+            </div>
+            <div class="industry-card" onclick="openModal('realestate3')">
+                <div class="industry-header">
+                    <span class="industry-icon">🏘️</span>
+                    <h3 data-i18n="ind_22_title">Property Agency</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_22_feat1">Listing management</li>
+                    <li data-i18n="ind_22_feat2">Client matching</li>
+                    <li data-i18n="ind_22_feat3">Commission tracking</li>
+                </ul>
+            </div>
+            <div class="industry-card" onclick="openModal('accounting1')">
+                <div class="industry-header">
+                    <span class="industry-icon">📊</span>
+                    <h3 data-i18n="ind_23_title">Accounting Firm</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_23_feat1">Client portal</li>
+                    <li data-i18n="ind_23_feat2">Tax workflow</li>
+                    <li data-i18n="ind_23_feat3">Audit trails</li>
+                </ul>
+            </div>
+            <div class="industry-card" onclick="openModal('consulting1')">
+                <div class="industry-header">
+                    <span class="industry-icon">💼</span>
+                    <h3 data-i18n="ind_24_title">Consulting Services</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_24_feat1">Project tracking</li>
+                    <li data-i18n="ind_24_feat2">Time billing</li>
+                    <li data-i18n="ind_24_feat3">Resource planning</li>
+                </ul>
+            </div>
+            <div class="industry-card" onclick="openModal('marketing1')">
+                <div class="industry-header">
+                    <span class="industry-icon">📢</span>
+                    <h3 data-i18n="ind_25_title">Digital Marketing</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_25_feat1">Campaign tracking</li>
+                    <li data-i18n="ind_25_feat2">Lead management</li>
+                    <li data-i18n="ind_25_feat3">ROI analytics</li>
+                </ul>
+            </div>
+            <div class="industry-card" onclick="openModal('education2')">
+                <div class="industry-header">
+                    <span class="industry-icon">🎓</span>
+                    <h3 data-i18n="ind_26_title">Online Course Platform</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_26_feat1">Video hosting</li>
+                    <li data-i18n="ind_26_feat2">Student progress</li>
+                    <li data-i18n="ind_26_feat3">Certificate generation</li>
+                </ul>
+            </div>
+            <div class="industry-card" onclick="openModal('education3')">
+                <div class="industry-header">
+                    <span class="industry-icon">🚌</span>
+                    <h3 data-i18n="ind_27_title">School Transport</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_27_feat1">Route optimization</li>
+                    <li data-i18n="ind_27_feat2">Parent alerts</li>
+                    <li data-i18n="ind_27_feat3">Attendance tracking</li>
+                </ul>
+            </div>
+            <div class="industry-card" onclick="openModal('agriculture1')">
+                <div class="industry-header">
+                    <span class="industry-icon">🌾</span>
+                    <h3 data-i18n="ind_28_title">Farm Management</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_28_feat1">Crop monitoring</li>
+                    <li data-i18n="ind_28_feat2">Harvest planning</li>
+                    <li data-i18n="ind_28_feat3">Equipment tracking</li>
+                </ul>
+            </div>
+            <div class="industry-card" onclick="openModal('fishing1')">
+                <div class="industry-header">
+                    <span class="industry-icon">🎣</span>
+                    <h3 data-i18n="ind_29_title">Fishing Fleet</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_29_feat1">Catch logging</li>
+                    <li data-i18n="ind_29_feat2">Vessel tracking</li>
+                    <li data-i18n="ind_29_feat3">Quota management</li>
+                </ul>
+            </div>
+            <div class="industry-card" onclick="openModal('mining1')">
+                <div class="industry-header">
+                    <span class="industry-icon">⛏️</span>
+                    <h3 data-i18n="ind_30_title">Mining Operations</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_30_feat1">Equipment monitoring</li>
+                    <li data-i18n="ind_30_feat2">Safety compliance</li>
+                    <li data-i18n="ind_30_feat3">Production reports</li>
+                </ul>
+            </div>
+            <div class="industry-card" onclick="openModal('oilgas1')">
+                <div class="industry-header">
+                    <span class="industry-icon">🛢️</span>
+                    <h3 data-i18n="ind_31_title">Oil & Gas</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_31_feat1">Pipeline monitoring</li>
+                    <li data-i18n="ind_31_feat2">Maintenance logs</li>
+                    <li data-i18n="ind_31_feat3">Compliance tracking</li>
+                </ul>
+            </div>
+            <div class="industry-card" onclick="openModal('energy1')">
+                <div class="industry-header">
+                    <span class="industry-icon">⚡</span>
+                    <h3 data-i18n="ind_32_title">Solar Farm</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_32_feat1">Panel monitoring</li>
+                    <li data-i18n="ind_32_feat2">Energy output</li>
+                    <li data-i18n="ind_32_feat3">Maintenance schedule</li>
+                </ul>
+            </div>
+            <div class="industry-card" onclick="openModal('events1')">
+                <div class="industry-header">
+                    <span class="industry-icon">🎉</span>
+                    <h3 data-i18n="ind_33_title">Event Management</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_33_feat1">Vendor coordination</li>
+                    <li data-i18n="ind_33_feat2">Ticketing system</li>
+                    <li data-i18n="ind_33_feat3">Guest check-in</li>
+                </ul>
+            </div>
+            <div class="industry-card" onclick="openModal('hotel1')">
+                <div class="industry-header">
+                    <span class="industry-icon">🏨</span>
+                    <h3 data-i18n="ind_34_title">Hotel Management</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_34_feat1">Booking engine</li>
+                    <li data-i18n="ind_34_feat2">Housekeeping</li>
+                    <li data-i18n="ind_34_feat3">Guest services</li>
+                </ul>
+            </div>
+            <div class="industry-card" onclick="openModal('tourism1')">
+                <div class="industry-header">
+                    <span class="industry-icon">✈️</span>
+                    <h3 data-i18n="ind_35_title">Travel Agency</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_35_feat1">Itinerary builder</li>
+                    <li data-i18n="ind_35_feat2">Booking management</li>
+                    <li data-i18n="ind_35_feat3">Commission tracking</li>
+                </ul>
+            </div>
+            <div class="industry-card" onclick="openModal('gym1')">
+                <div class="industry-header">
+                    <span class="industry-icon">💪</span>
+                    <h3 data-i18n="ind_36_title">Gym & Fitness</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_36_feat1">Member management</li>
+                    <li data-i18n="ind_36_feat2">Class scheduling</li>
+                    <li data-i18n="ind_36_feat3">Access control</li>
+                </ul>
+            </div>
+            <div class="industry-card" onclick="openModal('salon1')">
+                <div class="industry-header">
+                    <span class="industry-icon">💇</span>
+                    <h3 data-i18n="ind_37_title">Salon & Beauty</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_37_feat1">Appointment system</li>
+                    <li data-i18n="ind_37_feat2">Product sales</li>
+                    <li data-i18n="ind_37_feat3">Staff commission</li>
+                </ul>
+            </div>
+            <div class="industry-card" onclick="openModal('car1')">
+                <div class="industry-header">
+                    <span class="industry-icon">🚗</span>
+                    <h3 data-i18n="ind_38_title">Car Dealership</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_38_feat1">Inventory tracking</li>
+                    <li data-i18n="ind_38_feat2">Test drive booking</li>
+                    <li data-i18n="ind_38_feat3">Service reminders</li>
+                </ul>
+            </div>
+            <div class="industry-card" onclick="openModal('workshop1')">
+                <div class="industry-header">
+                    <span class="industry-icon">🔩</span>
+                    <h3 data-i18n="ind_39_title">Auto Workshop</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_39_feat1">Service history</li>
+                    <li data-i18n="ind_39_feat2">Parts inventory</li>
+                    <li data-i18n="ind_39_feat3">Job scheduling</li>
+                </ul>
+            </div>
+            <div class="industry-card" onclick="openModal('garage1')">
+                <div class="industry-header">
+                    <span class="industry-icon">🅿️</span>
+                    <h3 data-i18n="ind_40_title">Parking Management</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_40_feat1">Entry/exit system</li>
+                    <li data-i18n="ind_40_feat2">Payment integration</li>
+                    <li data-i18n="ind_40_feat3">Space monitoring</li>
+                </ul>
+            </div>
+            <div class="industry-card" onclick="openModal('security1')">
+                <div class="industry-header">
+                    <span class="industry-icon">🔒</span>
+                    <h3 data-i18n="ind_41_title">Security Services</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_41_feat1">Guard scheduling</li>
+                    <li data-i18n="ind_41_feat2">Incident reports</li>
+                    <li data-i18n="ind_41_feat3">Patrol tracking</li>
+                </ul>
+            </div>
+            <div class="industry-card" onclick="openModal('cleaning1')">
+                <div class="industry-header">
+                    <span class="industry-icon">🧹</span>
+                    <h3 data-i18n="ind_42_title">Cleaning Services</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_42_feat1">Job dispatch</li>
+                    <li data-i18n="ind_42_feat2">Quality checks</li>
+                    <li data-i18n="ind_42_feat3">Supply management</li>
+                </ul>
+            </div>
+            <div class="industry-card" onclick="openModal('pest1')">
+                <div class="industry-header">
+                    <span class="industry-icon">🐜</span>
+                    <h3 data-i18n="ind_43_title">Pest Control</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_43_feat1">Treatment records</li>
+                    <li data-i18n="ind_43_feat2">Route planning</li>
+                    <li data-i18n="ind_43_feat3">Chemical tracking</li>
+                </ul>
+            </div>
+            <div class="industry-card" onclick="openModal('laundry1')">
+                <div class="industry-header">
+                    <span class="industry-icon">👔</span>
+                    <h3 data-i18n="ind_44_title">Laundry Service</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_44_feat1">Order tracking</li>
+                    <li data-i18n="ind_44_feat2">Pickup scheduling</li>
+                    <li data-i18n="ind_44_feat3">Delivery routes</li>
+                </ul>
+            </div>
+            <div class="industry-card" onclick="openModal('recycling1')">
+                <div class="industry-header">
+                    <span class="industry-icon">♻️</span>
+                    <h3 data-i18n="ind_45_title">Recycling Center</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_45_feat1">Weight tracking</li>
+                    <li data-i18n="ind_45_feat2">Price management</li>
+                    <li data-i18n="ind_45_feat3">Vendor payments</li>
+                </ul>
+            </div>
+            <div class="industry-card" onclick="openModal('waste1')">
+                <div class="industry-header">
+                    <span class="industry-icon">🗑️</span>
+                    <h3 data-i18n="ind_46_title">Waste Management</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_46_feat1">Collection routes</li>
+                    <li data-i18n="ind_46_feat2">Bin tracking</li>
+                    <li data-i18n="ind_46_feat3">Billing system</li>
+                </ul>
+            </div>
+            <div class="industry-card" onclick="openModal('printing1')">
+                <div class="industry-header">
+                    <span class="industry-icon">🖨️</span>
+                    <h3 data-i18n="ind_47_title">Print Shop</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_47_feat1">Job queue</li>
+                    <li data-i18n="ind_47_feat2">Material tracking</li>
+                    <li data-i18n="ind_47_feat3">Delivery dispatch</li>
+                </ul>
+            </div>
+            <div class="industry-card" onclick="openModal('photo1')">
+                <div class="industry-header">
+                    <span class="industry-icon">📷</span>
+                    <h3 data-i18n="ind_48_title">Photography Studio</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_48_feat1">Booking calendar</li>
+                    <li data-i18n="ind_48_feat2">Client galleries</li>
+                    <li data-i18n="ind_48_feat3">Package sales</li>
+                </ul>
+            </div>
+            <div class="industry-card" onclick="openModal('music1')">
+                <div class="industry-header">
+                    <span class="industry-icon">🎵</span>
+                    <h3 data-i18n="ind_49_title">Music School</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_49_feat1">Lesson scheduling</li>
+                    <li data-i18n="ind_49_feat2">Practice rooms</li>
+                    <li data-i18n="ind_49_feat3">Recital planning</li>
+                </ul>
+            </div>
+            <div class="industry-card" onclick="openModal('dance1')">
+                <div class="industry-header">
+                    <span class="industry-icon">💃</span>
+                    <h3 data-i18n="ind_50_title">Dance Studio</h3>
+                </div>
+                <ul>
+                    <li data-i18n="ind_50_feat1">Class registration</li>
+                    <li data-i18n="ind_50_feat2">Level tracking</li>
+                    <li data-i18n="ind_50_feat3">Performance planning</li>
+                </ul>
+            </div>
         </div>
     </section>
 
@@ -623,6 +1064,49 @@
                 ind_8_title: "Tuition Center Management", ind_8_feat1: "Student enrollment", ind_8_feat2: "Class scheduling", ind_8_feat3: "Progress tracking",
                 ind_9_title: "Cold Chain Monitoring", ind_9_feat1: "Temperature logging", ind_9_feat2: "GPS route tracking", ind_9_feat3: "Alert notifications",
                 ind_10_title: "Rental Property Automation", ind_10_feat1: "Tenant management", ind_10_feat2: "Rent collection", ind_10_feat3: "Maintenance requests",
+                
+                // Additional 40 Industries
+                ind_11_title: "Fleet Management", ind_11_feat1: "Vehicle tracking", ind_11_feat2: "Fuel monitoring", ind_11_feat3: "Maintenance alerts",
+                ind_12_title: "Warehouse Management", ind_12_feat1: "Inventory control", ind_12_feat2: "Pick & pack system", ind_12_feat3: "Barcode scanning",
+                ind_13_title: "Cafe & Bakery POS", ind_13_feat1: "Quick order entry", ind_13_feat2: "Ingredient tracking", ind_13_feat3: "Loyalty program",
+                ind_14_title: "Fast Food Chain", ind_14_feat1: "Drive-thru integration", ind_14_feat2: "Kitchen automation", ind_14_feat3: "Multi-store sync",
+                ind_15_title: "Fashion Retail", ind_15_feat1: "Size/color matrix", ind_15_feat2: "Seasonal tracking", ind_15_feat3: "Style management",
+                ind_16_title: "Pharmacy POS", ind_16_feat1: "Prescription tracking", ind_16_feat2: "Batch management", ind_16_feat3: "Expiry alerts",
+                ind_17_title: "Dental Practice", ind_17_feat1: "Treatment plans", ind_17_feat2: "X-ray storage", ind_17_feat3: "Insurance claims",
+                ind_18_title: "Spa & Wellness", ind_18_feat1: "Booking system", ind_18_feat2: "Package tracking", ind_18_feat3: "Staff scheduling",
+                ind_19_title: "Factory Automation", ind_19_feat1: "IoT sensors", ind_19_feat2: "Predictive maintenance", ind_19_feat3: "OEE tracking",
+                ind_20_title: "Workshop Management", ind_20_feat1: "Job card system", ind_20_feat2: "Parts inventory", ind_20_feat3: "Labor tracking",
+                ind_21_title: "Construction Project", ind_21_feat1: "Progress tracking", ind_21_feat2: "Material management", ind_21_feat3: "Subcontractor portal",
+                ind_22_title: "Property Agency", ind_22_feat1: "Listing management", ind_22_feat2: "Client matching", ind_22_feat3: "Commission tracking",
+                ind_23_title: "Accounting Firm", ind_23_feat1: "Client portal", ind_23_feat2: "Tax workflow", ind_23_feat3: "Audit trails",
+                ind_24_title: "Consulting Services", ind_24_feat1: "Project tracking", ind_24_feat2: "Time billing", ind_24_feat3: "Resource planning",
+                ind_25_title: "Digital Marketing", ind_25_feat1: "Campaign tracking", ind_25_feat2: "Lead management", ind_25_feat3: "ROI analytics",
+                ind_26_title: "Online Course Platform", ind_26_feat1: "Video hosting", ind_26_feat2: "Student progress", ind_26_feat3: "Certificate generation",
+                ind_27_title: "School Transport", ind_27_feat1: "Route optimization", ind_27_feat2: "Parent alerts", ind_27_feat3: "Attendance tracking",
+                ind_28_title: "Farm Management", ind_28_feat1: "Crop monitoring", ind_28_feat2: "Harvest planning", ind_28_feat3: "Equipment tracking",
+                ind_29_title: "Fishing Fleet", ind_29_feat1: "Catch logging", ind_29_feat2: "Vessel tracking", ind_29_feat3: "Quota management",
+                ind_30_title: "Mining Operations", ind_30_feat1: "Equipment monitoring", ind_30_feat2: "Safety compliance", ind_30_feat3: "Production reports",
+                ind_31_title: "Oil & Gas", ind_31_feat1: "Pipeline monitoring", ind_31_feat2: "Maintenance logs", ind_31_feat3: "Compliance tracking",
+                ind_32_title: "Solar Farm", ind_32_feat1: "Panel monitoring", ind_32_feat2: "Energy output", ind_32_feat3: "Maintenance schedule",
+                ind_33_title: "Event Management", ind_33_feat1: "Vendor coordination", ind_33_feat2: "Ticketing system", ind_33_feat3: "Guest check-in",
+                ind_34_title: "Hotel Management", ind_34_feat1: "Booking engine", ind_34_feat2: "Housekeeping", ind_34_feat3: "Guest services",
+                ind_35_title: "Travel Agency", ind_35_feat1: "Itinerary builder", ind_35_feat2: "Booking management", ind_35_feat3: "Commission tracking",
+                ind_36_title: "Gym & Fitness", ind_36_feat1: "Member management", ind_36_feat2: "Class scheduling", ind_36_feat3: "Access control",
+                ind_37_title: "Salon & Beauty", ind_37_feat1: "Appointment system", ind_37_feat2: "Product sales", ind_37_feat3: "Staff commission",
+                ind_38_title: "Car Dealership", ind_38_feat1: "Inventory tracking", ind_38_feat2: "Test drive booking", ind_38_feat3: "Service reminders",
+                ind_39_title: "Auto Workshop", ind_39_feat1: "Service history", ind_39_feat2: "Parts inventory", ind_39_feat3: "Job scheduling",
+                ind_40_title: "Parking Management", ind_40_feat1: "Entry/exit system", ind_40_feat2: "Payment integration", ind_40_feat3: "Space monitoring",
+                ind_41_title: "Security Services", ind_41_feat1: "Guard scheduling", ind_41_feat2: "Incident reports", ind_41_feat3: "Patrol tracking",
+                ind_42_title: "Cleaning Services", ind_42_feat1: "Job dispatch", ind_42_feat2: "Quality checks", ind_42_feat3: "Supply management",
+                ind_43_title: "Pest Control", ind_43_feat1: "Treatment records", ind_43_feat2: "Route planning", ind_43_feat3: "Chemical tracking",
+                ind_44_title: "Laundry Service", ind_44_feat1: "Order tracking", ind_44_feat2: "Pickup scheduling", ind_44_feat3: "Delivery routes",
+                ind_45_title: "Recycling Center", ind_45_feat1: "Weight tracking", ind_45_feat2: "Price management", ind_45_feat3: "Vendor payments",
+                ind_46_title: "Waste Management", ind_46_feat1: "Collection routes", ind_46_feat2: "Bin tracking", ind_46_feat3: "Billing system",
+                ind_47_title: "Print Shop", ind_47_feat1: "Job queue", ind_47_feat2: "Material tracking", ind_47_feat3: "Delivery dispatch",
+                ind_48_title: "Photography Studio", ind_48_feat1: "Booking calendar", ind_48_feat2: "Client galleries", ind_48_feat3: "Package sales",
+                ind_49_title: "Music School", ind_49_feat1: "Lesson scheduling", ind_49_feat2: "Practice rooms", ind_49_feat3: "Recital planning",
+                ind_50_title: "Dance Studio", ind_50_feat1: "Class registration", ind_50_feat2: "Level tracking", ind_50_feat3: "Performance planning",
+                
                 show_more: "Show More Industries (40+)", show_less: "Show Less",
                 process_title: "The Fastware Process", process_subtitle: "From idea to live system in 10 days — here's how we do it.",
                 step1_title: "Consultation", step1_desc: "You share your pain points and requirements", step1_days: "Day 1",
@@ -683,6 +1167,49 @@
                 ind_8_title: "补习中心管理", ind_8_feat1: "学生报名", ind_8_feat2: "课程排程", ind_8_feat3: "进度追踪",
                 ind_9_title: "冷链监控", ind_9_feat1: "温度记录", ind_9_feat2: "GPS路线追踪", ind_9_feat3: "警报通知",
                 ind_10_title: "租赁物业自动化", ind_10_feat1: "租户管理", ind_10_feat2: "租金收取", ind_10_feat3: "维修请求",
+                
+                // Additional 40 Industries
+                ind_11_title: "车队管理", ind_11_feat1: "车辆追踪", ind_11_feat2: "燃油监控", ind_11_feat3: "维修提醒",
+                ind_12_title: "仓库管理", ind_12_feat1: "库存控制", ind_12_feat2: "拣货包装系统", ind_12_feat3: "条码扫描",
+                ind_13_title: "咖啡厅和面包店POS", ind_13_feat1: "快速订单录入", ind_13_feat2: "原料追踪", ind_13_feat3: "会员积分",
+                ind_14_title: "快餐连锁店", ind_14_feat1: "得来速集成", ind_14_feat2: "厨房自动化", ind_14_feat3: "多店同步",
+                ind_15_title: "时尚零售", ind_15_feat1: "尺码颜色矩阵", ind_15_feat2: "季节性追踪", ind_15_feat3: "款式管理",
+                ind_16_title: "药店POS", ind_16_feat1: "处方追踪", ind_16_feat2: "批次管理", ind_16_feat3: "过期提醒",
+                ind_17_title: "牙科诊所", ind_17_feat1: "治疗计划", ind_17_feat2: "X光存储", ind_17_feat3: "保险理赔",
+                ind_18_title: "水疗 wellness", ind_18_feat1: "预约系统", ind_18_feat2: "套餐追踪", ind_18_feat3: "员工排班",
+                ind_19_title: "工厂自动化", ind_19_feat1: "物联网传感器", ind_19_feat2: "预测性维护", ind_19_feat3: "OEE追踪",
+                ind_20_title: "车间管理", ind_20_feat1: "工单系统", ind_20_feat2: "零件库存", ind_20_feat3: "工时追踪",
+                ind_21_title: "建筑项目", ind_21_feat1: "进度追踪", ind_21_feat2: "材料管理", ind_21_feat3: "分包商门户",
+                ind_22_title: "房产中介", ind_22_feat1: "房源管理", ind_22_feat2: "客户匹配", ind_22_feat3: "佣金追踪",
+                ind_23_title: "会计师事务所", ind_23_feat1: "客户门户", ind_23_feat2: "税务流程", ind_23_feat3: "审计追踪",
+                ind_24_title: "咨询服务", ind_24_feat1: "项目追踪", ind_24_feat2: "工时计费", ind_24_feat3: "资源规划",
+                ind_25_title: "数字营销", ind_25_feat1: "活动追踪", ind_25_feat2: "线索管理", ind_25_feat3: "ROI分析",
+                ind_26_title: "在线课程平台", ind_26_feat1: "视频托管", ind_26_feat2: "学生进度", ind_26_feat3: "证书生成",
+                ind_27_title: "校车管理", ind_27_feat1: "路线优化", ind_27_feat2: "家长提醒", ind_27_feat3: "考勤追踪",
+                ind_28_title: "农场管理", ind_28_feat1: "作物监控", ind_28_feat2: "收获计划", ind_28_feat3: "设备追踪",
+                ind_29_title: "渔船队", ind_29_feat1: "捕获记录", ind_29_feat2: "船只追踪", ind_29_feat3: "配额管理",
+                ind_30_title: "采矿作业", ind_30_feat1: "设备监控", ind_30_feat2: "安全合规", ind_30_feat3: "生产报告",
+                ind_31_title: "石油天然气", ind_31_feat1: "管道监控", ind_31_feat2: "维护日志", ind_31_feat3: "合规追踪",
+                ind_32_title: "太阳能农场", ind_32_feat1: "面板监控", ind_32_feat2: "能源输出", ind_32_feat3: "维护计划",
+                ind_33_title: "活动管理", ind_33_feat1: "供应商协调", ind_33_feat2: "票务系统", ind_33_feat3: "客人签到",
+                ind_34_title: "酒店管理", ind_34_feat1: "预订引擎", ind_34_feat2: "客房服务", ind_34_feat3: "客户服务",
+                ind_35_title: "旅行社", ind_35_feat1: "行程规划", ind_35_feat2: "预订管理", ind_35_feat3: "佣金追踪",
+                ind_36_title: "健身房", ind_36_feat1: "会员管理", ind_36_feat2: "课程排期", ind_36_feat3: "门禁控制",
+                ind_37_title: "美容院", ind_37_feat1: "预约系统", ind_37_feat2: "产品销售", ind_37_feat3: "员工提成",
+                ind_38_title: "汽车销售", ind_38_feat1: "库存追踪", ind_38_feat2: "试驾预约", ind_38_feat3: "保养提醒",
+                ind_39_title: "汽车维修", ind_39_feat1: "维修历史", ind_39_feat2: "零件库存", ind_39_feat3: "工单排期",
+                ind_40_title: "停车场管理", ind_40_feat1: "进出系统", ind_40_feat2: "支付集成", ind_40_feat3: "车位监控",
+                ind_41_title: "安保服务", ind_41_feat1: "保安排班", ind_41_feat2: "事件报告", ind_41_feat3: "巡逻追踪",
+                ind_42_title: "清洁服务", ind_42_feat1: "任务派遣", ind_42_feat2: "质量检查", ind_42_feat3: "耗材管理",
+                ind_43_title: "害虫防治", ind_43_feat1: "处理记录", ind_43_feat2: "路线规划", ind_43_feat3: "药剂追踪",
+                ind_44_title: "洗衣服务", ind_44_feat1: "订单追踪", ind_44_feat2: "取件预约", ind_44_feat3: "配送路线",
+                ind_45_title: "回收中心", ind_45_feat1: "重量追踪", ind_45_feat2: "价格管理", ind_45_feat3: "供应商付款",
+                ind_46_title: "垃圾管理", ind_46_feat1: "收集路线", ind_46_feat2: "垃圾桶追踪", ind_46_feat3: "计费系统",
+                ind_47_title: "打印店", ind_47_feat1: "任务队列", ind_47_feat2: "材料追踪", ind_47_feat3: "配送派遣",
+                ind_48_title: "摄影工作室", ind_48_feat1: "预约日历", ind_48_feat2: "客户相册", ind_48_feat3: "套餐销售",
+                ind_49_title: "音乐学校", ind_49_feat1: "课程排期", ind_49_feat2: "练习室", ind_49_feat3: "演奏会策划",
+                ind_50_title: "舞蹈工作室", ind_50_feat1: "课程注册", ind_50_feat2: "级别追踪", ind_50_feat3: "演出策划",
+                
                 show_more: "显示更多行业 (40+)", show_less: "收起",
                 process_title: "Fastware流程", process_subtitle: "从创意到上线仅需10天——我们是如何做到的。",
                 step1_title: "咨询", step1_desc: "您分享痛点和需求", step1_days: "第1天",
@@ -1442,8 +1969,121 @@
             }
         }
 
+        const modalData = {
+            logistics1: {
+                icon: '📦',
+                category: { en: 'Logistics & Supply Chain', zh: '物流与供应链', ms: 'Logistik & Rantaian Bekalan', ja: '物流・サプライチェーン', ko: '물류 및 공급망', vi: 'Logistics & Chuỗi cung ứng', th: 'โลจิสติกส์และห่วงโซ่อุปทาน', id: 'Logistik & Rantai Pasok', hi: 'लॉजिस्टिक्स और आपूर्ति श्रृंखला', ur: 'لاجسٹکس اور سپلائی چین', ru: 'Логистика и цепочка поставок', fr: 'Logistique et chaîne d\'approvisionnement', es: 'Logística y cadena de suministro', my: 'လူသယ်ယူပို့ဆောင်ရေးနှင့် လုပ်ငန်းလမ်းကြောင်' },
+                title: { en: 'Cross-Border Parcel Tracking', zh: '跨境包裹追踪', ms: 'Jejak Parcel Lintas Sempadan', ja: '越境小包追跡', ko: '국경 간 소포 추적', vi: 'Theo Dõi Bưu Kiện Xuyên Biên Giới', th: 'ติดตามพัสดุข้ามพรมแดน', id: 'Pelacakan Paket Lintas Batas', hi: 'क्रॉस-बॉर्डर पार्सल ट्रैकिंग', ur: 'بارڈر پارسل ٹریکنگ', ru: 'Трансграничное отслеживание посылок', fr: 'Suivi de colis transfrontalier', es: 'Seguimiento de paquetes transfronterizo', my: 'နယ်စပ်ဖြတ်ကျော် အိတ်အထုပ်ခ-tracking' },
+                description: { en: 'Real-time tracking system for cross-border logistics operations. Manage shipments, automate customs documentation, and keep customers informed.', zh: '跨境物流业务的实时追踪系统。管理货运、自动化报关文件、让客户随时了解情况。', ms: 'Sistem jejak masa nyata untuk operasi logistik lintas sempadan. Urus penghantaran, automasi dokumen kastam, dan kekalkan pelanggan dimaklumkan.', ja: '越境物流業務のリアルタイム追跡システム。出荷管理、税関書類の自動化、顧客への情報提供を実現します。', ko: '국경 간 물류 운영을 위한 실시간 추적 시스템입니다. 출하 관리, 세관 서류 자동화, 고객 정보 제공을 지원합니다.', vi: 'Hệ thống theo dõi thờ gian thực cho hoạt động logistics xuyên biên giới. Quản lý lô hàng, tự động hóa tài liệu hải quan và thông báo cho khách hàng.', th: 'ระบบติดตามแบบเรียลไทม์สำหรับการดำเนินงานโลจิสติกส์ข้ามพรมแดน จัดการการจัดส่ง เอกสารศุลกากรอัตโนมัติ และแจ้งให้ลูกค้าทราบ', id: 'Sistem pelacakan real-time untuk operasi logistik lintas batas. Kelola pengiriman, otomatiskan dokumen bea cukai, dan beri tahu pelanggan.', hi: 'क्रॉस-बॉर्डर लॉजिस्टिक्स ऑपरेशन के लिए रीयल-टाइम ट्रैकिंग सिस्टम। शिपमेंट प्रबंधित करें, सीमा शुल्क दस्तावेज़ स्वचालित करें, और ग्राहकों को सूचित रखें।', ur: 'بارڈر لاجسٹکس آپریشنز کے لیے ریئل ٹائم ٹریکنگ سسٹم۔ شپمنٹس کا نظم کریں، کسٹم دستاویزات خودکار کریں، اور گاہکوں کو مطلع رکھیں۔', ru: 'Система отслеживания в реальном времени для трансграничных логистических операций. Управляйте отгрузками, автоматизируйте таможенную документацию и держите клиентов в курсе.', fr: 'Système de suivi en temps réel pour les opérations logistiques transfrontalières. Gérez les expéditions, automatisez la documentation douanière et informez les clients.', es: 'Sistema de seguimiento en tiempo real para operaciones logísticas transfronterizas. Gestione envíos, automatice documentación aduanera y mantenga informados a los clientes.', my: 'နယ်စပ်ဖြတ်ကျော်သော လူသယ်ယူပို့ဆောင်ရေးလုပ်ငန်းများအတွက် အချိန်နှင့်တစ်ပြေးညီ tracking စနစ်။ ပို့ဆောင်မှုများစီမံခန့်ခွဲပါ၊ ကုန်သွယ်ရေးခွပစ္စည်းများအလိုအလျောက်ပြုလုပ်ပါ၊ ဖောက်သည်များကိုအသိပေးပါ။' },
+                features: {
+                    en: ['Real-time shipment tracking', 'Automated customs documentation', 'Multi-carrier integration', 'Customer notification system', 'Analytics dashboard'],
+                    zh: ['实时货运追踪', '自动报关文件', '多承运商集成', '客户通知系统', '分析仪表板'],
+                    ms: ['Jejak penghantaran masa nyata', 'Dokumentasi kastam automatik', 'Integrasi berbilang pembawa', 'Sistem notifikasi pelanggan', 'Papan pemuka analitik'],
+                    ja: ['リアルタイム貨物追跡', '自動税関書類', '複数運送業者統合', '顧客通知システム', '分析ダッシュボード'],
+                    ko: ['실시간 화물 추적', '자동 세관 서류', '다중 운송업자 통합', '고객 알림 시스템', '분석 대시보드'],
+                    vi: ['Theo dõi lô hàng thờ gian thực', 'Tài liệu hải quan tự động', 'Tích hợp đa nhà vận chuyển', 'Hệ thống thông báo khách hàng', 'Bảng điều khiển phân tích'],
+                    th: ['ติดตามการจัดส่งแบบเรียลไทม์', 'เอกสารศุลกากรอัตโนมัติ', 'การผสานรวมผู้ให้บริการหลายราย', 'ระบบแจ้งเตือนลูกค้า', 'แดชบอร์ดการวิเคราะห์'],
+                    id: ['Pelacakan pengiriman real-time', 'Dokumentasi bea cukai otomatis', 'Integrasi multi-kurir', 'Sistem notifikasi pelanggan', 'Dashboard analitik'],
+                    hi: ['रीयल-टाइम शिपमेंट ट्रैकिंग', 'स्वचालित सीमा शुल्क दस्तावेज़', 'बहु-वाहक एकीकरण', 'ग्राहक अधिसूचना प्रणाली', 'एनालिटिक्स डैशबोर्ड'],
+                    ur: ['ریئل ٹائم شپمنٹ ٹریکنگ', 'خودکار کسٹم دستاویزات', 'ملٹی کیریئر انٹیگریشن', 'کسٹمر نوٹیفیکیشن سسٹم', 'اینالیٹکس ڈیش بورڈ'],
+                    ru: ['Отслеживание отгрузок в реальном времени', 'Автоматизация таможенной документации', 'Интеграция с несколькими перевозчиками', 'Система уведомлений клиентов', 'Аналитическая панель'],
+                    fr: ['Suivi des expéditions en temps réel', 'Documentation douanière automatisée', 'Intégration multi-transporteurs', 'Système de notification client', 'Tableau de bord analytique'],
+                    es: ['Seguimiento de envíos en tiempo real', 'Documentación aduanera automatizada', 'Integración multi-transportista', 'Sistema de notificación al cliente', 'Panel de análisis'],
+                    my: ['အချိန်နှင့်တစ်ပြေးညီ ပို့ဆောင်မှု tracking', 'အလိုအလျောက် ကုန်သွယ်ရေးခွပစ္စည်းများ', 'အ carriers အများအပြား ချိတ်ဆက်မှု', 'ဖောက်သည်အသိပေးချက်စနစ်', 'Analytics dashboard']
+                }
+            },
+            realestate1: {
+                icon: '🏢',
+                category: { en: 'Property & Real Estate', zh: '房地产', ms: 'Harta & Hartanah', ja: '不動産', ko: '부동산', vi: 'Bất động sản', th: 'อสังหาริมทรัพย์', id: 'Properti & Real Estat', hi: 'संपत्ति और रियल एस्टेट', ur: 'جائیداد اور رئیل اسٹیٹ', ru: 'Недвижимость', fr: 'Immobilier', es: 'Propiedades e inmuebles', my: 'အိမ်ခြံမြေနှင့် ပိုင်ဆိုင်မှု' },
+                title: { en: 'Condo/JMB Management', zh: '公寓/管委会管理', ms: 'Pengurusan Condo/JMB', ja: 'マンション/JMB管理', ko: '콘도/JMB 관리', vi: 'Quản Lý Chung Cư/JMB', th: 'การจัดการคอนโด/JMB', id: 'Manajemen Apartemen/JMB', hi: 'कंडोमिनियम/JMB प्रबंधन', ur: 'کونڈو/JMB مینجمنٹ', ru: 'Управление кондоминиумом/JMB', fr: 'Gestion de copropriété/JMB', es: 'Gestión de condominio/JMB', my: 'ကွန်ဒို/JMB စီမံခန့်ခွဲမှု' },
+                description: { en: 'Complete management system for condominiums and Joint Management Bodies. Handle maintenance fees, visitor access, and facility bookings seamlessly.', zh: '公寓和联合管理机构的完整管理系统。无缝处理管理费、访客出入和设施预订。', ms: 'Sistem pengurusan lengkap untuk kondominium dan Badan Pengurusan Bersama. Urus yuran penyelenggaraan, akses pelawat, dan tempahan kemudahan dengan lancar.', ja: 'マンションおよび合同管理組合向けの完全な管理システム。管理費、訪問者アクセス、施設予約をシームレスに処理します。', ko: '콘도미니엄 및 공동관리단체를 위한 완전한 관리 시스템입니다. 관리비, 방문자 출입, 시설 예약을 원활하게 처리합니다.', vi: 'Hệ thống quản lý toàn diện cho chung cư và Ban Quản lý Chung. Xử lý phí bảo trì, quyền truy cập của khách và đặt cơ sở vật chất một cách liền mạch.', th: 'ระบบบริหารจัดการครบวงจรสำหรับคอนโดและ JMB จัดการค่าบำรุงรักษา การเข้าถึงของผู้เยี่ยมชม และการจองสิ่งอำนวยความสะดวกได้อย่างราบรื่น', id: 'Sistem manajemen lengkap untuk apartemen dan Badan Pengelola Bersama. Kelola biaya perawatan, akses pengunjung, dan pemesanan fasilitas dengan lancar.', hi: 'कंडोमिनियम और संयुक्त प्रबंधन निकायों के लिए पूर्ण प्रबंधन प्रणाली। रखरखाव शुल्क, आगंतुक पहुंच और सुविधा बुकिंग को निर्बाध रूप से संभालें।', ur: 'کونڈومینیمز اور جوائنٹ مینجمنٹ باڈیز کے لیے مکمل مینجمنٹ سسٹم۔ دیکھ بھال کے اخراجات، ملاقاتیوں کی رسائی اور سہولیات کی بکنگ بغیر کسی رکاوٹ کے سنبھالیں۔', ru: 'Полная система управления для кондоминиумов и объединенных органов управления. Бесшовная обработка коммунальных платежей, контроль доступа посетителей и бронирование объектов.', fr: 'Système de gestion complet pour copropriétés et syndics. Gérez les charges, l\'accès visiteurs et les réservations d\'équipements en toute fluidité.', es: 'Sistema de gestión completo para condominios y JMB. Maneje cuotas de mantenimiento, acceso de visitantes y reservas de instalaciones sin problemas.', my: 'ကွန်ဒိုများနှင့် JMB များအတွက် ပြည့်စုံသော စီမံခန့်ခွဲမှုစနစ်။ ထိန်းသိမ်းစရိတ်များ၊ ဧည့်သည်များဝင်ရောက်မှု၊ ဆောင်ရွက်ချက်များ booking ကို ပြတ်တောက်မှုမရှိချိတ်ဆက်ပါ။' },
+                features: {
+                    en: ['Maintenance fee tracking', 'Visitor QR-pass system', 'Facility booking management', 'Resident communication portal', 'Financial reporting'],
+                    zh: ['管理费追踪', '访客二维码通行证', '设施预订管理', '居民沟通门户', '财务报告'],
+                    ms: ['Jejak yuran penyelenggaraan', 'Sistem QR-pass pelawat', 'Pengurusan tempahan kemudahan', 'Portal komunikasi penduduk', 'Pelaporan kewangan'],
+                    ja: ['管理費追跡', '訪問者QRパスシステム', '施設予約管理', '居住者コミュニケーションポータル', '財務報告'],
+                    ko: ['관리비 추적', '방문자 QR 패스 시스템', '시설 예약 관리', '입주민 커뮤니케이션 포털', '재무 보고'],
+                    vi: ['Theo dõi phí bảo trì', 'Hệ thống QR-pass khách', 'Quản lý đặt cơ sở vật chất', 'Cổng giao tiếp cư dân', 'Báo cáo tài chính'],
+                    th: ['ติดตามค่าบำรุงรักษา', 'ระบบ QR-pass สำหรับผู้มาเยือน', 'การจัดการการจองสิ่งอำนวยความสะดวก', 'พอร์ทัลสื่อสารสำหรับผู้อยู่อาศัย', 'รายงานทางการเงิน'],
+                    id: ['Pelacakan biaya perawatan', 'Sistem QR-pass pengunjung', 'Manajemen pemesanan fasilitas', 'Portal komunikasi penghuni', 'Pelaporan keuangan'],
+                    hi: ['रखरखाव शुल्क ट्रैकिंग', 'आगंतुक QR-पास सिस्टम', 'सुविधा बुकिंग प्रबंधन', 'निवासी संचार पोर्टल', 'वित्तीय रिपोर्टिंग'],
+                    ur: ['میینٹیننس فیس ٹریکنگ', 'وزیٹر QR پاس سسٹم', 'سہولت بکنگ مینجمنٹ', 'رہائشی کمیونیکیشن پورٹل', 'مالیاتی رپورٹنگ'],
+                    ru: ['Отслеживание коммунальных платежей', 'QR-пропускная система для посетителей', 'Управление бронированием объектов', 'Коммуникационный портал для жильцов', 'Финансовая отчетность'],
+                    fr: ['Suivi des charges', 'Système QR-pass visiteurs', 'Gestion des réservations', 'Portail de communication résidents', 'Rapports financiers'],
+                    es: ['Seguimiento de cuotas de mantenimiento', 'Sistema QR-pass para visitantes', 'Gestión de reservas de instalaciones', 'Portal de comunicación de residentes', 'Reportes financieros'],
+                    my: ['ထိန်းသိမ်းစရိတ် tracking', 'ဧည့်သည် QR-pass စနစ်', 'ဆောင်ရွက်ချက်များ booking စီမံခန့်ခွဲမှု', 'နေထိုင်သူများ ဆက်သွယ်ရေးပေါ်တယ်', 'ငွေကြေးဆိုင်ရာ အစီရင်ခံများ']
+                }
+            },
+            
+            // Additional 8 visible industries
+            medical1: {
+                icon: '🏥',
+                category: { en: 'Healthcare', zh: '医疗健康', ms: 'Penjagaan Kesihatan', ja: '医療・ヘルスケア', ko: '의료', vi: 'Chăm sóc sức khỏe', th: 'การดูแลสุขภาพ', id: 'Kesehatan', hi: 'स्वास्थ्य सेवा', ur: 'صحت کی دیکھ بھال', ru: 'Здравоохранение', fr: 'Santé', es: 'Salud', my: 'ကျန်းမာရေး' },
+                title: { en: 'Clinic Practice Management', zh: '诊所管理', ms: 'Pengurusan Klinik', ja: 'クリニック管理', ko: '의원 관리', vi: 'Quản Lý Phòng Khám', th: 'การจัดการคลินิก', id: 'Manajemen Klinik', hi: 'क्लिनिक प्रबंधन', ur: 'کلینک مینجمنٹ', ru: 'Управление клиникой', fr: 'Gestion de clinique', es: 'Gestión de clínica', my: 'ဆေးခန်း စီမံခန့်ခွဲမှု' },
+                description: { en: 'Comprehensive clinic management system with appointment scheduling, digital medical records, and patient portal for modern healthcare practices.', zh: '现代化医疗诊所的综合管理系统，包含预约排程、电子病历和患者门户功能。', ms: 'Sistem pengurusan klinik komprehensif dengan penjadualan temujanji, rekod perubatan digital, dan portal pesakit untuk amalan penjagaan kesihatan moden.', ja: '予約スケジューリング、電子カルテ、患者ポータルを備えた包括的なクリニック管理システム。', ko: '예약 일정 관리, 전자 의료 기록, 환자 포털이 포함된 종합적인 의원 관리 시스템입니다.', vi: 'Hệ thống quản lý phòng khám toàn diện với lập lịch hẹn, hồ sơ y tế kỹ thuật số và cổng thông tin bệnh nhân.', th: 'ระบบบริหารจัดการคลินิกที่ครอบคลุมพร้อมการนัดหมาย ประวัติการรักษาดิจิทัล และพอร์ทัลผู้ป่วย', id: 'Sistem manajemen klinik komprehensif dengan penjadwalan janji temu, rekam medis digital, dan portal pasien.', hi: 'नियुक्ति शेड्यूलिंग, डिजिटल मेडिकल रिकॉर्ड और पेशेंट पोर्टल के साथ व्यापक क्लिनिक प्रबंधन प्रणाली।', ur: 'اپائنٹمنٹ شیڈولنگ، ڈیجیٹل میڈیکل ریکارڈز، اور مریض پورٹل کے ساتھ جامع کلینک مینجمنٹ سسٹم۔', ru: 'Комплексная система управления клиникой с планированием приемов, электронными медицинскими записями и порталом пациентов.', fr: 'Système complet de gestion de clinique avec planification des rendez-vous, dossiers médicaux numériques et portail patient.', es: 'Sistema completo de gestión de clínicas con programación de citas, registros médicos digitales y portal del paciente.', my: 'အချိန်မှချိန်းသာမှု၊ ဒစ်ဂျစ်တယ်ဆေးဘက်ဆိုင်ရာမှတ်တမ်းများနှင့် လူနာများပေါ်တယ်အပါအဝင် ကျယ်ပြန့်သော ဆေးခန်းစီမံခန့်ခွဲမှုစနစ်။' },
+                features: {
+                    en: ['Appointment scheduling', 'Digital medical records', 'Patient portal', 'Prescription management', 'Billing integration'],
+                    zh: ['预约排程', '电子病历', '患者门户', '处方管理', '计费集成'],
+                    ms: ['Penjadualan temujanji', 'Rekod perubatan digital', 'Portal pesakit', 'Pengurusan preskripsi', 'Integrasi pengebilan'],
+                    ja: ['予約スケジューリング', '電子カルテ', '患者ポータル', '処方管理', '請求統合'],
+                    ko: ['예약 일정 관리', '전자 의료 기록', '환자 포털', '처방 관리', '청구 통합'],
+                    vi: ['Lập lịch hẹn', 'Hồ sơ y tế kỹ thuật số', 'Cổng thông tin bệnh nhân', 'Quản lý đơn thuốc', 'Tích hợp thanh toán'],
+                    th: ['การนัดหมาย', 'ประวัติการรักษาดิจิทัล', 'พอร์ทัลผู้ป่วย', 'การจัดการใบสั่งยา', 'การเชื่อมโยงการเรียกเก็บเงิน'],
+                    id: ['Penjadwalan janji temu', 'Rekam medis digital', 'Portal pasien', 'Manajemen resep', 'Integrasi penagihan'],
+                    hi: ['अपॉइंटमेंट शेड्यूलिंग', 'डिजिटल मेडिकल रिकॉर्ड्स', 'पेशेंट पोर्टल', 'प्रिस्क्रिप्शन मैनेजमेंट', 'बिलिंग इंटीग्रेशन'],
+                    ur: ['اپائنٹمنٹ شیڈولنگ', 'ڈیجیٹل میڈیکل ریکارڈز', 'مریض پورٹل', 'نسخہ مینجمنٹ', 'بلنگ انٹیگریشن'],
+                    ru: ['Планирование приемов', 'Электронные медицинские записи', 'Портал пациента', 'Управление рецептами', 'Интеграция выставления счетов'],
+                    fr: ['Planification des rendez-vous', 'Dossiers médicaux numériques', 'Portail patient', 'Gestion des ordonnances', 'Intégration de la facturation'],
+                    es: ['Programación de citas', 'Registros médicos digitales', 'Portal del paciente', 'Gestión de recetas', 'Integración de facturación'],
+                    my: ['အချိန်မှချိန်းသာမှု', 'ဒစ်ဂျစ်တယ်ဆေးဘက်ဆိုင်ရာမှတ်တမ်းများ', 'လူနာများပေါ်တယ်', 'ဆေးညွန်းစီမံခန့်ခွဲမှု', 'ငွေတောင်းခံခြင်း ဆက်စပ်မှု']
+                }
+            },
+            fnb1: {
+                icon: '🍽️',
+                category: { en: 'Food & Beverage', zh: '餐饮', ms: 'Makanan & Minuman', ja: '飲食', ko: '외식업', vi: 'Ẩm thực', th: 'อาหารและเครื่องดื่ม', id: 'Makanan & Minuman', hi: 'खाद्य और पेय', ur: 'کھانا اور مشروبات', ru: 'Рестораны и кафе', fr: 'Restauration', es: 'Alimentos y bebidas', my: 'အစားအသောက်နှင့် သောက်သောက်ရာ' },
+                title: { en: 'Restaurant POS & Inventory', zh: '餐厅POS与库存', ms: 'POS & Inventori Restoran', ja: 'レストランPOS・在庫管理', ko: '레스토랑 POS 및 재고', vi: 'POS & Quản Lý Kho Nhà Hàng', th: 'POS และสต็อกร้านอาหาร', id: 'POS & Inventori Restoran', hi: 'रेस्टोरेंट POS और इन्वेंट्री', ur: 'ریسٹورنٹ POS اور انوینٹری', ru: 'POS и инвентаризация ресторана', fr: 'POS et inventaire restaurant', es: 'POS e inventario de restaurante', my: 'စားသောက်ဆိုင် POS နှင့် စီမံခန့်ခွဲမှု' },
+                description: { en: 'All-in-one restaurant management system with POS, kitchen display, and inventory tracking for efficient F&B operations.', zh: '一体化餐厅管理系统，包含POS、厨房显示系统和库存追踪，实现高效的餐饮运营。', ms: 'Sistem pengurusan restoran all-in-one dengan POS, paparan dapur, dan jejak inventori untuk operasi F&B yang cekap.', ja: 'POS、キッチンディスプレイ、在庫追跡を備えたオールインワンレストラン管理システム。', ko: 'POS, 주방 디스플레이, 재고 추적이 포함된 올인원 레스토랑 관리 시스템입니다.', vi: 'Hệ thống quản lý nhà hàng all-in-one với POS, màn hình bếp và theo dõi tồn kho.', th: 'ระบบบริหารร้านอาหารแบบครบวงจรพร้อม POS จอแสดงผลห้องครัว และการติดตามสต็อก', id: 'Sistem manajemen restoran all-in-one dengan POS, tampilan dapur, dan pelacakan inventori.', hi: 'POS, किचन डिस्प्ले और इन्वेंट्री ट्रैकिंग के साथ ऑल-इन-वन रेस्टोरेंट मैनेजमेंट सिस्टम।', ur: 'POS، کچن ڈسپلے، اور انوینٹری ٹریکنگ کے ساتھ آل ان ون ریسٹورنٹ مینجمنٹ سسٹم۔', ru: 'Комплексная система управления рестораном с POS, кухонным дисплеем и отслеживанием запасов.', fr: 'Système de gestion de restaurant tout-en-un avec POS, écran cuisine et suivi des stocks.', es: 'Sistema integral de gestión de restaurantes con POS, pantalla de cocina y seguimiento de inventario.', my: 'POS၊ မီးဖိုပြင် display နှင့် ကုန်လက်ကျန် tracking ပါဝင်သော စားသောက်ဆိုင်စီမံခန့်ခွဲမှုစနစ်။' },
+                features: {
+                    en: ['Order management', 'Kitchen display system', 'Stock tracking', 'Table management', 'Staff scheduling'],
+                    zh: ['订单管理', '厨房显示系统', '库存追踪', '桌位管理', '员工排班'],
+                    ms: ['Pengurusan pesanan', 'Sistem paparan dapur', 'Jejak stok', 'Pengurusan meja', 'Penjadualan kakitangan'],
+                    ja: ['注文管理', 'キッチンディスプレイシステム', '在庫追跡', 'テーブル管理', 'スタッフスケジューリング'],
+                    ko: ['주문 관리', '주방 디스플레이 시스템', '재고 추적', '테이블 관리', '직원 스케줄링'],
+                    vi: ['Quản lý đơn hàng', 'Hệ thống hiển thị bếp', 'Theo dõi tồn kho', 'Quản lý bàn', 'Lập lịch nhân viên'],
+                    th: ['การจัดการออเดอร์', 'ระบบแสดงผลห้องครัว', 'การติดตามสต็อก', 'การจัดการโต๊ะ', 'การจัดตารางพนักงาน'],
+                    id: ['Manajemen pesanan', 'Sistem tampilan dapur', 'Pelacakan stok', 'Manajemen meja', 'Penjadwalan staf'],
+                    hi: ['ऑर्डर मैनेजमेंट', 'किचन डिस्प्ले सिस्टम', 'स्टॉक ट्रैकिंग', 'टेबल मैनेजमेंट', 'स्टाफ शेड्यूलिंग'],
+                    ur: ['آرڈر مینجمنٹ', 'کچن ڈسپلے سسٹم', 'اسٹاک ٹریکنگ', 'ٹیبل مینجمنٹ', 'اسٹاف شیڈولنگ'],
+                    ru: ['Управление заказами', 'Система дисплея на кухне', 'Отслеживание запасов', 'Управление столиками', 'Планирование персонала'],
+                    fr: ['Gestion des commandes', 'Système d\'affichage cuisine', 'Suivi des stocks', 'Gestion des tables', 'Planification du personnel'],
+                    es: ['Gestión de pedidos', 'Sistema de pantalla de cocina', 'Seguimiento de inventario', 'Gestión de mesas', 'Programación de personal'],
+                    my: ['အမိန့်စီမံခန့်ခွဲမှု', 'မီးဖိုပြင် display စနစ်', 'ကုန်လက်ကျန် tracking', 'စားပွဲစီမံခန့်ခွဲမှု', 'ဝန်ထမ်းအချိန်ဇယား']
+                }
+            }
+        };
+
         function openModal(industry) {
-            document.getElementById('industryModal').classList.add('show');
+            const modal = document.getElementById('industryModal');
+            const data = modalData[industry];
+            const t = translations[currentLang];
+            
+            if (data) {
+                document.getElementById('modalIcon').textContent = data.icon;
+                document.getElementById('modalCategory').textContent = data.category[currentLang] || data.category.en;
+                document.getElementById('modalTitle').textContent = data.title[currentLang] || data.title.en;
+                document.getElementById('modalDescription').textContent = data.description[currentLang] || data.description.en;
+                
+                const featuresList = document.getElementById('modalFeatures');
+                featuresList.innerHTML = '';
+                const features = data.features[currentLang] || data.features.en;
+                features.forEach(feature => {
+                    const li = document.createElement('li');
+                    li.textContent = feature;
+                    featuresList.appendChild(li);
+                });
+            }
+            
+            modal.classList.add('show');
             document.body.style.overflow = 'hidden';
         }
 
