@@ -2059,13 +2059,290 @@
                     es: ['Gestión de pedidos', 'Sistema de pantalla de cocina', 'Seguimiento de inventario', 'Gestión de mesas', 'Programación de personal'],
                     my: ['အမိန့်စီမံခန့်ခွဲမှု', 'မီးဖိုပြင် display စနစ်', 'ကုန်လက်ကျန် tracking', 'စားပွဲစီမံခန့်ခွဲမှု', 'ဝန်ထမ်းအချိန်ဇယား']
                 }
+            },
+            
+            // Manufacturing industries
+            manufacturing1: {
+                icon: '⚙️',
+                category: { en: 'Manufacturing', zh: '制造业', ms: 'Pembuatan', ja: '製造業', ko: '제조업', vi: 'Sản xuất', th: 'การผลิต', id: 'Manufaktur', hi: 'विनिर्माण', ur: 'مینوفیکچرنگ', ru: 'Производство', fr: 'Fabrication', es: 'Manufactura', my: 'ထုတ်လုပ်မှု' },
+                title: { en: 'Manufacturing Job Shop', zh: '制造业车间', ms: 'Job Shop Pembuatan', ja: '製造業ジョブショップ', ko: '제조 작업장', vi: 'Xưởng Sản Xuất', th: 'โรงงานผลิต Job Shop', id: 'Job Shop Manufaktur', hi: 'विनिर्माण जॉब शॉप', ur: 'مینوفیکچرنگ جاب شاپ', ru: 'Производственный цех', fr: 'Atelier de fabrication', es: 'Taller de manufactura', my: 'ထုတ်လုပ်ရေး Job Shop' },
+                description: { en: 'Production tracking, machine scheduling, and quality control system for manufacturing operations.', zh: '制造业的生产追踪、机器排程和质量控制系统。', ms: 'Sistem jejak pengeluaran, penjadualan mesin, dan kawalan kualiti untuk operasi pembuatan.', ja: '製造業の生産追跡、機械スケジューリング、品質管理システム。', ko: '제조 운영을 위한 생산 추적, 기계 일정 관리 및 품질 관리 시스템입니다.', vi: 'Hệ thống theo dõi sản xuất, lập lịch máy móc và kiểm soát chất lượng cho hoạt động sản xuất.', th: 'ระบบติดตามการผลิต การจัดตารางเครื่องจักร และการควบคุมคุณภาพสำหรับการดำเนินงานการผลิต', id: 'Sistem pelacakan produksi, penjadwalan mesin, dan kontrol kualitas untuk operasi manufaktur.', hi: 'विनिर्माण संचालन के लिए उत्पादन ट्रैकिंग, मशीन शेड्यूलिंग और गुणवत्ता नियंत्रण प्रणाली।', ur: 'مینوفیکچرنگ آپریشنز کے لیے پروڈکشن ٹریکنگ، مشین شیڈولنگ، اور کوالٹی کنٹرول سسٹم۔', ru: 'Система отслеживания производства, планирования оборудования и контроля качества для производственных операций.', fr: 'Système de suivi de production, planification des machines et contrôle qualité pour les opérations de fabrication.', es: 'Sistema de seguimiento de producción, programación de máquinas y control de calidad para operaciones de manufactura.', my: 'ထုတ်လုပ်မှုလုပ်ငန်းများအတွက် ထုတ်လုပ်မှု tracking၊ စက်ပစ္စည်း scheduling နှင့် အရည်အသွေးထိန်းချုပ်မှုစနစ်။' },
+                features: {
+                    en: ['Production tracking', 'Machine scheduling', 'Quality control', 'Work order management', 'Inventory integration'],
+                    zh: ['生产追踪', '机器排程', '质量控制', '工单管理', '库存集成'],
+                    ms: ['Jejak pengeluaran', 'Penjadualan mesin', 'Kawalan kualiti', 'Pengurusan pesanan kerja', 'Integrasi inventori'],
+                    ja: ['生産追跡', '機械スケジューリング', '品質管理', '作業指示書管理', '在庫統合'],
+                    ko: ['생산 추적', '기계 일정 관리', '품질 관리', '작업 지시서 관리', '재고 통합'],
+                    vi: ['Theo dõi sản xuất', 'Lập lịch máy móc', 'Kiểm soát chất lượng', 'Quản lý lệnh sản xuất', 'Tích hợp tồn kho'],
+                    th: ['ติดตามการผลิต', 'การจัดตารางเครื่องจักร', 'การควบคุมคุณภาพ', 'การจัดการใบสั่งงาน', 'การเชื่อมโยงสินค้าคงคลัง'],
+                    id: ['Pelacakan produksi', 'Penjadwalan mesin', 'Kontrol kualitas', 'Manajemen perintah kerja', 'Integrasi inventori'],
+                    hi: ['उत्पादन ट्रैकिंग', 'मशीन शेड्यूलिंग', 'गुणवत्ता नियंत्रण', 'वर्क ऑर्डर प्रबंधन', 'इन्वेंट्री एकीकरण'],
+                    ur: ['پروڈکشن ٹریکنگ', 'مشین شیڈولنگ', 'کوالٹی کنٹرول', 'ورک آرڈر مینجمنٹ', 'انوینٹری انٹیگریشن'],
+                    ru: ['Отслеживание производства', 'Планирование оборудования', 'Контроль качества', 'Управление рабочими заказами', 'Интеграция запасов'],
+                    fr: ['Suivi de production', 'Planification des machines', 'Contrôle qualité', 'Gestion des ordres de travail', 'Intégration des stocks'],
+                    es: ['Seguimiento de producción', 'Programación de máquinas', 'Control de calidad', 'Gestión de órdenes de trabajo', 'Integración de inventario'],
+                    my: ['ထုတ်လုပ်မှု tracking', 'စက်ပစ္စည်း scheduling', 'အရည်အသွေးထိန်းချုပ်မှု', 'အလုပ်အမိန့်စီမံခန့်ခွဲမှု', 'ကုန်လက်ကျန် ဆက်စပ်မှု']
+                }
+            },
+            
+            // Legal industry
+            legal1: {
+                icon: '⚖️',
+                category: { en: 'Legal Services', zh: '法律服务', ms: 'Perkhidmatan Undang-Undang', ja: '法律サービス', ko: '법률 서비스', vi: 'Dịch vụ pháp lý', th: 'บริการทางกฎหมาย', id: 'Jasa Hukum', hi: 'कानूनी सेवाएं', ur: 'قانونی خدمات', ru: 'Юридические услуги', fr: 'Services juridiques', es: 'Servicios legales', my: 'ဥပဒေဝန်ဆောင်မှု' },
+                title: { en: 'Legal Case Management', zh: '法律案件管理', ms: 'Pengurusan Kes Undang-Undang', ja: '法律案件管理', ko: '법률 사건 관리', vi: 'Quản Lý Vụ Án Pháp Lý', th: 'การจัดการคดีความ', id: 'Manajemen Kas Hukum', hi: 'कानूनी केस प्रबंधन', ur: 'قانونی کیس مینجمنٹ', ru: 'Управление юридическими делами', fr: 'Gestion des affaires juridiques', es: 'Gestión de casos legales', my: 'ဥပဒေရေးအမှု စီမံခန့်ခွဲမှု' },
+                description: { en: 'Case timeline tracking, document management, and client billing system for law firms.', zh: '律师事务所的案件时间线追踪、文档管理和客户计费系统。', ms: 'Sistem jejak garis masa kes, pengurusan dokumen, dan pengebilan pelanggan untuk firma guaman.', ja: '法律事務所の案件タイムライン追跡、文書管理、顧客請求システム。', ko: '법률 사무소를 위한 사건 타임라인 추적, 문서 관리 및 고객 청구 시스템입니다.', vi: 'Hệ thống theo dõi tiến độ vụ án, quản lý tài liệu và thanh toán khách hàng cho công ty luật.', th: 'ระบบติดตามกรณี การจัดการเอกสาร และการเรียกเก็บเงินจากลูกค้าสำหรับสำนักงานกฎหมาย', id: 'Sistem pelacakan kas, manajemen dokumen, dan penagihan klien untuk firma hukum.', hi: 'कानून फर्मों के लिए केस टाइमलाइन ट्रैकिंग, दस्तावेज़ प्रबंधन और क्लाइंट बिलिंग प्रणाली।', ur: 'لاء frmز کے لیے کیس ٹائم لائن ٹریکنگ، دستاویزات کا انتظام، اور کلائنٹ بلنگ سسٹم۔', ru: 'Система отслеживания сроков дел, управления документами и выставления счетов клиентам для юридических фирм.', fr: 'Système de suivi des délais des affaires, gestion des documents et facturation des clients pour les cabinets d\'avocats.', es: 'Sistema de seguimiento de plazos de casos, gestión de documentos y facturación de clientes para bufetes de abogados.', my: 'ဥပဒေအဖွဲ့အစည်းများအတွက် အမှုအချိန်ဇယား tracking၊ စာရွက်စာတမ်းစီမံခန့်ခွဲမှု နှင့် ဖောက်သည်ငွေတောင်းခံခြင်းစနစ်။' },
+                features: {
+                    en: ['Case timeline tracking', 'Document management', 'Client billing', 'Court deadline alerts', 'Conflict checking'],
+                    zh: ['案件时间线追踪', '文档管理', '客户计费', '法院截止日期提醒', '冲突检查'],
+                    ms: ['Jejak garis masa kes', 'Pengurusan dokumen', 'Pengebilan pelanggan', 'Makluman tarikh akhir mahkamah', 'Pemeriksaan konflik'],
+                    ja: ['案件タイムライン追跡', '文書管理', '顧客請求', '法廷期限アラート', '利益相反チェック'],
+                    ko: ['사건 타임라인 추적', '문서 관리', '고객 청구', '법원 마감일 알림', '이해충돌 확인'],
+                    vi: ['Theo dõi tiến độ vụ án', 'Quản lý tài liệu', 'Thanh toán khách hàng', 'Cảnh báo hạn chót tòa án', 'Kiểm tra xung đột'],
+                    th: ['ติดตามกรณี', 'การจัดการเอกสาร', 'การเรียกเก็บเงินจากลูกค้า', 'การแจ้งเตือนกำหนดเวลาศาล', 'การตรวจสอบความขัดแย้ง'],
+                    id: ['Pelacakan kas', 'Manajemen dokumen', 'Penagihan klien', 'Peringatan tenggat waktu pengadilan', 'Pemeriksaan konflik'],
+                    hi: ['केस टाइमलाइन ट्रैकिंग', 'दस्तावेज़ प्रबंधन', 'क्लाइंट बिलिंग', 'कोर्ट डेडलाइन अलर्ट', 'कन्फ्लिक्ट चेकिंग'],
+                    ur: ['کیس ٹائم لائن ٹریکنگ', 'دستاویزات کا انتظام', 'کلائنٹ بلنگ', 'عدالتی ڈیڈلائن الرٹس', 'تضادات کی جانچ'],
+                    ru: ['Отслеживание сроков дел', 'Управление документами', 'Выставление счетов клиентам', 'Оповещения о сроках суда', 'Проверка конфликтов'],
+                    fr: ['Suivi des délais des affaires', 'Gestion des documents', 'Facturation des clients', 'Alertes des délais judiciaires', 'Vérification des conflits'],
+                    es: ['Seguimiento de plazos de casos', 'Gestión de documentos', 'Facturación de clientes', 'Alertas de fechas límite judiciales', 'Verificación de conflictos'],
+                    my: ['အမှုအချိန်ဇယား tracking', 'စာရွက်စာတမ်းစီမံခန့်ခွဲမှု', 'ဖောက်သည်ငွေတောင်းခံခြင်း', 'တရားရုံးအချိန်ကုန်သတိပေးချက်', 'ပွင့်လင်းမှုတိုးစစ်ဆေးခြင်း']
+                }
+            },
+            
+            // Retail/E-commerce
+            retail1: {
+                icon: '🛒',
+                category: { en: 'Retail & E-commerce', zh: '零售与电商', ms: 'Peruncitan & E-dagang', ja: '小売・Eコマース', ko: '소매 및 전자상거래', vi: 'Bán lẻ & Thương mại điện tử', th: 'ค้าปลีกและอีคอมเมิร์ซ', id: 'Ritel & E-commerce', hi: 'खुदरा और ई-कॉमर्स', ur: 'ریٹیل اور ای کامرس', ru: 'Розничная торговля и электронная коммерция', fr: 'Commerce de détail et e-commerce', es: 'Venta minorista y comercio electrónico', my: 'ရောင်းချမှု နှင့် အွန်လိုင်းကုန်သွယ်မှု' },
+                title: { en: 'E-commerce Order Management', zh: '电商订单管理', ms: 'Pengurusan Pesanan E-dagang', ja: 'EC注文管理', ko: '전자상거래 주문 관리', vi: 'Quản Lý Đơn Hàng TMĐT', th: 'การจัดการออเดอร์อีคอมเมิร์ซ', id: 'Manajemen Pesanan E-commerce', hi: 'ई-कॉमर्स ऑर्डर प्रबंधन', ur: 'ای کامرس آرڈر مینجمنٹ', ru: 'Управление заказами электронной коммерции', fr: 'Gestion des commandes e-commerce', es: 'Gestión de pedidos de comercio electrónico', my: 'အွန်လိုင်းအမိန့်စီမံခန့်ခွဲမှု' },
+                description: { en: 'Multi-channel sync, inventory management, and order fulfillment system for online retailers.', zh: '多渠道同步、库存管理和订单履行系统，适用于在线零售商。', ms: 'Sistem penyegerakan multi-saluran, pengurusan inventori, dan pemenuhan pesanan untuk peruncit dalam talian.', ja: 'オンライン小売業者向けのマルチチャネル同期、在庫管理、注文履行システム。', ko: '온라인 소매업체를 위한 다중 채널 동기화, 재고 관리 및 주문 이행 시스템입니다.', vi: 'Hệ thống đồng bộ đa kênh, quản lý tồn kho và hoàn thiện đơn hàng cho nhà bán lẻ trực tuyến.', th: 'ระบบซิงค์หลายช่องทาง การจัดการสินค้าคงคลัง และการเติมเต็มออเดอร์สำหรับผู้ค้าปลีกออนไลน์', id: 'Sistem sinkronisasi multi-channel, manajemen inventori, dan pemenuhan pesanan untuk pengecer online.', hi: 'ऑनलाइन खुदरा विक्रेताओं के लिए मल्टी-चैनल सिंक, इन्वेंट्री मैनेजमेंट और ऑर्डर फुलफिलमेंट सिस्टम।', ur: 'آن لائن ریٹیلرز کے لیے ملٹی چینل سنک، انوینٹری مینجمنٹ، اور آرڈر فلفیلمنٹ سسٹم۔', ru: 'Система мультиканальной синхронизации, управления запасами и выполнения заказов для интернет-магазинов.', fr: 'Système de synchronisation multi-canal, gestion des stocks et exécution des commandes pour les détaillants en ligne.', es: 'Sistema de sincronización multicanal, gestión de inventario y cumplimiento de pedidos para minoristas en línea.', my: 'အွန်လိုင်းရောင်းချသူများအတွက် အကန့်အသီးသီး sync၊ ကုန်လက်ကျန်စီမံခန့်ခွဲမှု နှင့် အမိန့်ဖြည့်ဆည်းမှုစနစ်။' },
+                features: {
+                    en: ['Multi-channel sync', 'Inventory management', 'Order fulfillment', 'Customer tracking', 'Analytics dashboard'],
+                    zh: ['多渠道同步', '库存管理', '订单履行', '客户追踪', '分析仪表板'],
+                    ms: ['Penyegerakan multi-saluran', 'Pengurusan inventori', 'Pemenuhan pesanan', 'Jejak pelanggan', 'Papan pemuka analitik'],
+                    ja: ['マルチチャネル同期', '在庫管理', '注文履行', '顧客追跡', '分析ダッシュボード'],
+                    ko: ['다중 채널 동기화', '재고 관리', '주문 이행', '고객 추적', '분석 대시보드'],
+                    vi: ['Đồng bộ đa kênh', 'Quản lý tồn kho', 'Hoàn thiện đơn hàng', 'Theo dõi khách hàng', 'Bảng điều khiển phân tích'],
+                    th: ['ซิงค์หลายช่องทาง', 'การจัดการสินค้าคงคลัง', 'การเติมเต็มออเดอร์', 'การติดตามลูกค้า', 'แดชบอร์ดการวิเคราะห์'],
+                    id: ['Sinkronisasi multi-channel', 'Manajemen inventori', 'Pemenuhan pesanan', 'Pelacakan pelanggan', 'Dashboard analitik'],
+                    hi: ['मल्टी-चैनल सिंक', 'इन्वेंट्री मैनेजमेंट', 'ऑर्डर फुलफिलमेंट', 'कस्टमर ट्रैकिंग', 'एनालिटिक्स डैशबोर्ड'],
+                    ur: ['ملٹی چینل سنک', 'انوینٹری مینجمنٹ', 'آرڈر فلفیلمنٹ', 'کسٹمر ٹریکنگ', 'اینالیٹکس ڈیش بورڈ'],
+                    ru: ['Мультиканальная синхронизация', 'Управление запасами', 'Выполнение заказов', 'Отслеживание клиентов', 'Аналитическая панель'],
+                    fr: ['Synchronisation multi-canal', 'Gestion des stocks', 'Exécution des commandes', 'Suivi des clients', 'Tableau de bord analytique'],
+                    es: ['Sincronización multicanal', 'Gestión de inventario', 'Cumplimiento de pedidos', 'Seguimiento de clientes', 'Panel de análisis'],
+                    my: ['အကန့်အသီးသီး sync', 'ကုန်လက်ကျန်စီမံခန့်ခွဲမှု', 'အမိန့်ဖြည့်ဆည်းမှု', 'ဖောက်သည်များ tracking', 'Analytics dashboard']
+                }
+            },
+            
+            // Education
+            education1: {
+                icon: '📚',
+                category: { en: 'Education', zh: '教育', ms: 'Pendidikan', ja: '教育', ko: '교육', vi: 'Giáo dục', th: 'การศึกษา', id: 'Pendidikan', hi: 'शिक्षा', ur: 'تعلیم', ru: 'Образование', fr: 'Éducation', es: 'Educación', my: 'ပညာရေး' },
+                title: { en: 'Tuition Center Management', zh: '补习中心管理', ms: 'Pengurusan Pusat Tuisyen', ja: '学習塾管理', ko: '학원 관리', vi: 'Quản Lý Trung Tâm Gia Sư', th: 'การจัดการศูนย์กวดวิชา', id: 'Manajemen Bimbingan Belajar', hi: 'ट्यूशन सेंटर प्रबंधन', ur: 'ٹیوشن سینٹر مینجمنٹ', ru: 'Управление учебным центром', fr: 'Gestion de centre de tutorat', es: 'Gestión de centro de tutorías', my: 'သင်တန်းစင်တာ စီမံခန့်ခွဲမှု' },
+                description: { en: 'Student enrollment, class scheduling, and progress tracking system for tuition centers.', zh: '补习中心的学生报名、课程排程和进度追踪系统。', ms: 'Sistem pendaftaran pelajar, penjadualan kelas, dan jejak kemajuan untuk pusat tuisyen.', ja: '学習塾の学生登録、授業スケジューリング、進捗追跡システム。', ko: '학원을 위한 학생 등록, 수업 일정 관리 및 진도 추적 시스템입니다.', vi: 'Hệ thống tuyển sinh học viên, lập lịch lớp học và theo dõi tiến độ cho trung tâm gia sư.', th: 'ระบบรับสมัครนักเรียน การจัดตารางเรียน และการติดตามความก้าวหน้าสำหรับศูนย์กวดวิชา', id: 'Sistem pendaftaran siswa, penjadwalan kelas, dan pelacakan kemajuan untuk bimbingan belajar.', hi: 'ट्यूशन सेंटर के लिए छात्र नामांकन, कक्षा शेड्यूलिंग और प्रगति ट्रैकिंग प्रणाली।', ur: 'ٹیوشن سینٹرز کے لیے طلباء کا اندراج، کلاس شیڈولنگ، اور پیش رفت کی ٹریکنگ سسٹم۔', ru: 'Система зачисления студентов, планирования занятий и отслеживания прогресса для учебных центров.', fr: 'Système d\'inscription des étudiants, planification des cours et suivi des progrès pour les centres de tutorat.', es: 'Sistema de inscripción de estudiantes, programación de clases y seguimiento de progreso para centros de tutorías.', my: 'သင်တန်းစင်တာများအတွက် ကျောင်းသားအသစ်များစာရင်း၊ အတန်းအချိန်ဇယားနှင့် အခြေအနေ tracking စနစ်။' },
+                features: {
+                    en: ['Student enrollment', 'Class scheduling', 'Progress tracking', 'Attendance monitoring', 'Fee management'],
+                    zh: ['学生报名', '课程排程', '进度追踪', '考勤监控', '费用管理'],
+                    ms: ['Pendaftaran pelajar', 'Penjadualan kelas', 'Jejak kemajuan', 'Pemantauan kehadiran', 'Pengurusan yuran'],
+                    ja: ['学生登録', '授業スケジューリング', '進捗追跡', '出席監視', '料金管理'],
+                    ko: ['학생 등록', '수업 일정 관리', '진도 추적', '출석 모니터링', '수수료 관리'],
+                    vi: ['Tuyển sinh học viên', 'Lập lịch lớp học', 'Theo dõi tiến độ', 'Giám sát điểm danh', 'Quản lý học phí'],
+                    th: ['การรับสมัครนักเรียน', 'การจัดตารางเรียน', 'การติดตามความก้าวหน้า', 'การตรวจสอบการเข้าเรียน', 'การจัดการค่าธรรมเนียม'],
+                    id: ['Pendaftaran siswa', 'Penjadwalan kelas', 'Pelacakan kemajuan', 'Pemantauan kehadiran', 'Manajemen biaya'],
+                    hi: ['छात्र नामांकन', 'कक्षा शेड्यूलिंग', 'प्रगति ट्रैकिंग', 'उपस्थिति निगरानी', 'शुल्क प्रबंधन'],
+                    ur: ['طلباء کا اندراج', 'کلاس شیڈولنگ', 'پیش رفت کی ٹریکنگ', 'حاضری کی نگرانی', 'فیس مینجمنٹ'],
+                    ru: ['Зачисление студентов', 'Планирование занятий', 'Отслеживание прогресса', 'Мониторинг посещаемости', 'Управление оплатой'],
+                    fr: ['Inscription des étudiants', 'Planification des cours', 'Suivi des progrès', 'Surveillance de la présence', 'Gestion des frais'],
+                    es: ['Inscripción de estudiantes', 'Programación de clases', 'Seguimiento de progreso', 'Monitoreo de asistencia', 'Gestión de tarifas'],
+                    my: ['ကျောင်းသားအသစ်များစာရင်း', 'အတန်းအချိန်ဇယား', 'အခြေအနေ tracking', 'ချိန်းဆိုမှုစောင့်ကြည့်ခြင်း', 'စရိတ်စီမံခန့်ခွဲမှု']
+                }
+            },
+            
+            // Logistics 2 - Cold Chain
+            logistics2: {
+                icon: '🧊',
+                category: { en: 'Logistics & Supply Chain', zh: '物流与供应链', ms: 'Logistik & Rantaian Bekalan', ja: '物流・サプライチェーン', ko: '물류 및 공급망', vi: 'Logistics & Chuỗi cung ứng', th: 'โลจิสติกส์และห่วงโซ่อุปทาน', id: 'Logistik & Rantai Pasok', hi: 'लॉजिस्टिक्स और आपूर्ति श्रृंखला', ur: 'لاجسٹکس اور سپلائی چین', ru: 'Логистика и цепочка поставок', fr: 'Logistique et chaîne d\'approvisionnement', es: 'Logística y cadena de suministro', my: 'လူသယ်ယူပို့ဆောင်ရေးနှင့် လုပ်ငန်းလမ်းကြောင်' },
+                title: { en: 'Cold Chain Monitoring', zh: '冷链监控', ms: 'Pemantauan Rantaian Sejuk', ja: 'コールドチェーン監視', ko: '콜드체인 모니터링', vi: 'Giám Sát Chuỗi Lạnh', th: 'การตรวจสอบห่วงโซ่ความเย็น', id: 'Pemantauan Rantai Dingin', hi: 'कोल्ड चेन निगरानी', ur: 'کلڈ چین مانیٹرنگ', ru: 'Мониторинг холодовой цепи', fr: 'Surveillance de la chaîne du froid', es: 'Monitoreo de cadena de frío', my: 'အေးခဲထိန်းသိမ်းမှု စောင့်ကြည့်မှု' },
+                description: { en: 'Temperature logging, GPS route tracking, and alert notifications for temperature-sensitive shipments.', zh: '温度敏感货物的温度记录、GPS路线追踪和警报通知。', ms: 'Pencatatan suhu, jejak laluan GPS, dan pemberitahuan amaran untuk penghantaran sensitif suhu.', ja: '温度管理が必要な貨物の温度記録、GPSルート追跡、アラート通知。', ko: '온도 민감 화물을 위한 온도 기록, GPS 경로 추적 및 알림 기능.', vi: 'Ghi log nhiệt độ, theo dõi tuyến đường GPS và thông báo cảnh báo cho hàng hóa nhạy cảm với nhiệt độ.', th: 'การบันทึกอุณหภูมิ การติดตามเส้นทาง GPS และการแจ้งเตือนสำหรับการจัดส่งที่อ่อนไหวต่ออุณหภูมิ', id: 'Pencatatan suhu, pelacakan rute GPS, dan notifikasi peringatan untuk pengiriman sensitif suhu.', hi: 'तापमान-संवेदनशील शिपमेंट के लिए तापमान लॉगिंग, GPS रूट ट्रैकिंग और अलर्ट नोटिफिकेशन।', ur: 'درجہ حرارت کے حساس شپمنٹس کے لیے درجہ حرارت لاگنگ، GPS روٹ ٹریکنگ، اور الرٹ نوٹیفیکیشنز۔', ru: 'Регистрация температуры, отслеживание маршрута GPS и оповещения для температурочувствительных грузов.', fr: 'Enregistrement de température, suivi d\'itinéraire GPS et alertes pour les expéditions sensibles à la température.', es: 'Registro de temperatura, seguimiento de ruta GPS y alertas para envíos sensibles a la temperatura.', my: 'အပူချိန်လှိုနစ်သော ပို့ဆောင်မှုများအတွက် အပူချိန်မှတ်တမ်း၊ GPS လမ်းကြောင်း tracking နှင့် သတိပေးချက်များ။' },
+                features: {
+                    en: ['Temperature logging', 'GPS route tracking', 'Alert notifications', 'Compliance reports', 'Historical data'],
+                    zh: ['温度记录', 'GPS路线追踪', '警报通知', '合规报告', '历史数据'],
+                    ms: ['Pencatatan suhu', 'Jejak laluan GPS', 'Pemberitahuan amaran', 'Laporan pematuhan', 'Data sejarah'],
+                    ja: ['温度記録', 'GPSルート追跡', 'アラート通知', 'コンプライアンスレポート', '履歴データ'],
+                    ko: ['온도 기록', 'GPS 경로 추적', '알림', '규정 준수 보고서', '역사적 데이터'],
+                    vi: ['Ghi log nhiệt độ', 'Theo dõi tuyến đường GPS', 'Thông báo cảnh báo', 'Báo cáo tuân thủ', 'Dữ liệu lịch sử'],
+                    th: ['การบันทึกอุณหภูมิ', 'การติดตามเส้นทาง GPS', 'การแจ้งเตือน', 'รายงานการปฏิบัติตาม', 'ข้อมูลย้อนหลัง'],
+                    id: ['Pencatatan suhu', 'Pelacakan rute GPS', 'Notifikasi peringatan', 'Laporan kepatuhan', 'Data historis'],
+                    hi: ['तापमान लॉगिंग', 'GPS रूट ट्रैकिंग', 'अलर्ट सूचनाएं', 'अनुपालन रिपोर्ट', 'ऐतिहासिक डेटा'],
+                    ur: ['درجہ حرارت لاگنگ', 'GPS روٹ ٹریکنگ', 'الرٹ نوٹیفیکیشنز', 'تعمیل رپورٹس', 'تاریخی ڈیٹا'],
+                    ru: ['Регистрация температуры', 'Отслеживание маршрута GPS', 'Оповещения', 'Отчеты о соблюдении норм', 'Исторические данные'],
+                    fr: ['Enregistrement de température', 'Suivi d\'itinéraire GPS', 'Alertes', 'Rapports de conformité', 'Données historiques'],
+                    es: ['Registro de temperatura', 'Seguimiento de ruta GPS', 'Alertas', 'Informes de cumplimiento', 'Datos históricos'],
+                    my: ['အပူချိန်မှတ်တမ်း', 'GPS လမ်းကြောင်း tracking', 'သတိပေးချက်များ', 'စည်းကမ်းလိုက်နာမှုအစီရင်ခံများ', 'သမိုင်းဝင်ဒေတာ']
+                }
+            },
+            
+            // Real Estate 2 - Rental
+            realestate2: {
+                icon: '🏠',
+                category: { en: 'Property & Real Estate', zh: '房地产', ms: 'Harta & Hartanah', ja: '不動産', ko: '부동산', vi: 'Bất động sản', th: 'อสังหาริมทรัพย์', id: 'Properti & Real Estat', hi: 'संपत्ति और रियल एस्टेट', ur: 'جائیداد اور رئیل اسٹیٹ', ru: 'Недвижимость', fr: 'Immobilier', es: 'Propiedades e inmuebles', my: 'အိမ်ခြံမြေနှင့် ပိုင်ဆိုင်မှု' },
+                title: { en: 'Rental Property Automation', zh: '租赁物业自动化', ms: 'Automasi Hartanah Sewa', ja: '賃貸物件自動化', ko: '임대 자산 자동화', vi: 'Tự Động Hóa Cho Thuê', th: 'ระบบอัตโนมัติสำหรับเช่า', id: 'Otomasi Properti Sewa', hi: 'रेंटल प्रॉपर्टी ऑटोमेशन', ur: 'رینٹل پراپرٹی آٹومیشن', ru: 'Автоматизация арендной недвижимости', fr: 'Automatisation des locations', es: 'Automatización de propiedades en alquiler', my: 'ငှားရမ်းခြင်း ပိုင်ဆိုင်မှု အလိုအလျောက်စနစ်' },
+                description: { en: 'Tenant management, rent collection, and maintenance request system for rental property owners.', zh: '为出租物业业主提供的租户管理、租金收取和维修请求系统。', ms: 'Sistem pengurusan penyewa, kutipan sewa, dan permintaan penyelenggaraan untuk pemilik hartanah sewa.', ja: '賃貸物件所有者向けのテナント管理、家賃徴収、メンテナンス依頼システム。', ko: '임대 자산 소유주를 위한 임차인 관리, 임금 수금 및 유지보수 요청 시스템입니다.', vi: 'Hệ thống quản lý ngườ thuê, thu tiền thuê và yêu cầu bảo trì cho chủ sở hữu bất động sản cho thuê.', th: 'ระบบจัดการผู้เช่า การเก็บค่าเช่า และคำขอซ่อมบำรุงสำหรับเจ้าของอสังหาริมทรัพย์ให้เช่า', id: 'Sistem manajemen penyewa, pengumpulan sewa, dan permintaan perawatan untuk pemilik properti sewa.', hi: 'किरायेदार प्रबंधन, किराया संग्रह और रखरखाव अनुरोध प्रणाली किरायेदारी संपत्ति मालिकों के लिए।', ur: 'کرایہ داروں کا انتظام، کرایہ وصولی، اور دیکھ بھال کے درخواستوں کا نظام کرایہ پر جائیداد کے مالکان کے لیے۔', ru: 'Система управления арендаторами, сбора арендной платы и обработки заявок на обслуживание для арендодателей.', fr: 'Système de gestion des locataires, collecte des loyers et demandes de maintenance pour les propriétaires.', es: 'Sistema de gestión de inquilinos, cobro de alquiler y solicitudes de mantenimiento para propietarios.', my: 'ငှားရမ်းသူများစီမံခန့်ခွဲမှု၊ ငှားရမ်းကြေးစုစည်းမှု နှင့် ထိန်းသိမ်းရေးတောင်းဆိုမှုများစနစ် ငှားရမ်းခြင်းပိုင်ဆိုင်မှုပိုင်ရှင်များအတွက်။' },
+                features: {
+                    en: ['Tenant management', 'Rent collection', 'Maintenance requests', 'Lease tracking', 'Financial reporting'],
+                    zh: ['租户管理', '租金收取', '维修请求', '租约追踪', '财务报告'],
+                    ms: ['Pengurusan penyewa', 'Kutipan sewa', 'Permintaan penyelenggaraan', 'Jejak pajakan', 'Pelaporan kewangan'],
+                    ja: ['テナント管理', '家賃徴収', 'メンテナンス依頼', '契約追跡', '財務報告'],
+                    ko: ['임차인 관리', '임금 수금', '유지보수 요청', '임대 추적', '재무 보고'],
+                    vi: ['Quản lý ngườ thuê', 'Thu tiền thuê', 'Yêu cầu bảo trì', 'Theo dõi hợp đồng', 'Báo cáo tài chính'],
+                    th: ['การจัดการผู้เช่า', 'การเก็บค่าเช่า', 'คำขอซ่อมบำรุง', 'การติดตามสัญญาเช่า', 'รายงานทางการเงิน'],
+                    id: ['Manajemen penyewa', 'Pengumpulan sewa', 'Permintaan perawatan', 'Pelacakan sewa', 'Pelaporan keuangan'],
+                    hi: ['किरायेदार प्रबंधन', 'किराया संग्रह', 'रखरखाव अनुरोध', 'लीज ट्रैकिंग', 'वित्तीय रिपोर्टिंग'],
+                    ur: ['کرایہ داروں کا انتظام', 'کرایہ وصولی', 'دیکھ بھال کے درخواستیں', 'لیز ٹریکنگ', 'مالیاتی رپورٹنگ'],
+                    ru: ['Управление арендаторами', 'Сбор арендной платы', 'Запросы на обслуживание', 'Отслеживание договоров', 'Финансовая отчетность'],
+                    fr: ['Gestion des locataires', 'Collecte des loyers', 'Demandes de maintenance', 'Suivi des baux', 'Rapports financiers'],
+                    es: ['Gestión de inquilinos', 'Cobro de alquiler', 'Solicitudes de mantenimiento', 'Seguimiento de contratos', 'Reportes financieros'],
+                    my: ['ငှားရမ်းသူစီမံခန့်ခွဲမှု', 'ငှားရမ်းကြေးစုစည်းမှု', 'ထိန်းသိမ်းရေးတောင်းဆိုမှုများ', 'စာချုပ်အခြေအနေ tracking', 'ငွေကြေးဆိုင်ရာအစီရင်ခံများ']
+                }
+            },
+            
+            // Manufacturing 2 - Factory
+            manufacturing2: {
+                icon: '🏭',
+                category: { en: 'Manufacturing', zh: '制造业', ms: 'Pembuatan', ja: '製造業', ko: '제조업', vi: 'Sản xuất', th: 'การผลิต', id: 'Manufaktur', hi: 'विनिर्माण', ur: 'مینوفیکچرنگ', ru: 'Производство', fr: 'Fabrication', es: 'Manufactura', my: 'ထုတ်လုပ်မှု' },
+                title: { en: 'Factory Automation', zh: '工厂自动化', ms: 'Automasi Kilang', ja: '工場自動化', ko: '공장 자동화', vi: 'Tự Động Hóa Nhà Máy', th: 'ระบบอัตโนมัติในโรงงาน', id: 'Otomasi Pabrik', hi: 'फैक्ट्री ऑटोमेशन', ur: 'فیکٹری آٹومیشن', ru: 'Автоматизация производства', fr: 'Automatisation d\'usine', es: 'Automatización de fábrica', my: 'စက်ရုံ အလိုအလျောက်စနစ်' },
+                description: { en: 'IoT sensors, predictive maintenance, and OEE tracking for smart factory operations.', zh: '智能工厂运营的物联网传感器、预测性维护和设备综合效率追踪。', ms: 'Sensor IoT, penyelenggaraan ramalan, dan jejak OEE untuk operasi kilang pintar.', ja: 'スマートファクトリー運営のためのIoTセンサー、予測メンテナンス、OEE追跡。', ko: '스마트 팩토리 운영을 위한 IoT 센서, 예측 유지보수 및 OEE 추적.', vi: 'Cảm biến IoT, bảo trì dự đoán và theo dõi OEE cho vận hành nhà máy thông minh.', th: 'เซนเซอร์ IoT การบำรุงรักษาเชิงคาดการณ์ และการติดตาม OEE สำหรับการดำเนินงานโรงงานอัจฉริยะ', id: 'Sensor IoT, pemeliharaan prediktif, dan pelacakan OEE untuk operasi pabrik pintar.', hi: 'IoT सेंसर, भविष्य कहने वाला रखरखाव और स्मार्ट फैक्टरी संचालन के लिए OEE ट्रैकिंग।', ur: 'آئی او ٹی سینسرز، پیشنگوئی دیکھ بھال، اور سمارٹ فیکٹری آپریشنز کے لیے OEE ٹریکنگ۔', ru: 'IoT-датчики, предиктивное обслуживание и отслеживание OEE для умного производства.', fr: 'Capteurs IoT, maintenance prédictive et suivi OEE pour les opérations d\'usine intelligentes.', es: 'Sensores IoT, mantenimiento predictivo y seguimiento OEE para operaciones de fábrica inteligente.', my: 'ကျွမ်းကျင်သော စက်ရုံလုပ်ငန်းများအတွက် IoT sensors၊ အနာဂတ်ထိန်းသိမ်းခြင်း နှင့် OEE tracking။' },
+                features: {
+                    en: ['IoT sensors', 'Predictive maintenance', 'OEE tracking', 'Production analytics', 'Quality monitoring'],
+                    zh: ['物联网传感器', '预测性维护', '设备综合效率追踪', '生产分析', '质量监控'],
+                    ms: ['Sensor IoT', 'Penyelenggaraan ramalan', 'Jejak OEE', 'Analitik pengeluaran', 'Pemantauan kualiti'],
+                    ja: ['IoTセンサー', '予測メンテナンス', 'OEE追跡', '生産分析', '品質監視'],
+                    ko: ['IoT 센서', '예측 유지보수', 'OEE 추적', '생산 분석', '품질 모니터링'],
+                    vi: ['Cảm biến IoT', 'Bảo trì dự đoán', 'Theo dõi OEE', 'Phân tích sản xuất', 'Giám sát chất lượng'],
+                    th: ['เซนเซอร์ IoT', 'การบำรุงรักษาเชิงคาดการณ์', 'การติดตาม OEE', 'การวิเคราะห์การผลิต', 'การตรวจสอบคุณภาพ'],
+                    id: ['Sensor IoT', 'Pemeliharaan prediktif', 'Pelacakan OEE', 'Analitik produksi', 'Pemantauan kualitas'],
+                    hi: ['IoT सेंसर', 'भविष्य कहने वाला रखरखाव', 'OEE ट्रैकिंग', 'उत्पादन एनालिटिक्स', 'गुणवत्ता निगरानी'],
+                    ur: ['آئی او ٹی سینسرز', 'پیشنگوئی دیکھ بھال', 'OEE ٹریکنگ', 'پروڈکشن اینالیٹکس', 'کوالٹی مانیٹرنگ'],
+                    ru: ['IoT-датчики', 'Предиктивное обслуживание', 'Отслеживание OEE', 'Аналитика производства', 'Мониторинг качества'],
+                    fr: ['Capteurs IoT', 'Maintenance prédictive', 'Suivi OEE', 'Analytique de production', 'Surveillance qualité'],
+                    es: ['Sensores IoT', 'Mantenimiento predictivo', 'Seguimiento OEE', 'Analítica de producción', 'Monitoreo de calidad'],
+                    my: ['IoT sensors', 'အနာဂတ်ထိန်းသိမ်းခြင်း', 'OEE tracking', 'ထုတ်လုပ်မှု analytics', 'အရည်အသွေးစောင့်ကြည့်ခြင်း']
+                }
             }
         };
 
         function openModal(industry) {
             const modal = document.getElementById('industryModal');
-            const data = modalData[industry];
+            let data = modalData[industry];
             const t = translations[currentLang];
+            const en = translations['en'];
+            
+            // If no modalData exists, build from translations
+            if (!data) {
+                const indKey = industry.replace(/\d+$/, ''); // e.g., 'manufacturing1' -> 'manufacturing'
+                const num = industry.match(/\d+$/)[0]; // e.g., 'manufacturing1' -> '1'
+                const titleKey = `ind_${num}_title`;
+                const feat1Key = `ind_${num}_feat1`;
+                const feat2Key = `ind_${num}_feat2`;
+                const feat3Key = `ind_${num}_feat3`;
+                
+                // Get category based on industry type
+                let category = { en: 'Industry Solutions', zh: '行业解决方案', ms: 'Penyelesaian Industri', ja: '業界ソリューション', ko: '업종 솔루션', vi: 'Giải pháp ngành', th: 'โซลูชันอุตสาหกรรม', id: 'Solusi Industri', hi: 'उद्योग समाधान', ur: 'انڈسٹری حل', ru: 'Отраслевые решения', fr: 'Solutions sectorielles', es: 'Soluciones por industria', my: 'လုပ်ငန်းဖြေရှင်းချက်များ' };
+                
+                // Map industry keys to categories
+                const categoryMap = {
+                    logistics: { en: 'Logistics & Supply Chain', zh: '物流与供应链', ms: 'Logistik & Rantaian Bekalan', ja: '物流・サプライチェーン', ko: '물류 및 공급망', vi: 'Logistics & Chuỗi cung ứng', th: 'โลจิสติกส์และห่วงโซ่อุปทาน', id: 'Logistik & Rantai Pasok', hi: 'लॉजिस्टिक्स और आपूर्ति श्रृंखला', ur: 'لاجسٹکس اور سپلائی چین', ru: 'Логистика и цепочка поставок', fr: 'Logistique et chaîne d\'approvisionnement', es: 'Logística y cadena de suministro', my: 'လူသယ်ယူပို့ဆောင်ရေးနှင့် လုပ်ငန်းလမ်းကြောင်' },
+                    realestate: { en: 'Property & Real Estate', zh: '房地产', ms: 'Harta & Hartanah', ja: '不動産', ko: '부동산', vi: 'Bất động sản', th: 'อสังหาริมทรัพย์', id: 'Properti & Real Estat', hi: 'संपत्ति और रियल एस्टेट', ur: 'جائیداد اور رئیل اسٹیٹ', ru: 'Недвижимость', fr: 'Immobilier', es: 'Propiedades e inmuebles', my: 'အိမ်ခြံမြေနှင့် ပိုင်ဆိုင်မှု' },
+                    medical: { en: 'Healthcare', zh: '医疗健康', ms: 'Penjagaan Kesihatan', ja: '医療・ヘルスケア', ko: '의료', vi: 'Chăm sóc sức khỏe', th: 'การดูแลสุขภาพ', id: 'Kesehatan', hi: 'स्वास्थ्य सेवा', ur: 'صحت کی دیکھ بھال', ru: 'Здравоохранение', fr: 'Santé', es: 'Salud', my: 'ကျန်းမာရေး' },
+                    fnb: { en: 'Food & Beverage', zh: '餐饮', ms: 'Makanan & Minuman', ja: '飲食', ko: '외식업', vi: 'Ẩm thực', th: 'อาหารและเครื่องดื่ม', id: 'Makanan & Minuman', hi: 'खाद्य और पेय', ur: 'کھانا اور مشروبات', ru: 'Рестораны и кафе', fr: 'Restauration', es: 'Alimentos y bebidas', my: 'အစားအသောက်နှင့် သောက်သောက်ရာ' },
+                    manufacturing: { en: 'Manufacturing', zh: '制造业', ms: 'Pembuatan', ja: '製造業', ko: '제조업', vi: 'Sản xuất', th: 'การผลิต', id: 'Manufaktur', hi: 'विनिर्माण', ur: 'مینوفیکچرنگ', ru: 'Производство', fr: 'Fabrication', es: 'Manufactura', my: 'ထုတ်လုပ်မှု' },
+                    legal: { en: 'Legal Services', zh: '法律服务', ms: 'Perkhidmatan Undang-Undang', ja: '法律サービス', ko: '법률 서비스', vi: 'Dịch vụ pháp lý', th: 'บริการทางกฎหมาย', id: 'Jasa Hukum', hi: 'कानूनी सेवाएं', ur: 'قانونی خدمات', ru: 'Юридические услуги', fr: 'Services juridiques', es: 'Servicios legales', my: 'ဥပဒေဝန်ဆောင်မှု' },
+                    retail: { en: 'Retail & E-commerce', zh: '零售与电商', ms: 'Peruncitan & E-dagang', ja: '小売・Eコマース', ko: '소매 및 전자상거래', vi: 'Bán lẻ & Thương mại điện tử', th: 'ค้าปลีกและอีคอมเมิร์ซ', id: 'Ritel & E-commerce', hi: 'खुदरा और ई-कॉमर्स', ur: 'ریٹیل اور ای کامرس', ru: 'Розничная торговля и электронная коммерция', fr: 'Commerce de détail et e-commerce', es: 'Venta minorista y comercio electrónico', my: 'ရောင်းချမှု နှင့် အွန်လိုင်းကုန်သွယ်မှု' },
+                    education: { en: 'Education', zh: '教育', ms: 'Pendidikan', ja: '教育', ko: '교육', vi: 'Giáo dục', th: 'การศึกษา', id: 'Pendidikan', hi: 'शिक्षा', ur: 'تعلیم', ru: 'Образование', fr: 'Éducation', es: 'Educación', my: 'ပညာရေး' },
+                    healthcare: { en: 'Healthcare', zh: '医疗健康', ms: 'Penjagaan Kesihatan', ja: '医療・ヘルスケア', ko: '의료', vi: 'Chăm sóc sức khỏe', th: 'การดูแลสุขภาพ', id: 'Kesehatan', hi: 'स्वास्थ्य सेवा', ur: 'صحت کی دیکھ بھال', ru: 'Здравоохранение', fr: 'Santé', es: 'Salud', my: 'ကျန်းမာရေး' },
+                    construction: { en: 'Construction', zh: '建筑', ms: 'Pembinaan', ja: '建設', ko: '건설', vi: 'Xây dựng', th: 'การก่อสร้าง', id: 'Konstruksi', hi: 'निर्माण', ur: 'تعمیرات', ru: 'Строительство', fr: 'Construction', es: 'Construcción', my: 'ဆောက်လုပ်ရေး' },
+                    accounting: { en: 'Accounting', zh: '会计', ms: 'Perakaunan', ja: '会計', ko: '회계', vi: 'Kế toán', th: 'การบัญชี', id: 'Akuntansi', hi: 'लेखांकन', ur: 'اکاؤنٹنگ', ru: 'Бухгалтерия', fr: 'Comptabilité', es: 'Contabilidad', my: 'စာရင်းကိုင်စနစ်' },
+                    consulting: { en: 'Consulting', zh: '咨询', ms: 'Perundingan', ja: 'コンサルティング', ko: '컨설팅', vi: 'Tư vấn', th: 'ที่ปรึกษา', id: 'Konsultasi', hi: 'परामर्श', ur: 'مشاورت', ru: 'Консалтинг', fr: 'Conseil', es: 'Consultoría', my: 'အကြံပေးခြင်း' },
+                    marketing: { en: 'Marketing', zh: '营销', ms: 'Pemasaran', ja: 'マーケティング', ko: '마케팅', vi: 'Marketing', th: 'การตลาด', id: 'Pemasaran', hi: 'मार्केटिंग', ur: 'مارکیٹنگ', ru: 'Маркетинг', fr: 'Marketing', es: 'Marketing', my: 'အရောင်းအ၀ယ်ပြုလုပ်ခြင်း' },
+                    agriculture: { en: 'Agriculture', zh: '农业', ms: 'Pertanian', ja: '農業', ko: '높업', vi: 'Nông nghiệp', th: 'การเกษตร', id: 'Pertanian', hi: 'कृषि', ur: 'زراعت', ru: 'Сельское хозяйство', fr: 'Agriculture', es: 'Agricultura', my: 'စိုက်ပျိုးရေး' },
+                    fishing: { en: 'Fishing', zh: '渔业', ms: 'Perikanan', ja: '漁業', ko: '어업', vi: 'Đánh bắt cá', th: 'การประมง', id: 'Perikanan', hi: 'मछली पकड़ना', ur: 'مچھلی پکڑنا', ru: 'Рыболовство', fr: 'Pêche', es: 'Pesca', my: 'ငါးဖမ်းခြင်း' },
+                    mining: { en: 'Mining', zh: '矿业', ms: 'Perlombongan', ja: '鉱業', ko: '광업', vi: 'Khai thác mỏ', th: 'การทำเหมือง', id: 'Pertambangan', hi: 'खनन', ur: 'مائننگ', ru: 'Горнодобыча', fr: 'Exploitation minière', es: 'Minería', my: 'သတ္တုတွင်းထုန်း' },
+                    oilgas: { en: 'Oil & Gas', zh: '石油天然气', ms: 'Minyak & Gas', ja: '石油・ガス', ko: '석유 및 가스', vi: 'Dầu khí', th: 'น้ำมันและก๊าซ', id: 'Minyak & Gas', hi: 'तेल और गैस', ur: 'تیل اور گیس', ru: 'Нефть и газ', fr: 'Pétrole et gaz', es: 'Petróleo y gas', my: 'ဆီဓာတ်ငွေ့' },
+                    energy: { en: 'Energy', zh: '能源', ms: 'Tenaga', ja: 'エネルギー', ko: '에너지', vi: 'Năng lượng', th: 'พลังงาน', id: 'Energi', hi: 'ऊर्जा', ur: 'توانائی', ru: 'Энергетика', fr: 'Énergie', es: 'Energía', my: 'စွမ်းအင်' },
+                    events: { en: 'Events', zh: '活动', ms: 'Acara', ja: 'イベント', ko: '이벤트', vi: 'Sự kiện', th: 'งานอีเวนต์', id: 'Acara', hi: 'आयोजन', ur: 'تقریبات', ru: 'Мероприятия', fr: 'Événements', es: 'Eventos', my: 'အစည်းအဝေးများ' },
+                    hotel: { en: 'Hospitality', zh: '酒店', ms: 'Hospitality', ja: 'ホスピタリティ', ko: '호텔', vi: 'Khách sạn', th: 'โรงแรม', id: 'Perhotelan', hi: 'आतिथ्य', ur: 'مہمان نوازی', ru: 'Гостеприимство', fr: 'Hôtellerie', es: 'Hotelería', my: 'ဟိုတယ်လောက' },
+                    tourism: { en: 'Tourism', zh: '旅游', ms: 'Pelancongan', ja: '観光', ko: '관광', vi: 'Du lịch', th: 'การท่องเที่ยว', id: 'Pariwisata', hi: 'पर्यटन', ur: 'سیاحت', ru: 'Туризм', fr: 'Tourisme', es: 'Turismo', my: 'ခရီးသွားလုပ်ငန်း' },
+                    gym: { en: 'Fitness', zh: '健身', ms: 'Kecergasan', ja: 'フィットネス', ko: '피트니스', vi: 'Thể hình', th: 'ฟิตเนส', id: 'Kebugaran', hi: 'फिटनेस', ur: 'فٹنس', ru: 'Фитнес', fr: 'Fitness', es: 'Fitness', my: 'ကျန်းမာရေး' },
+                    salon: { en: 'Beauty', zh: '美容', ms: 'Kecantikan', ja: '美容', ko: '뷰티', vi: 'Làm đẹp', th: 'ความงาม', id: 'Kecantikan', hi: 'सौंदर्य', ur: 'خوبصورتی', ru: 'Красота', fr: 'Beauté', es: 'Belleza', my: 'အလှပ' },
+                    car: { en: 'Automotive', zh: '汽车', ms: 'Automotif', ja: '自動車', ko: '자동차', vi: 'Ô tô', th: 'ยานยนต์', id: 'Otomotif', hi: 'ऑटोमोटिव', ur: 'آٹوموٹو', ru: 'Автомобильная промышленность', fr: 'Automobile', es: 'Automotriz', my: 'မော်တော်ယာဉ်' },
+                    workshop: { en: 'Auto Repair', zh: '汽修', ms: 'Baiki Kereta', ja: '自動車修理', ko: '자동차 수리', vi: 'Sửa chữa ô tô', th: 'ซ่อมรถยนต์', id: 'Bengkel', hi: 'ऑटो रिपेयर', ur: 'آٹو مرمت', ru: 'Авторемонт', fr: 'Réparation automobile', es: 'Reparación de autos', my: 'ကားပြုပြင်ခြင်း' },
+                    garage: { en: 'Parking', zh: '停车场', ms: 'Tempat Letak Kereta', ja: '駐車場', ko: '주차장', vi: 'Bãi đậu xe', th: 'ที่จอดรถ', id: 'Parkir', hi: 'पार्किंग', ur: 'پارکنگ', ru: 'Парковка', fr: 'Parking', es: 'Estacionamiento', my: 'ကားရပ်နားရာ' },
+                    security: { en: 'Security', zh: '安保', ms: 'Keselamatan', ja: 'セキュリティ', ko: '보안', vi: 'An ninh', th: 'รักษาความปลอดภัย', id: 'Keamanan', hi: 'सुरक्षा', ur: 'سیکیورٹی', ru: 'Охрана', fr: 'Sécurité', es: 'Seguridad', my: 'လုံခြုံရေး' },
+                    cleaning: { en: 'Cleaning', zh: '清洁', ms: 'Pembersihan', ja: '清掃', ko: '청소', vi: 'Vệ sinh', th: 'ทำความสะอาด', id: 'Kebersihan', hi: 'सफाई', ur: 'صفائی', ru: 'Уборка', fr: 'Nettoyage', es: 'Limpieza', my: 'သန့်ရှင်းရေး' },
+                    pest: { en: 'Pest Control', zh: '害虫防治', ms: 'Kawalan Serangga', ja: '害虫駆除', ko: '해충 방제', vi: 'Kiểm soát côn trùng', th: 'กำจัดแมลง', id: 'Pest Control', hi: 'कीट नियंत्रण', ur: 'کیڑے مکوڑوں کا کنٹرول', ru: 'Дезинсекция', fr: 'Désinsectisation', es: 'Control de plagas', my: 'ပိုးမွှားနှိမ်နင်းရေး' },
+                    laundry: { en: 'Laundry', zh: '洗衣', ms: 'Dobi', ja: '洗濯', ko: '세탁', vi: 'Giặt là', th: 'ซักรีด', id: 'Laundry', hi: 'धुलाई', ur: 'لانڈری', ru: 'Прачечная', fr: 'Blanchisserie', es: 'Lavandería', my: 'အဝတ်လျှော်ခြင်း' },
+                    recycling: { en: 'Recycling', zh: '回收', ms: 'Kitar Semula', ja: 'リサイクル', ko: '재활용', vi: 'Tái chế', th: 'รีไซเคิล', id: 'Daur Ulang', hi: 'रीसाइक्लिंग', ur: 'ری سائیکلنگ', ru: 'Переработка', fr: 'Recyclage', es: 'Reciclaje', my: 'ပြန်လည်အသုံးပြုခြင်း' },
+                    waste: { en: 'Waste Management', zh: '废物管理', ms: 'Pengurusan Sisa', ja: '廃棄物管理', ko: '폐기물 관리', vi: 'Quản lý chất thải', th: 'การจัดการขยะ', id: 'Pengelolaan Sampah', hi: 'अपशिष्ट प्रबंधन', ur: 'فضلہ انتظام', ru: 'Управление отходами', fr: 'Gestion des déchets', es: 'Gestión de residuos', my: 'အမှိုက်စီမံခန့်ခွဲမှု' },
+                    printing: { en: 'Printing', zh: '印刷', ms: 'Percetakan', ja: '印刷', ko: '인쇄', vi: 'In ấn', th: 'การพิมพ์', id: 'Percetakan', hi: 'प्रिंटिंग', ur: 'پرنٹنگ', ru: 'Печать', fr: 'Imprimerie', es: 'Impresión', my: 'ပုံနှိပ်ခြင်း' },
+                    photo: { en: 'Photography', zh: '摄影', ms: 'Fotografi', ja: '写真', ko: '사진', vi: 'Nhiếp ảnh', th: 'การถ่ายภาพ', id: 'Fotografi', hi: 'फोटोग्राफी', ur: 'فوٹوگرافی', ru: 'Фотография', fr: 'Photographie', es: 'Fotografía', my: 'ဓာတ်ပုံ' },
+                    music: { en: 'Music Education', zh: '音乐教育', ms: 'Pendidikan Muzik', ja: '音楽教育', ko: '음악 교육', vi: 'Giáo dục âm nhạc', th: 'ดนตรีศึกษา', id: 'Pendidikan Musik', hi: 'संगीत शिक्षा', ur: 'موسیقی کی تعلیم', ru: 'Музыкальное образование', fr: 'Éducation musicale', es: 'Educación musical', my: 'သီချင်းပညာရေး' },
+                    dance: { en: 'Dance', zh: '舞蹈', ms: 'Tarian', ja: 'ダンス', ko: '댄스', vi: 'Khiêu vũ', th: 'การเต้นรำ', id: 'Tari', hi: 'नृत्य', ur: 'رقص', ru: 'Танцы', fr: 'Danse', es: 'Danza', my: 'အကခုန်ခြင်း' }
+                };
+                
+                category = categoryMap[indKey] || category;
+                
+                data = {
+                    icon: document.querySelector(`[onclick="openModal('${industry}')"] .industry-icon`)?.textContent || '🏢',
+                    category: category,
+                    title: { 
+                        en: en[titleKey] || 'Industry Solution', 
+                        zh: t[titleKey] || en[titleKey] || '行业解决方案',
+                        ms: t[titleKey] || en[titleKey],
+                        ja: t[titleKey] || en[titleKey],
+                        ko: t[titleKey] || en[titleKey],
+                        vi: t[titleKey] || en[titleKey],
+                        th: t[titleKey] || en[titleKey],
+                        id: t[titleKey] || en[titleKey],
+                        hi: t[titleKey] || en[titleKey],
+                        ur: t[titleKey] || en[titleKey],
+                        ru: t[titleKey] || en[titleKey],
+                        fr: t[titleKey] || en[titleKey],
+                        es: t[titleKey] || en[titleKey],
+                        my: t[titleKey] || en[titleKey]
+                    },
+                    description: { 
+                        en: `Custom software solution for ${en[titleKey] || 'this industry'}. Streamline operations, automate workflows, and boost productivity.`,
+                        zh: `${t[titleKey] || en[titleKey] || '本行业'}的定制软件解决方案。简化运营、自动化工作流程并提高生产力。`,
+                        ms: `Penyelesaian perisian tersuai untuk ${t[titleKey] || en[titleKey] || 'industri ini'}. Permudah operasi, automasi aliran kerja, dan tingkatkan produktiviti.`,
+                        ja: `${t[titleKey] || en[titleKey] || 'この業界'}向けカスタムソフトウェアソリューション。業務を簡略化し、ワークフローを自動化し、生産性を向上させます。`,
+                        ko: `${t[titleKey] || en[titleKey] || '이 산업'}을 위한 맞춤형 소프트웨어 솔루션입니다. 운영을 간소화하고 워크플로우를 자동화하며 생산성을 높입니다.`,
+                        vi: `Giải pháp phần mềm tùy chỉnh cho ${t[titleKey] || en[titleKey] || 'ngành này'}. Hợp lý hóa vận hành, tự động hóa quy trình làm việc và tăng năng suất.`,
+                        th: `โซลูชันซอฟต์แวร์ที่กำหนดเองสำหรับ${t[titleKey] || en[titleKey] || 'อุตสาหกรรมนี้'} ปรับปรุงการดำเนินงาน อัตโนมัติเวิร์กโฟลว์ และเพิ่มผลผลิต`,
+                        id: `Solusi perangkat lunak kustom untuk ${t[titleKey] || en[titleKey] || 'industri ini'}. Permudah operasi, otomasi alur kerja, dan tingkatkan produktivitas.`,
+                        hi: `${t[titleKey] || en[titleKey] || 'इस उद्योग'} के लिए कस्टम सॉफ्टवेयर समाधान। संचालन को सुव्यवस्थित करें, वर्कफ्लो स्वचालित करें और उत्पादकता बढ़ाएं।`,
+                        ur: `${t[titleKey] || en[titleKey] || 'اس انڈسٹری'} کے لیے کسٹم سافٹ ویئر حل۔ آپریشنز کو ہموار کریں، ورک فلوز کو خودکار کریں، اور پیداواری صلاحیت بڑھائیں۔`,
+                        ru: `Пользовательское программное решение для ${t[titleKey] || en[titleKey] || 'этой отрасли'}. Оптимизируйте операции, автоматизируйте рабочие процессы и повысьте производительность.`,
+                        fr: `Solution logicielle personnalisée pour ${t[titleKey] || en[titleKey] || 'ce secteur'}. Rationalisez les opérations, automatisez les workflows et augmentez la productivité.`,
+                        es: `Solución de software personalizada para ${t[titleKey] || en[titleKey] || 'esta industria'}. Optimice operaciones, automatice flujos de trabajo y aumente la productividad.`,
+                        my: `${t[titleKey] || en[titleKey] || 'ဤလုပ်ငန်း'}အတွက် စိတ်တိုင်းက် ဆော့ဖ်ဝဲဖြေရှင်းချက်။ လုပ်ငန်းလည်ပတ်မှုများကို ရှင်းလင်းစေပါ၊ အလုပ်စဉ်များကို အလိုအလျောက်ပြုလုပ်ပြီး ထုတ်လုပ်မှုကို တိုးတက်စေပါ။`
+                    },
+                    features: {
+                        en: [en[feat1Key] || 'Feature 1', en[feat2Key] || 'Feature 2', en[feat3Key] || 'Feature 3', 'Custom reporting', 'Mobile access'],
+                        zh: [t[feat1Key] || en[feat1Key] || '功能 1', t[feat2Key] || en[feat2Key] || '功能 2', t[feat3Key] || en[feat3Key] || '功能 3', '自定义报告', '移动访问'],
+                        ms: [t[feat1Key] || en[feat1Key], t[feat2Key] || en[feat2Key], t[feat3Key] || en[feat3Key], 'Laporan tersuai', 'Akses mudah alih'],
+                        ja: [t[feat1Key] || en[feat1Key], t[feat2Key] || en[feat2Key], t[feat3Key] || en[feat3Key], 'カスタムレポート', 'モバイルアクセス'],
+                        ko: [t[feat1Key] || en[feat1Key], t[feat2Key] || en[feat2Key], t[feat3Key] || en[feat3Key], '맞춤 보고서', '모바일 액세스'],
+                        vi: [t[feat1Key] || en[feat1Key], t[feat2Key] || en[feat2Key], t[feat3Key] || en[feat3Key], 'Báo cáo tùy chỉnh', 'Truy cập di động'],
+                        th: [t[feat1Key] || en[feat1Key], t[feat2Key] || en[feat2Key], t[feat3Key] || en[feat3Key], 'รายงานที่กำหนดเอง', 'การเข้าถึงบนมือถือ'],
+                        id: [t[feat1Key] || en[feat1Key], t[feat2Key] || en[feat2Key], t[feat3Key] || en[feat3Key], 'Laporan kustom', 'Akses seluler'],
+                        hi: [t[feat1Key] || en[feat1Key], t[feat2Key] || en[feat2Key], t[feat3Key] || en[feat3Key], 'कस्टम रिपोर्टिंग', 'मोबाइल एक्सेस'],
+                        ur: [t[feat1Key] || en[feat1Key], t[feat2Key] || en[feat2Key], t[feat3Key] || en[feat3Key], 'کسٹم رپورٹنگ', 'موبائل رسائی'],
+                        ru: [t[feat1Key] || en[feat1Key], t[feat2Key] || en[feat2Key], t[feat3Key] || en[feat3Key], 'Пользовательская отчетность', 'Мобильный доступ'],
+                        fr: [t[feat1Key] || en[feat1Key], t[feat2Key] || en[feat2Key], t[feat3Key] || en[feat3Key], 'Rapports personnalisés', 'Accès mobile'],
+                        es: [t[feat1Key] || en[feat1Key], t[feat2Key] || en[feat2Key], t[feat3Key] || en[feat3Key], 'Informes personalizados', 'Acceso móvil'],
+                        my: [t[feat1Key] || en[feat1Key], t[feat2Key] || en[feat2Key], t[feat3Key] || en[feat3Key], 'စိတ်တိုင်းက် အစီရင်ခံများ', 'မိုဘိုင်းဝင်ရောက်ခြင်း']
+                    }
+                };
+            }
             
             if (data) {
                 document.getElementById('modalIcon').textContent = data.icon;
